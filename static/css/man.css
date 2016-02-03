@@ -95,8 +95,8 @@
 .app-main-content{
 
     height: 820px;
-    background: white url("img/main.jpg") no-repeat right ;
-    background-size:100% 100%;
+    background: white url("img/main_ok.jpg") no-repeat right ;
+    /*background-size:100%;*/
 }
 
 .app-main-content-in{
