@@ -3,11 +3,22 @@ from django.template import RequestContext, loader
 from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct
 from django.template.defaulttags import register
 import datetime
+import math
 
 
 @register.filter
 def get_item(dic, key):
 	return dic.get(key)
+
+
+@register.filter
+def get_range(value):
+	return range(value)
+
+
+@register.filter
+def get_be(left, right):
+	return left >= right
 
 
 def index(request):
@@ -20,6 +31,7 @@ def news(request):
 	template = loader.get_template('suiyuan/news.html')
 	pass_all = Passage.objects.all()
 	top_news = Topnews.objects.latest('set_date')
+	page_count = math.ceil(pass_all.count()/6)
 	try:
 		flow_news = Flownews.objects.all()
 	except Flownews.DoesNotExist:
@@ -27,7 +39,8 @@ def news(request):
 	return HttpResponse(template.render(RequestContext(request, {
 		"passage_list": pass_all,
 		"top_news": top_news,
-		"flow_news": flow_news
+		"flow_news": flow_news,
+		"page_count": page_count
 	})))
 
 

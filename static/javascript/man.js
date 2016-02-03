@@ -5,7 +5,8 @@ var compan = false;
 var bar_transparent = true;
 var app_com_readmore = false;
 var app_news_date_list = false;
-
+var last_scroll_top = document.body.scrollTop|document.documentElement.scrollTop;
+var bar_show = true;
 var app_carousel_click = false;
 $('#app-com-btn').click(function(){
     if(compan) {
@@ -95,7 +96,7 @@ $('.app-product-type-list li').hover(function(){
     elem.css('display','none');
 });
 
-$('#bar_search').click(function(){
+$('.bar_search').click(function(){
     $('.search-container').css('display','block');
     $('.search-container').removeClass('animated fadeOutDown');
     $('.search-container').addClass('animated fadeInDown');
@@ -104,4 +105,17 @@ $('#bar_search').click(function(){
 $('#search-remove').click(function(){
     $('.search-container').removeClass('animated fadeInDown');
     $('.search-container').addClass('animated fadeOutDown');
+});
+
+$(document).scroll(function(){
+    var hi = document.body.scrollTop|document.documentElement.scrollTop;
+    if(hi > last_scroll_top && hi >80 && bar_show) {
+        $('.app-nav').removeClass('animation-move-down');
+        $('.app-nav').addClass('animation-move-up');
+    }
+    else{
+        $('.app-nav').removeClass('animation-move-up');
+        $('.app-nav').addClass('animation-move-down');
+    }
+    last_scroll_top = hi;
 });

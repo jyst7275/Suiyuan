@@ -101,30 +101,22 @@
             <p>无文章</p>
         {% endif %}
         <nav class="app-news-pageguide">
-        <div class="app-news-pagecon">
-            <div class="app-news-pagecon-left" style="float:left;">
-                上一页
-            </div>
-            <div class="app-news-pagecon-right" style="float:right;">
-                上一页
-            </div>
-        </div>
-        <ul class="pagination">
-            <li>
-                <a href="#" aria-label="Previous">
+        <ul class="pagination" data-page="1">
+            <li style="display: none;">
+                <a id="app-news-page-next" href="javascript:void(0)" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            {% for i in page_count|get_range %}
+            <li><a href="javascript:void(0)">{{ forloop.counter }}</a></li>
+            {% endfor %}
+            {% if page_count|get_be:1 %}
             <li>
-                <a href="#" aria-label="Next">
+                <a id="app-news-page-next" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
+            {% endif %}
         </ul>
         </nav>
     </div>

@@ -18,6 +18,7 @@
     position: relative;
     display: none;
     animation-fill-mode: forwards;
+    animation-duration: 0.5s;
 }
 
 .search-content{
@@ -664,11 +665,6 @@ display: none;
     padding-bottom: 20px;
 }
 
-.app-news-pagecon div{
-    border: 1px black solid;
-    border-radius: 4px;
-    padding: 10px;
-}
 
 .app-news-pageguide{
     text-align: center;
@@ -1192,4 +1188,24 @@ display: none;
 
 .app-news-flow .app-active{
     display: block;
+}
+
+.animation-move-up{
+    animation: move-up 0.5s forwards;
+}
+
+.animation-move-down{
+    animation: move-down 0.5s forwards;
+}
+#bar_search{
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: transparent;
+}
+#bar_search:hover{
+    background: #ddd;
 }

@@ -102,3 +102,20 @@ to {background-color: transparent;border-color: transparent;}
         top: 300px;
     }
 }
+
+@keyframes move-up {
+    from{
+        margin-top: 0;
+    }
+    to{
+        margin-top: -55px;
+    }
+}
+@keyframes move-down {
+    from{
+        margin-top: -55px;
+    }
+    to{
+        margin-top: 0px;
+    }
+}
