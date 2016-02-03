@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block content %}
+{% load staticfiles %}
+    <div class="app-main">
+        <div class="app-main-content">
+            <div class="app-main-content-in container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="app-main-showtext">
+                    穗源<br>
+                    你的绿色饮食专家<br>
+                        </div>
+                        <button class="btn app-btn-green" href="#app-font-head">开启你的绿色之旅</button>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="app-line">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="app-font-head" class="app-font-head center">
+                <h1>健康生产流程</h1>
+                <hr style="border-top-color: #2b542c; margin-bottom: 40px">
+                    </div>
+                <div class="center">
+                    <img class="app-line-img" src='{% static "img/line1.jpg" %}' alt="">
+
+                <div class="app-line-text">
+                    <p>健康的土地产出健康的产品</p>
+                    <p>我们采用严格标准选取<strong>健康、肥沃</strong>的土地</p>
+
+                </div>
+                </div>
+                <div class="center">
+                    <img class="app-line-img" src='{% static "img/line2.jpg" %}' alt="">
+                <div class="app-line-text">
+                    <p>优秀的品种是优秀产品的源泉</p>
+                    <p>我们的大米采用<strong>与大学合作研发</strong>的优良品种，有良好的<strong>口感及营养</strong></p>
+                </div>
+                </div>
+                <div class="center">
+                    <img class="app-line-img" src='{% static "img/line2.jpg" %}' alt="">
+                <div class="app-line-text">
+                    <p>科技的力量让产品保证质量</p>
+                    <p>我们采用先进的<strong>育种、灌溉</strong>等现代农业方法，<strong>每一个到您手上的产品</strong>都经过我们的严格把控</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="app-customer">
+        <div class="container app-con-head">
+            <h1>满意的顾客</h1>
+            <h2>没有什么比顾客的意见更能反应我们的产品</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1" style="position: relative">
+                    <div id="app-say-1" class="row app-customer-say">
+                        <div class="app-customer-say-img" style="display: inline;float: left">
+                            <img src='{%  static  "img/customer.jpg" %}' alt="">
+                        </div>
+                        <div class="app-customer-say-content">
+                            <p>“我一年前接触穗源的大米和油，我就<strong>一直</strong>在使用。这是一个<strong>绿色</strong>的时代，有机产品是我对于<strong>健康和产品质量</strong>的追求，而穗源让这成为可能。"</p>
+                            <div class="app-customer-say-content-re">
+                                ——农民，使用穗源产品1年
+                            </div>
+
+                        </div>
+                        <div class="app-full-star center" style="padding-top: 20px">
+                            <i class="fa fa-star fa-2x"></i>
+                            <i class="fa fa-star fa-2x"></i>
+                            <i class="fa fa-star fa-2x"></i>
+                            <i class="fa fa-star fa-2x"></i>
+                            <i class="fa fa-star fa-2x"></i>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 center app-more-margin">
+                    <div class="app-icon-down-container"><i class="fa fa-angle-double-down fa-2x app-icon-down app-icon-moving-down"></i></div>
+                    <button class="btn btn-primary">查看更多</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-video">
+        <div class="container">
+            <div class="col-md-12 center app-font-head">
+                <h2>关于穗源</h2>
+                <hr style="border-top-color: #2b542c; margin-bottom: 40px">
+                <div class="app-about-what">
+                    <h2>穗源全方位布局有机农业</h2>
+                    <ul>
+                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>粮油产品</p></li>
+                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>蔬菜水果</p></li>
+                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>观光旅游</p></li>
+                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>还有一个</p></li>
+                    </ul>
+                </div>
+                <hr style="border-top: solid #e3e3e3 2px;width: 200px;">
+                <div class="app-video-content center" style="max-width: 700px">
+                    <h2>宣传视频</h2>
+                <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen=""></iframe>
+    </div>
+                    </div>
+                <div class="app-join-us">
+                    <h2>穗源，等待你的参与</h2>
+                        <ul class="app-join-us-list">
+                            <li><a href="" class="app-join-circle app-hover-red">加盟</a></li>
+                            <li><a class="app-join-circle app-hover-green" href="">应聘</a></li>
+                            <li><a class="app-join-circle app-hover-gold" href="">购买</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    $('.app-nav').css('background-color','transparent');
+    $('.app-nav').css('border-color','transparent');
+
+$(document).scroll(function(){
+   var hi = document.body.scrollTop|document.documentElement.scrollTop;
+    if(hi > 80 && bar_transparent){
+        bar_transparent = false;
+        $('.app-nav').css('animation','nav-change 1s forwards');
+    }
+    else if(hi <=80 && !bar_transparent){
+        bar_transparent = true;
+        $('.app-nav').css('animation','nav-change-reverse 1s forwards');
+    }
+});
+</script>
+{% endblock %}

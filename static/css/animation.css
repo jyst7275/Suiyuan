@@ -1,0 +1,104 @@
+@keyframes nav-change
+{
+from {background-color: transparent;border-color: transparent;}
+to {background: white;border-color: #e3e3e3;}
+}
+
+@-moz-keyframes nav-change /* Firefox */
+{
+from {background-color: transparent;border-color: transparent;}
+to {background: white;border-color: #e3e3e3;}
+}
+
+@-webkit-keyframes nav-change /* Safari 和 Chrome */
+{
+from {background-color: transparent;border-color: transparent;}
+to {background: white;border-color: #e3e3e3;}
+}
+
+@-o-keyframes nav-change /* Opera */
+{
+from {background-color: transparent;border-color: transparent;}
+to {background: white;border-color: #e3e3e3;}
+}
+
+@keyframes nav-change-reverse
+{
+from {background: white;border-color: #e3e3e3;}
+to {background-color: transparent;border-color: transparent;}
+}
+
+@-moz-keyframes nav-change-reverse /* Firefox */
+{
+from {background: white;border-color: #e3e3e3;}
+to {background-color: transparent;border-color: transparent;}
+}
+
+@-webkit-keyframes nav-change-reverse /* Safari 和 Chrome */
+{
+from {background: white;border-color: #e3e3e3;}
+to {background-color: transparent;border-color: transparent;}
+}
+
+@-o-keyframes nav-change-reverse /* Opera */
+{
+from {background: white;border-color: #e3e3e3;}
+to {background-color: transparent;border-color: transparent;}
+}
+
+
+@keyframes forward-back {
+    from{
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+    to{
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+}
+
+@-moz-keyframes forward-back {
+
+    from{
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+    to{
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+}
+
+@-webkit-keyframes forward-back {
+
+    from{
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+    to{
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+}
+
+@-o-keyframes forward-back {
+
+    from{
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+    to{
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+}
+
+@keyframes in-out {
+    from{
+        top: 0px;
+    }
+    to{
+        top: 300px;
+    }
+}

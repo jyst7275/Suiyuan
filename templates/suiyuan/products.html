@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% block content%}
+{% load staticfiles %}
+    <div class="app-product-head">
+    <div class="container" style="position: relative">
+    <div class="app-product-head-img app-carousel">
+        <ul class="app-carousel-list">
+            <li class="app-carousel-content app-active" data-bg-color="darkred">
+                <div class="img-container">
+                    <img src='{% static "img/product-img.jpg" %}' alt="">
+                </div>
+                <div class="text-container">
+                    <h2>穗源御膳贡米</h2>
+                    <p>给你不一样的体验</p>
+                </div>
+            </li>
+            <li class="app-carousel-content" data-bg-color="darkred">
+                <div class="img-container">
+                    <img src='{% static "img/product-img.jpg" %}' alt="">
+                </div>
+                <div class="text-container">
+                    <h2>穗源御膳贡米</h2>
+                    <p>给你不一样的体验2</p>
+                </div>
+            </li >
+            <li class="app-carousel-content" data-bg-color="darkred">
+                <div class="img-container">
+                    <img src='{% static "img/product-img.jpg" %}' alt="">
+                </div>
+                <div class="text-container">
+                    <h2>穗源御膳贡米3</h2>
+                    <p>给你不一样的体验</p>
+                </div>
+            </li>
+        </ul>
+        <div class="app-carousel-indicator">
+            <ul class="app-carousel-indicator-list">
+                <li class="app-carousel-indicator-point app-active" data-slide-to="0"></li>
+                <li class="app-carousel-indicator-point" data-slide-to="1"></li>
+                <li class="app-carousel-indicator-point" data-slide-to="2"></li>
+            </ul>
+        </div>
+</div>
+        <div class="app-product-bar-container">
+    <ul class="app-product-type-list">
+        <li style="background: #c81118;">
+            <a href="" style="color: white">所有产品</a>
+        </li>
+        {% if pc_list %}
+        {% for pc in pc_list %}
+        <li>
+            <a href="">{{ pc.category }}</a>
+            {% if pc_list|get_item:pc %}
+            <div class="app-product-type-sidebar">
+                <ul>
+                    {% for pc_sub in pc_list|get_item:pc %}
+                    <li><a href="">{{ pc_sub.category }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+    </div>
+</div>
+    </div>
+
+<div class="app-product-section app-product-new">
+    <div class="container">
+        <div class="app-product-section-list">
+                <ul>
+                    <li>
+                        <div class="app-product-panel">
+                        <div class="app-product-container app-bg-fa-1">
+                            <div class="img-container">
+                            <img src='{% static "img/product1.jpg" %}' alt=""></div>
+                            <div class="text-container">
+                                <h4>尚品贡米</h4>
+                                <div class="app-product-detail">
+                                    <p>括生anhao</p>
+                                </div>
+                                <div class="app-product-price">¥110 <button class="btn btn-red">立即立即</button></div>
+                            </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="app-product-panel">
+                            <div class="app-product-label">
+                                <img src='{% static "img/hot.png" %}' alt="">
+                            </div>
+                        <div class="app-product-container app-bg-fa-2">
+
+                            <div class="img-container">
+                            <img src='{% static "img/product1.jpg" %}' alt=""></div>
+                            <div class="text-container">
+                                <h4>尚品贡米</h4>
+                                <div class="app-product-detail">
+                                    <p>括生anhao</p>
+                                </div>
+                                <div class="app-product-price">¥110
+                                    <p><button class="btn btn-red">立即立即</button></p></div>
+                            </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-panel">
+                        <div class="app-product-container app-bg-fa-3">
+                            <div class="img-container">
+                            <img src='{% static "img/product1.jpg" %}' alt=""></div>
+                            <div class="text-container">
+                                <h4>尚品贡米</h4>
+                                <div class="app-product-detail">
+                                    <p>括生anhao</p>
+                                </div>
+                                <div class="app-product-price">¥110 <button class="btn btn-red">立即立即</button></div>
+                            </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+    {% for product_name in product_list %}
+    <div class="app-product-section app-product-rice">
+        <div class="container">
+            <div class="app-product-section-head" style="position: relative;">
+                <img src={{ product_name.img.url }} alt="">
+                <div style="position: absolute;left: 25px;top:30px;font-size: 28px;color: #2b542c">
+                    {{ product_name.category }}
+                </div>
+            </div>
+
+            <div class="app-product-section-list">
+                <ul>
+                    {% for pr in product_list|get_item:product_name %}
+                    <li>
+                        <div class="app-product-panel">
+                        <div class="app-product-container">
+                            <div class="img-container">
+                            <img src={{ pr.product_img.url }} alt=""></div>
+                            <div class="text-container">
+                                <h4>{{ pr.product_name }}</h4>
+                                <div class="app-product-detail">
+                                    <p>{{ pr.product_summery }}</p>
+                                </div>
+                                <div class="app-product-price">¥{{ pr.product_prize }} <button class="btn btn-red">立即购买</button></div>
+                            </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="app-product-footer">
+        <div class="container">
+            <hr style="border-top: #f7f7f7 solid 1px;margin-bottom: 0;">
+            <div class="app-product-footer-main">
+                <ul>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/star.png" %}' alt="">
+                        上市企业 质量保证
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/jd.png" %}' alt="">
+                        京东商城 清远馆
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/tmall.png" %}' alt="">
+                        天猫商城专卖店
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/star.png" %}' alt="">
+                        上市企业 质量保证
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <hr style="border-top: #f7f7f7 solid 1px;margin-top: 0;">
+        </div>
+
+    </div>
+
+    <script>
+    $('#bar_products').addClass('app-active');
+    </script>
+{% endblock %}

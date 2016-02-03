@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content%}
+<div class="bg-gray">
+    <div class="app-news-img">
+    </div>
+    <div class="app-new-bar">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4 app-new-bar-li">
+            <h4>企业动态</h4>
+            了解穗源最新动态
+            <div><i class="fa fa-angle-down"></i></div>
+        </div>
+        <div class="col-md-4 app-new-bar-li">
+            <h4>行业资讯</h4>
+            了解行业的最新动向
+            <div><i class="fa fa-angle-down"></i></div>
+        </div>
+        <div class="col-md-4 app-new-bar-li">
+            <h4>健康知识</h4>
+            了解健康小提示
+            <div><i class="fa fa-angle-down"></i></div>
+        </div>
+            </div>
+    </div>
+    </div>
+    <div class="app-news-top">
+    <div class="container">
+        <div class="row">
+            {% if top_news %}
+            <div class="col-md-5 app-news-top-img">
+                <img src={{ top_news.passage.pass_img.url }} alt="">
+            </div>
+            <div class="col-md-12" style="float: none">
+                <h3>{{ top_news.title }}</h3>
+                <div class="main-text">
+                    {{ top_news.summery }}
+                </div>
+                <a href={{ top_news.passage.get_absolute_url }}><button class="btn btn-primary">查看详情</button></a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+    <div class="app-news-list-bar">
+    <div  class="app-news-list-bar-icon" style="position: absolute;left: 10px;"><i class="fa fa-plus"></i></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                文章列表
+            </div>
+            <div class="col-md-6 app-news-flow">
+                {% if flow_news %}
+                    <ul>
+                    {% for foo in flow_news %}
+                    <li><a href={{ foo.passage.get_absolute_url }}>{{ foo.passage.pass_title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="app-news-bar-list">
+        <div class="container">
+            <ul class="app-news-bar-date">
+                <li><i class="fa fa-check"></i><a href="">All</a></li>
+                <li><i class="fa fa-check-empty"></i><a href="">2015年12</a></li>
+                <li><i class="fa fa-check-empty"></i><a href="">2015年12</a></li>
+                <li><i class="fa fa-check-empty"></i><a href="">2015年12</a></li>
+                <li><i class="fa fa-check-empty"></i><a href="">2015年12</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="app-news-list">
+    <div class="container">
+        <ul class="app-news-list-head">
+        <li class="app-active" role="button">全部</li>
+        <li role="button">公司动态</li>
+        <li role="button">行业动向</li>
+        <li role="button">健康知识</li>
+        </ul>
+        {% if passage_list %}
+        <ul class="app-news-list-container">
+        {% for pass in passage_list %}
+            <li class="app-news-container">
+                <img src={{ pass.pass_img.url }} alt="">
+                <div class="app-news-text">
+                <h4>{{ pass.pass_title }}</h4>
+                    <div class="app-news-date">{{ pass.pub_date }}</div>
+                <div>{{ pass.pass_summery }}</div>
+                <hr style="border-top: solid 1px #5596e6">
+                    <i class="fa fa-book fa-lg" style="color: #337ab7"></i><a class="app-news-text-more" href={{ pass.get_absolute_url }}>阅读新闻</a>
+                    </div>
+            </li>
+        {% endfor %}
+        </ul>
+            {% else  %}
+            <p>无文章</p>
+        {% endif %}
+        <nav class="app-news-pageguide">
+        <div class="app-news-pagecon">
+            <div class="app-news-pagecon-left" style="float:left;">
+                上一页
+            </div>
+            <div class="app-news-pagecon-right" style="float:right;">
+                上一页
+            </div>
+        </div>
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+        </nav>
+    </div>
+    </div>
+</div>
+<script>
+$('#bar_news').addClass('app-active');
+</script>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='{%  static  "css/bootstrap.css" %}' rel="stylesheet" type="text/css">
+    <link href='{%  static  "css/font-awesome.css" %}' rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href='{% static  "css/animate.css" %}' type="text/css">
+    <link rel="stylesheet" href='{% static  "css/animation.css" %}' type="text/css">
+    <link rel="stylesheet" href='{% static  "css/man.css" %}' type="text/css">
+    <script src='{%  static  "javascript/jquery.js" %}'></script>
+    <script src='{%  static  "javascript/bootstrap.js" %}'></script>
+    <title>广东穗源农业股份有限公司</title>
+</head>
+
+<body>
+    <div class="top-bar">
+    <nav class = "navbar navbar-default app-nav">
+          <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand" href="/"><span><img src='{%  static  "img/logo.png" %}' alt="" style="height: 40px"></span>穗源农业</a>
+              <ul class="nav navbar-nav navbar-right app-navbar-list">
+                  <li id="bar_news"><a href="/news">新闻</a></li>
+                  <li id="bar_people"><a href="/people">专家团队</a></li>
+                  <li id="bar_products"><a href="/products">产品</a></li>
+                  <li id="bar_contact"><a href="/contact">联系我们</a></li>
+                  <li id="bar_about"><a href="/about">关于</a></li>
+                  <li id="bar_search"><a href="javascript:void(0)">搜索</a></li>
+            </ul>
+            </div>
+        </nav>
+
+    <div class="container">
+    <div class="search-container">
+        <div class="search-content">
+            <input id="search-input" type="text" class="form-control" placeholder="搜索">
+            <i id="search-btn" class="fa fa-search fa-lg" role="button"></i>
+            <i id="search-remove" class="fa fa-remove fa-lg" role="button"></i>
+        </div>
+            </div>
+    </div>
+    </div>
+{% block content %}{% endblock %}
+    <div class="app-com">
+        <div class="app-com-fix">
+          <div id="app-com-panel" class="panel panel-primary app-com-content">
+          <div class="panel-body">
+              <div class="app-com-section">
+              <p>在线客服</p>
+              <hr class="app-line-green" style="margin-top: 5px;">
+              <ul class="app-normal-list">
+                  <li>客服1</li>
+                  <li>客服2</li>
+              </ul>
+              </div>
+              <div class="app-com-section">
+              <p>工作时间</p>
+              <hr style="border-top-color: #2b542c; margin-top: 5px;margin-bottom: 5px;">
+              <p>周一至周日 8:00-18:00</p>
+              </div>
+              <div class="app-com-section">
+              <p>联系方式</p>
+              <hr style="border-top-color: #2b542c; margin-top: 5px;margin-bottom: 5px;">
+                <ul style="padding-left:5px">
+                    <li style="list-style: none">座机:0763-5851836</li>
+                    <li style="list-style: none">李小姐:13828552207</li>
+                    <li style="list-style: none">冯小姐:13828551237</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div id="app-com-btn" class="app-com-icon app-com-fix">
+            <img src='{%  static  "img/com.png" %}' alt="" style="width: 50px">
+        </div>
+    </div>
+<footer>
+    <div class="app-footer-guide">
+        <div class="container app-footer">
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1 app-footer-guide-list">
+                <h4><strong>新闻</strong></h4>
+                <ul>
+                    <li><a href="">公司动态</a></li>
+                    <li><a href="">行业动态</a></li>
+                    <li><a href="">健康知识</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 app-footer-guide-list">
+                <h4><strong>了解我们</strong></h4>
+                <ul>
+                    <li><a href="">关于穗源</a></li>
+                    <li><a href="">技术团队</a></li>
+                    <li><a href="">公司文化</a></li>
+                    <li><a href="">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 app-footer-guide-list">
+                <h4><strong>精诚合作</strong></h4>
+                <ul>
+                    <li><a href="">加入我们</a></li>
+                    <li><a href="">企业合作</a></li>
+                    <li><a href="">产品购买</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5 app-footer-guide-list">
+                <h4><strong>Making Agriculture Great Again</strong></h4>
+                <ul class="app-contact-icon-list">
+                    <li><a href=""><i class="fa fa-facebook-square fa-2x app-icon-white"></i></a></li>
+                    <li><a href=""><i class="fa fa-twitter fa-2x app-icon-white"></i></a></li>
+                    <li><a href=""><i class="fa fa-linkedin fa-2x app-icon-white"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <div class="app-footer-name">
+                    <p>版权所有©广东穗源农业科技股份有限公司 2011-2016。 保留一切权利。粤A2-20044005号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</footer>
+</body>
+<script src='{%  static  "javascript/man.js" %}'></script>
+</html>

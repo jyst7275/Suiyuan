@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content%}
+    {% load staticfiles %}
+<div class="container app-to-top">
+    <div class="col-md-12">
+        <div><h4>首页 > 新闻 > </h4></div>
+        <div class="app-detail-head">
+            <h2>{{ passage.pass_title }}</h2>
+        </div>
+        <div class="app-detail-date"><p>{{ pass.pub_date }}</p></div>
+        <div class="app-detail-share">
+            <hr style="border-top: 1px #f7f7f7 solid;margin-bottom: 8px">
+            <ul class="app-detail-share-list">
+                <li style="background: lightcoral"><i class="fa fa-print"></i></li>
+                <li style="background: lightcoral"><i class="fa fa-envelope"></i></li>
+                <li style="background: lightblue"><i class="fa fa-weibo"></i></li>
+                <li style="background: lightgreen"><i class="fa fa-wechat"></i></li>
+                <li style="background: red"><i class="fa fa-qq"></i></li>
+            </ul>
+        </div>
+        <div class="app-detail-content">
+            {{ passage.pass_content.con_content|safe }}
+        </div>
+    </div>
+</div>
+    <div class="container app-detail-con">
+        <div class="row">
+            <div class="col-md-12">
+                {% if passage_prev %}
+                    <div class="app-detail-con-btn"><a href={{ passage_prev.get_absolute_url }}>上一页：{{ passage_prev.pass_title }}</a></div>
+                {% else %}
+                    <div class="app-detail-con-btn"><a href="">上一页：无</a></div>
+                {% endif %}
+                {% if passage_next %}
+                    <div class="app-detail-con-btn"><a href={{ passage_next.get_absolute_url }}>下一页：{{ passage_next.pass_title }}</a></div>
+                {% else %}
+                    <div class="app-detail-con-btn"><a href="">下一页：无</a></div>
+                {% endif %}
+            <div class="app-detail-return">
+  <ul class="pager">
+    <li><a href="/news"><i class="fa fa-home"></i> 回到新闻</a></li>
+  </ul>
+</div>
+                </div>
+        </div>
+    </div>
+
+<div class="app-detail-bar">
+<div class="app-detail-bar-header">
+    文章列表
+</div>
+<div class="app-detail-bar-list">
+    <ul>
+        <li><i class="fa fa-plus"></i>2015年12月</li>
+        <li><i class="fa fa-plus"></i>2015年12月</li>
+        <li><i class="fa fa-plus"></i>2015年12月</li>
+        <li><i class="fa fa-plus"></i>2015年12月</li>
+    </ul>
+</div>
+<div class="app-detail-bar-more">
+    更多
+</div>
+</div>
+    <script src='{%  static  "javascript/articles-bar.js" %}'></script>
+{% endblock %}
