@@ -3,6 +3,7 @@ from django.utils import timezone
 from uuslug import slugify
 from django.utils.html import format_html
 
+
 class PassageContent(models.Model):
 	con_content = models.TextField()
 
@@ -21,8 +22,14 @@ class Passage(models.Model):
 	pass_content = models.OneToOneField(PassageContent, on_delete=models.CASCADE)
 	index_pinyin = models.SlugField(max_length=100, null=True)
 
+	def img_url(self):
+		return self.pass_img.url
+
 	def get_absolute_url(self):
 		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, self.index_pinyin)
+
+	def pass_url(self):
+		return self.get_absolute_url()
 
 	def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
 		self.index_pinyin = slugify(self.pass_title, max_length=60)
@@ -52,9 +59,17 @@ class ProductCategory(models.Model):
 	img = models.ImageField(upload_to='uploads/productCategory/')
 	count = models.IntegerField()
 	father = models.ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True)
+	index = models.SlugField(max_length=100, null=True)
+
+	def get_absolute_url(self):
+		return "/products/archives/" + self.index
 
 	def __str__(self):
 		return self.category
+
+	def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+		self.index = slugify(self.category, max_length=100)
+		super(ProductCategory, self).save(force_insert, force_update, using, update_fields)
 
 
 class Product(models.Model):
@@ -64,6 +79,7 @@ class Product(models.Model):
 	product_description = models.TextField()
 	product_prize = models.IntegerField()
 	product_category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+	product_date = models.DateField("Up_to_Market", default=timezone.datetime.today().date().replace(2012, 1, 1))
 
 	def img_display(self):
 		return format_html('<img src="{}" style="width:50px;">', self.product_img.url)

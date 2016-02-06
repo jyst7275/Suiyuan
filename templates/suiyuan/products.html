@@ -5,7 +5,7 @@
     <div class="container" style="position: relative">
     <div class="app-product-head-img app-carousel">
         <ul class="app-carousel-list">
-            <li class="app-carousel-content app-active" data-bg-color="darkred">
+            <li class="app-carousel-content app-active" data-bg-color="pink">
                 <div class="img-container">
                     <img src='{% static "img/product-img.jpg" %}' alt="">
                 </div>
@@ -44,17 +44,17 @@
         <div class="app-product-bar-container">
     <ul class="app-product-type-list">
         <li style="background: #c81118;">
-            <a href="" style="color: white">所有产品</a>
+            <a href="/products/archives/all" style="color: white">所有产品</a>
         </li>
         {% if pc_list %}
         {% for pc in pc_list %}
         <li>
-            <a href="">{{ pc.category }}</a>
+            <a href={{ pc.get_absolute_url }}>{{ pc.category }}</a>
             {% if pc_list|get_item:pc %}
             <div class="app-product-type-sidebar">
                 <ul>
                     {% for pc_sub in pc_list|get_item:pc %}
-                    <li><a href="">{{ pc_sub.category }}</a></li>
+                    <li><a href={{ pc_sub.get_absolute_url }}>{{ pc_sub.category }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -71,57 +71,24 @@
     <div class="container">
         <div class="app-product-section-list">
                 <ul>
+                    {% for hproduct in hot_list %}
                     <li>
                         <div class="app-product-panel">
-                        <div class="app-product-container app-bg-fa-1">
+                        <div class="app-product-container app-bg-fa-{{ forloop.counter }}">
                             <div class="img-container">
-                            <img src='{% static "img/product1.jpg" %}' alt=""></div>
+                            <img src={{ hproduct.product.product_img.url }} alt=""></div>
                             <div class="text-container">
-                                <h4>尚品贡米</h4>
+                                <h4>{{ hproduct.product.product_name }}</h4>
                                 <div class="app-product-detail">
-                                    <p>括生anhao</p>
+                                    <p>{{ hproduct.product.product_summery }}</p>
                                 </div>
-                                <div class="app-product-price">¥110 <button class="btn btn-red">立即立即</button></div>
+                                <div class="app-product-price">¥{{ hproduct.product.product_prize }} <button class="btn btn-red">立即购买</button></div>
                             </div>
                             </div>
                         </div>
 
                     </li>
-                    <li>
-                        <div class="app-product-panel">
-                            <div class="app-product-label">
-                                <img src='{% static "img/hot.png" %}' alt="">
-                            </div>
-                        <div class="app-product-container app-bg-fa-2">
-
-                            <div class="img-container">
-                            <img src='{% static "img/product1.jpg" %}' alt=""></div>
-                            <div class="text-container">
-                                <h4>尚品贡米</h4>
-                                <div class="app-product-detail">
-                                    <p>括生anhao</p>
-                                </div>
-                                <div class="app-product-price">¥110
-                                    <p><button class="btn btn-red">立即立即</button></p></div>
-                            </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="app-product-panel">
-                        <div class="app-product-container app-bg-fa-3">
-                            <div class="img-container">
-                            <img src='{% static "img/product1.jpg" %}' alt=""></div>
-                            <div class="text-container">
-                                <h4>尚品贡米</h4>
-                                <div class="app-product-detail">
-                                    <p>括生anhao</p>
-                                </div>
-                                <div class="app-product-price">¥110 <button class="btn btn-red">立即立即</button></div>
-                            </div>
-                            </div>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
     </div>
@@ -197,7 +164,6 @@
 
             <hr style="border-top: #f7f7f7 solid 1px;margin-top: 0;">
         </div>
-
     </div>
 
     <script>

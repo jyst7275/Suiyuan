@@ -6,24 +6,27 @@
     </div>
     <div class="app-new-bar">
     <div class="container">
-        <div class="row">
-        <div class="col-md-4 app-new-bar-li">
+        <div class="row app-new-bar-list">
+
+            <div class="col-md-4 app-new-bar-li app-news-type-news" data-type="news">
             <h4>企业动态</h4>
             了解穗源最新动态
             <div><i class="fa fa-angle-down"></i></div>
         </div>
-        <div class="col-md-4 app-new-bar-li">
+        <div class="col-md-4 app-new-bar-li app-news-type-business" data-type="business">
             <h4>行业资讯</h4>
             了解行业的最新动向
             <div><i class="fa fa-angle-down"></i></div>
         </div>
-        <div class="col-md-4 app-new-bar-li">
+        <div class="col-md-4 app-new-bar-li app-news-type-health" data-type="health">
             <h4>健康知识</h4>
             了解健康小提示
             <div><i class="fa fa-angle-down"></i></div>
         </div>
-            </div>
+        </div>
+
     </div>
+
     </div>
     <div class="app-news-top">
     <div class="container">
@@ -43,7 +46,7 @@
         </div>
     </div>
     </div>
-    <div class="app-news-list-bar">
+    <div id="app-news-bar" class="app-news-list-bar">
     <div  class="app-news-list-bar-icon" style="position: absolute;left: 10px;"><i class="fa fa-plus"></i></div>
     <div class="container">
         <div class="row">
@@ -76,11 +79,11 @@
     </div>
     <div class="app-news-list">
     <div class="container">
-        <ul class="app-news-list-head">
-        <li class="app-active" role="button">全部</li>
-        <li role="button">公司动态</li>
-        <li role="button">行业动向</li>
-        <li role="button">健康知识</li>
+        <ul class="app-news-list-head" data-type="all">
+        <li class="app-active app-news-type-all" role="button" data-type="all">全部</li>
+        <li class="app-news-type-news" role="button" data-type="news">公司动态</li>
+        <li class="app-news-type-business" role="button" data-type="business">行业动向</li>
+        <li class="app-news-type-health" role="button" data-type="health">健康知识</li>
         </ul>
         {% if passage_list %}
         <ul class="app-news-list-container">
@@ -100,19 +103,19 @@
             {% else  %}
             <p>无文章</p>
         {% endif %}
-        <nav class="app-news-pageguide">
-        <ul class="pagination" data-page="1">
-            <li style="display: none;">
-                <a id="app-news-page-next" href="javascript:void(0)" aria-label="Previous">
+        <nav class="app-news-pageguide" data-page="1" data-max={{ page_count }}>
+        <ul class="pagination">
+            <li>
+                <a style="display: none;" id="app-news-page-prev" href="javascript:void(0)" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
             {% for i in page_count|get_range %}
-            <li><a href="javascript:void(0)">{{ forloop.counter }}</a></li>
+            <li class="app-news-page-btn" data-target={{ forloop.counter }}><a href="javascript:void(0)">{{ forloop.counter }}</a></li>
             {% endfor %}
-            {% if page_count|get_be:1 %}
+            {% if page_count|get_be:2 %}
             <li>
-                <a id="app-news-page-next" href="#" aria-label="Next">
+                <a id="app-news-page-next" href="javascript:void(0)" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

@@ -5,14 +5,13 @@ from .model import Topnews, Flownews, ProductCategory, Product, Hotproduct
 from django.contrib import admin
 
 
-admin.site.register(Topnews)
-admin.site.register(Flownews)
-admin.site.register(Hotproduct)
-admin.site.register(ProductCategory)
+class ProductCategoryAdmin(admin.ModelAdmin):
+	list_display = ("category", "is_subclass", "img", "count", "father", "index")
+	fields = ("category", "is_subclass", "img", "count", "father")
 
 
 class ProductAdmin(SummernoteModelAdmin):
-	list_display = ("img_display", "product_name", "product_category", "product_prize",)
+	list_display = ("img_display", "product_name", "product_category", "product_prize", "product_date")
 	list_display_links = ("img_display", "product_name")
 
 
@@ -34,7 +33,10 @@ class PassageAdmin(admin.ModelAdmin):
 class PassageContentAdmin(SummernoteModelAdmin):
 	pass
 
-
+admin.site.register(Topnews)
+admin.site.register(Flownews)
+admin.site.register(Hotproduct)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Passage, PassageAdmin)
 admin.site.register(PassageContent, PassageContentAdmin)
+admin.site.register(ProductCategory, ProductCategoryAdmin)

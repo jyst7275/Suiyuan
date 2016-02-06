@@ -2,8 +2,19 @@ from django.http import HttpResponse
 from django.template import RequestContext, loader
 from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct
 from django.template.defaulttags import register
+from django.db.models import Q
 import datetime
 import math
+
+
+@register.filter
+def get_item_index(a):
+	return a.index
+
+
+@register.filter
+def item_eq(a, b):
+	return a == b
 
 
 @register.filter
@@ -121,3 +132,54 @@ def contact(request):
 def people(request):
 	template = loader.get_template('suiyuan/people.html')
 	return HttpResponse(template.render(RequestContext(request, {})))
+
+
+def product_archives(request, index_pinyin):
+	order_ba = False
+	order_di = ""
+	if request.method == "GET" and "order-by" in request.GET:
+		order_str = request.GET['order-by']
+		order_arr = order_str.split('-')
+		order = order_arr[0]
+		order_direction = order_arr[1]
+		if order == "price":
+			order_ba = "product_prize"
+		elif order == "date":
+			order_ba = "product_date"
+		if order_direction == "down":
+			order_di = "-"
+	template = loader.get_template('suiyuan/product_archive.html')
+	pc_dict = {}
+	pc_list = ProductCategory.objects.all()
+	index_type_sub = "all"
+	for pc in pc_list:
+		if not pc.is_subclass:
+			if pc not in pc_dict:
+				pc_dict[pc] = []
+		else:
+			fa = deep_cat(pc)
+			if fa not in pc_dict:
+				pc_dict[fa] = [pc]
+			else:
+				pc_dict[fa].append(pc)
+	if index_pinyin == "all":
+		product_list = Product.objects.all()
+		index_type = "all"
+	else:
+		pc_name = ProductCategory.objects.get(index=index_pinyin)
+		if pc_name.is_subclass:
+			index_type = pc_name.father.index
+			index_type_sub = pc_name.index
+		else:
+			index_type = pc_name.index
+		product_list = Product.objects.filter(Q(product_category__father__index=index_pinyin) | Q(product_category__index=index_pinyin))
+	if order_ba != False:
+		product_list = product_list.order_by(order_di + order_ba)
+	return HttpResponse(template.render(RequestContext(request, {
+		"product_list": product_list,
+		"pc_list": pc_dict,
+		"index_type": index_type,
+		"index_type_sub": index_type_sub,
+		"request_type": index_pinyin,
+		"order": {"obj": order_ba, "direction": order_di}
+	})))

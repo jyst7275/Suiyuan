@@ -572,6 +572,10 @@ display: none;
     cursor:pointer;
 }
 
+.app-new-bar-list .app-active{
+    background: #004584;
+}
+
 .app-new-bar{
     background: rgba(0,101,151,0.7);
 }
@@ -1208,4 +1212,180 @@ display: none;
 }
 #bar_search:hover{
     background: #ddd;
+}
+.app-product-archive-bar{
+    background: #333;
+}
+.app-product-archive-bar-list{
+
+    color: white;
+    display: block;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+
+.app-product-archive-bar-list li{
+    display: inline-block;
+    padding: 20px 30px;;
+}
+
+.app-product-archive-bar-list li a{
+    color: white;
+    text-decoration: none;
+}
+
+.app-product-archive-selector-list{
+    display: block;
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0;
+}
+.app-product-archive-selector-list li span{
+    margin-left: 5px;
+}
+
+.app-product-archive-sublist{
+    list-style: none;
+    padding-left:80px;
+    display: none;
+}
+
+.app-product-archive-sublist li{
+    /*text-align: center;*/
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+.app-product-archive-sublist li a{
+    color: #999;
+    text-decoration: none;
+}
+.app-product-archive-sublist li a:hover{
+    color: #666;
+}
+
+
+.app-product-archive-sublist .app-active a{
+    color: darkred;
+
+}
+.app-product-archive-sublist .app-active:hover{
+    color: darkred;
+}
+
+
+.app-product-archive-selector-list li{
+    display: inline-block;
+    margin: 10px 10px;
+    color: #999;
+}
+.app-product-archive-selector-list li a {
+    color: #999;
+    text-decoration: none;
+}
+
+.app-product-archive-selector-list li a:hover{
+    color: #666;
+}
+
+.app-product-archive-selector-list .app-active a{
+    color: darkred;
+}
+.app-product-archive-selector-list .app-active a:hover{
+    color: darkred;
+}
+
+.app-product-archive-selector-list .app-active span{
+    color: darkred;
+}
+
+.app-product-archive-selector-list .app-active:hover{
+    color: darkred;
+}
+
+.app-product-archive-selector-section{
+    border-bottom: 1px #dedede solid;
+    margin-bottom: 0;
+}
+.app-product-archive-selector{
+    border: 1px #dedede solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.app-product-archive-bar-selector-header{
+    width: 80px;
+    padding: 10px 10px;
+    text-align: right;
+}
+
+.app-product-archive-list .img-container img{
+    width: 160px;
+    height: 190px;
+    margin: 15px 25px;
+
+}
+
+.app-product-archive-list{
+    display: block;
+    list-style: none;
+    padding-left: 0;
+}
+.app-product-archive-list li{
+    border: 1px solid #dedede;
+    /*display: inline-block;*/
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.app-product-archive-list li:hover{
+    border-color: darkred;
+}
+
+.app-product-archive-list li .text-container{
+    text-align: center;
+}
+
+.app-product-archive-list li .price-container{
+    text-align: center;
+    color: darkred;
+    font-size: 23px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.app-product-archive-list li .btn-container{
+    border-top: 1px solid #dedede;
+    text-align: center;
+    padding: 5px;
+    color: darkred;
+    float: left;
+    width: 50%;
+    border-right: 1px solid #dedede;
+}
+
+.app-product-archive-list li .buy-container{
+    text-align: center;
+    border-top: 1px solid #dedede;
+    padding: 5px;
+}
+
+.app-product-archive-list li .buy-container:hover{
+    cursor: default;
+}
+
+.app-product-archive-list li .btn-container:hover{
+    color: white;
+    background: darkred;
+}
+
+.app-product-archive-list{
+    margin-right: -20px;
+}
+
+.app-product-archive-subcontainer .app-active{
+    display: inline-block;
 }

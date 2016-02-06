@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load staticfiles %}
+    <div class="app-product-archive-bar app-to-top">
+        <div class="container">
+            <ul class="app-product-archive-bar-list">
+                <li style="background: #c81118"><a href="/products/archives/all">所有商品</a></li>
+                <li><a href="">购物车</a></li>
+                <li><a href="">订单查询</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+    <div class="app-product-archive-selector">
+    <div class="app-product-archive-selector-section">
+        <div class="app-product-archive-bar-selector-header" style="float: left">
+            分类：
+        </div>
+        <ul class="app-product-archive-selector-list">
+            <li {% if index_type|item_eq:"all" %} class="app-active" {% endif %}><a href="/products/archives/all">全部</a></li>
+            {% for pc in pc_list %}
+                <li {% if index_type|item_eq:pc.index %} class="app-active" {% endif %} role="button" data-target="product-subset-{{ pc.index }}"><a href={{ pc.get_absolute_url }}>{{ pc.category }}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="app-product-archive-subcontainer">
+        {% for pc in pc_list %}
+        {% if pc_list|get_item:pc %}
+        <ul {% if index_type|item_eq:pc.index %} class="app-active app-product-archive-sublist" {% else %} class="app-product-archive-sublist" {% endif %} id="product-subset-{{ pc.index }}">
+            <li {% if index_type_sub|item_eq:"all" %} class="app-active" {% endif %} role="button"><a href={{ pc.get_absolute_url }}>全部</a></li>
+            {% for sub_pc in pc_list|get_item:pc %}
+            <li {% if sub_pc.index|item_eq:index_type_sub %} class="app-active" {% endif %} role="button"><a href={{ sub_pc.get_absolute_url }}>{{ sub_pc.category }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    <div class="app-product-archive-selector-section">
+        <div class="app-product-archive-bar-selector-header" style="float: left">
+            排序：
+        </div>
+        <ul class="app-product-archive-selector-list">
+            <li {% if order.obj|item_eq:False %} class="app-active" {% endif %} role="button"><a href="/products/archives/{{ request_type }}" >默认</a></li>
+            {% if order.obj|item_eq:"product_prize" %}
+            <li class="app-active"><a href="/products/archives/{{ request_type }}?order-by=price-{% if order.direction|item_eq:"-" %}up{% else %}down{% endif %}">价格</a><span {% if order.direction|item_eq:"-" %}class="fa fa-level-down"{% else %}class="fa fa-level-up"{% endif %}></span></li>
+            {% else %}
+            <li><a href="/products/archives/{{ request_type }}?order-by=price-down">价格</a><span class="fa fa-level-down"></span></li>
+            {% endif %}
+
+            {% if order.obj|item_eq:"product_date" %}
+            <li class="app-active"><a href="/products/archives/{{ request_type }}?order-by=date-{% if order.direction|item_eq:"-" %}up{% else %}down{% endif %}">上架时间</a><span {% if order.direction|item_eq:"-" %}class="fa fa-level-down"{% else %}class="fa fa-level-up"{% endif %}></span></li>
+            {% else %}
+                <li><a href="/products/archives/{{ request_type }}?order-by=date-down">上架时间</a><span class="fa fa-level-down"></span></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    </div>
+    <div class="app-product-archive-list-container">
+        <ul class="app-product-archive-list">
+            {% for product in product_list %}
+            <li>
+                <div class="img-container">
+                    <img src={{ product.product_img.url }} alt="">
+                </div>
+                <div class="text-container">
+                    {{ product.product_name }}
+                </div>
+                <div class="price-container">
+                    ￥{{ product.product_prize }}
+                </div>
+                <div role="button" class="btn-container">
+                    马上购买
+                </div>
+                <div class="buy-container">
+                    100人购买
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </div>
+        <div class="app-product-footer">
+        <div class="container">
+            <hr style="border-top: #f7f7f7 solid 1px;margin-bottom: 0;">
+            <div class="app-product-footer-main">
+                <ul>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/star.png" %}' alt="">
+                        上市企业 质量保证
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/jd.png" %}' alt="">
+                        京东商城 清远馆
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/tmall.png" %}' alt="">
+                        天猫商城专卖店
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/star.png" %}' alt="">
+                        上市企业 质量保证
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <hr style="border-top: #f7f7f7 solid 1px;margin-top: 0;">
+        </div>
+    </div>
+{% endblock %}

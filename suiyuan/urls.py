@@ -17,14 +17,18 @@ from django.contrib import admin
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from . import rest
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index),
     url(r'^news', views.news),
     url(r'^archives/([0-9]+)/([0-9]+)/([0-9]+)/([\w|\-]+)', views.archives),
     url(r'^about', views.about),
-    url(r'^products', views.products),
+    url(r'^products/$', views.products),
+    url(r'^products/archives/([\w|\-]+)/$', views.product_archives),
     url(r'^contact', views.contact),
     url(r'^people', views.people),
     url(r'^summernote/', include('django_summernote.urls')),
+    url(r'^v1/passage/([\w]+)/$', rest.PassageDetail.as_view())
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

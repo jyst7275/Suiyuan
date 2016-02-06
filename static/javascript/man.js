@@ -119,3 +119,98 @@ $(document).scroll(function(){
     }
     last_scroll_top = hi;
 });
+
+function setPage(type, page){
+    $.get('/v1/passage/'+ type + '/' + '?page='+page, function(data){
+        $('.app-news-list-container').empty();
+        if(data.count > 0) {
+            for (var i = 0; i < data.count; i++) {
+                $('.app-news-list-container').append('<li class="app-news-container"> \
+                <img src=' + data.results[i].img_url + ' alt=""> \
+                <div class="app-news-text"> \
+                <h4>' + data.results[i].pass_title + '</h4> \
+                    <div class="app-news-date">' + data.results[i].pub_date + '</div> \
+                <div>' + data.results[i].pass_summery + '</div> \
+                <hr style="border-top: solid 1px #5596e6"> \
+                    <i class="fa fa-book fa-lg" style="color: #337ab7"></i><a class="app-news-text-more" href=' + data.results[i].pass_url + '>阅读新闻</a>\
+                    </div></li>');
+            }
+            $('.app-news-pageguide').attr('data-page', page);
+        }
+        else{
+            $('.app-news-list-container').append('<p>没有相关信息</p>')
+        }
+    });
+}
+
+
+function setPageBar(page_now){
+    var page_max = $('.app-news-pageguide').attr('data-max');
+    if(page_now <= 1)
+        $('#app-news-page-prev').css('display', 'none');
+    else
+        $('#app-news-page-prev').css('display', 'block');
+    if(page_now >= page_max)
+        $('#app-news-page-next').css('display', 'none');
+    else
+        $('#app-news-page-next').css('display', 'block');
+    $('.app-news-pageguide').attr('data-page', page_now);
+}
+
+function refreshPageBar(page_max){
+    $('.app-news-pageguide .pagination').empty();
+    if(page_max >= 1)
+    $('.app-news-pageguide .pagination').append('<li><a style="display: none;" id="app-news-page-prev" href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>');
+    for(var i = 0;i < page_max;i ++){
+        $('.app-news-pageguide .pagination').append('<li class="app-news-page-btn" data-target=' + (i+1) + '><a href="javascript:void(0)">' + (i+1) + '</a></li>');
+    }
+    if(page_max > 1)
+    $('.app-news-pageguide .pagination').append('<li><a id="app-news-page-next" href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>');
+}
+
+$('.app-new-bar-li').click(function(){
+   var type = $(this).attr('data-type');
+    setPage(type, 1);
+    $('.app-new-bar-list').children('.app-active').removeClass("app-active");
+    $(this).addClass('app-active');
+        $.get('/v1/passage/' + type + '/' + "?max_page", function(data){
+        refreshPageBar(data);
+    });
+    $('html,body').animate({scrollTop:$('#app-news-bar').offset().top}, 800);
+    $('.app-news-type-'+$('.app-news-list-head').children('.app-active').attr('data-type')).removeClass("app-active");
+    $('.app-news-type-'+$(this).attr('data-type')).addClass('app-active');
+});
+
+
+$('.app-news-list-head li').click(function(){
+    var type = $(this).attr('data-type');
+    setPage(type, 1);
+    $('.app-news-type-'+$('.app-news-list-head').children('.app-active').attr('data-type')).removeClass("app-active");
+    $('.app-news-type-'+$(this).attr('data-type')).addClass('app-active');
+
+    //change bar
+    $.get('/v1/passage/' + type + '/' + "?max_page", function(data){
+        refreshPageBar(data);
+    });
+});
+
+$('.app-news-page-btn').click(function(){
+    var page = $(this).attr('data-target');
+    var type = $('.app-news-list-head').attr('data-type');
+    setPage(type, page);
+    setPageBar(page);
+});
+
+$('#app-news-page-next').click(function(){
+    var page = $('.app-news-pageguide').attr('data-page');
+    var type = $('.app-news-list-head').attr('data-type');
+    setPage(type, Number(page) + 1);
+    setPageBar(Number(page) + 1)
+});
+
+$('#app-news-page-prev').click(function(){
+    var page = $('.app-news-pageguide').attr('data-page');
+    var type = $('.app-news-list-head').attr('data-type');
+    setPage(type, Number(page) - 1);
+    setPageBar(Number(page) - 1);
+});
