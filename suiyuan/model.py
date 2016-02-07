@@ -80,6 +80,17 @@ class Product(models.Model):
 	product_prize = models.IntegerField()
 	product_category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
 	product_date = models.DateField("Up_to_Market", default=timezone.datetime.today().date().replace(2012, 1, 1))
+	img_1 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
+	img_2 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
+	img_3 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
+	img_4 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
+	img_5 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
+
+	def img_set(self):
+		return [self.img_1, self.img_2, self.img_3, self.img_4, self.img_5]
+
+	def get_absolute_url(self):
+		return "/products/details/" + self.product_category.category + "/" + str(self.id)
 
 	def img_display(self):
 		return format_html('<img src="{}" style="width:50px;">', self.product_img.url)
@@ -91,6 +102,13 @@ class Product(models.Model):
 
 	def __str__(self):
 		return self.product_name
+
+
+class RecommendProduct(models.Model):
+	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.product.product_name
 
 
 class Hotproduct(models.Model):

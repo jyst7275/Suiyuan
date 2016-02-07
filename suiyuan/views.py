@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct
+from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct, RecommendProduct
 from django.template.defaulttags import register
 from django.db.models import Q
 import datetime
@@ -182,4 +182,15 @@ def product_archives(request, index_pinyin):
 		"index_type_sub": index_type_sub,
 		"request_type": index_pinyin,
 		"order": {"obj": order_ba, "direction": order_di}
+	})))
+
+
+def product_details(request, product_category, product_id):
+	template = loader.get_template("suiyuan/product_detail.html")
+	obj = Product.objects.get(id=product_id)
+
+	recommend_list = RecommendProduct.objects.all()
+	return HttpResponse(template.render(RequestContext(request, {
+		"product": obj,
+		"recommend_list": recommend_list
 	})))

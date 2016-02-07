@@ -1,7 +1,7 @@
 from django_summernote.admin import SummernoteModelAdmin
 from .model import Passage
 from .model import PassageContent
-from .model import Topnews, Flownews, ProductCategory, Product, Hotproduct
+from .model import Topnews, Flownews, ProductCategory, Product, Hotproduct, RecommendProduct
 from django.contrib import admin
 
 
@@ -16,7 +16,16 @@ class ProductAdmin(SummernoteModelAdmin):
 
 
 class PassageAdmin(admin.ModelAdmin):
-	fields = ('pub_date', ('pass_title', 'pass_type'), 'pass_summery', 'pass_img', 'pass_content')
+	fieldsets = (
+		(None, {
+			'fields': ('pub_date', ('pass_title', 'pass_type'), 'pass_summery', 'pass_img', 'pass_content')
+		}),
+		('pic', {
+			'classes': ('collapse',),
+			'fields': ('img1', 'img2', 'img3', 'img4', 'img5')
+		}),
+		)
+
 	list_display = ('pass_title', 'pub_date')
 	view_on_site = True
 
@@ -36,6 +45,7 @@ class PassageContentAdmin(SummernoteModelAdmin):
 admin.site.register(Topnews)
 admin.site.register(Flownews)
 admin.site.register(Hotproduct)
+admin.site.register(RecommendProduct)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Passage, PassageAdmin)
 admin.site.register(PassageContent, PassageContentAdmin)

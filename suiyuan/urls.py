@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^about', views.about),
     url(r'^products/$', views.products),
     url(r'^products/archives/([\w|\-]+)/$', views.product_archives),
+    url(r'^products/details/([\w|\-]+)/([0-9]+)', views.product_details),
     url(r'^contact', views.contact),
     url(r'^people', views.people),
     url(r'^summernote/', include('django_summernote.urls')),

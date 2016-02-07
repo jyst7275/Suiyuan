@@ -70,9 +70,10 @@
                 <div class="price-container">
                     ￥{{ product.product_prize }}
                 </div>
-                <div role="button" class="btn-container">
+
+                <a href={{ product.get_absolute_url }}><div class="btn-container">
                     马上购买
-                </div>
+                </div></a>
                 <div class="buy-container">
                     100人购买
                 </div>

@@ -1,0 +1,73 @@
+{% extends "product_base.html" %}
+{% block product_content %}
+{% load staticfiles %}
+    <div class="product-detail-header">
+    <div class="container">
+    <div class="col-md-6">
+        <div class="product-detail-img">
+            <img src={{ product.product_img.url }} alt="">
+            <div class="product-pic-list">
+                <ul>
+                    <li><img src={{ product.product_img.url }} alt=""></li>
+                    {% for img in product.img_set %}
+                        {% if img %}
+                    <li><img src={{ img.url }} alt=""></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="product-detail-select">
+            <div class="product-header"><h3><strong>{{ product.product_name }}</strong></h3></div>
+            <div class="product-summery">{{ product.product_summery }}</div>
+            <div class="product-price"><span>价格：</span>￥{{ product.product_prize }}</div>
+            <div class="product-service">服务：由穗源加盟店配送及进行售后服务</div>
+            <div class="product-type">种类：{{ product.product_category.category }}</div>
+            <div class="product-number box-container">
+                <span>数量：</span><a href="javascript:void(0)"><span id="box-minus" class="box-re">-</span></a><input id="number_box" type="text" value="1"><a
+                    href="javascript:void(0)"><span id="box-add" class="box-re">+</span></a>
+            </div>
+            <div class="product-btn">
+                <button class="buy-btn">加入购物车</button>
+                <button class="buy-btn">立即购买</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="product-detail-content">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="product-detail-container">
+        <div class="product-detail-bar">
+            <ul>
+                <li class="app-active">商品详情</li>
+            </ul>
+        </div>
+        <div class="product-detail-content-container">
+            {{ product.product_description|safe }}
+        </div>
+    </div>
+                </div>
+            <div class="col-md-3">
+                <div class="product-detail-recommend">
+                    <div class="text-container">
+                        推荐产品
+                    </div>
+                <ul class="product-detail-recommend-list">
+                    {% for product in recommend_list %}
+                    <li>
+                        <img src={{ product.product.product_img.url }} alt="">
+                        <div class="text-container"><a href={{ product.product.get_absoluate_url }}>{{ product.product.product_name }}</a></div>
+                        <div class="price-container">￥{{ product.product.product_prize }}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+            </div>
+    </div>
+    <script src='{%  static  "javascript/product.js" %}'></script>
+{% endblock %}

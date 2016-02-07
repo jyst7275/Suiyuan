@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load staticfiles %}
+    <div class="app-product-archive-bar app-to-top">
+        <div class="container">
+            <ul class="app-product-archive-bar-list">
+                <li style="background: #c81118"><a href="/products/archives/all">所有商品</a></li>
+                <li><a href="">购物车</a></li>
+                <li><a href="">订单查询</a></li>
+            </ul>
+        </div>
+    </div>
+    {% block product_content %}{% endblock %}
+        <div class="app-product-footer">
+        <div class="container">
+            <hr style="border-top: #f7f7f7 solid 1px;margin-bottom: 0;">
+            <div class="app-product-footer-main">
+                <ul>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/star.png" %}' alt="">
+                        上市企业 质量保证
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/jd.png" %}' alt="">
+                        京东商城 清远馆
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/tmall.png" %}' alt="">
+                        天猫商城专卖店
+                        </div>
+                    </li>
+                    <li>
+                        <div class="app-product-footer-container">
+                        <img src='{% static "img/star.png" %}' alt="">
+                        上市企业 质量保证
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <hr style="border-top: #f7f7f7 solid 1px;margin-top: 0;">
+        </div>
+    </div>
+{% endblock %}
