@@ -6,11 +6,12 @@
             <div class="app-main-content-in container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="app-main-showtext">
+                        <div class="app-main-showtext animated fadeInDown">
                     穗源<br>
                     你的绿色饮食专家<br>
+                            <i id="click-to-start" role="button" class="fa fa-angle-double-down"></i>
                         </div>
-                        <button class="btn app-btn-green" href="#app-font-head">开启你的绿色之旅</button>
+
                         </div>
                 </div>
 
@@ -18,39 +19,103 @@
         </div>
     </div>
     <div class="app-line">
-        <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="app-font-head" class="app-font-head center">
-                <h1>健康生产流程</h1>
-                <hr style="border-top-color: #2b542c; margin-bottom: 40px">
-                    </div>
-                <div class="center">
-                    <img class="app-line-img" src='{% static "img/line1.jpg" %}' alt="">
-
-                <div class="app-line-text">
-                    <p>健康的土地产出健康的产品</p>
-                    <p>我们采用严格标准选取<strong>健康、肥沃</strong>的土地</p>
-
-                </div>
-                </div>
-                <div class="center">
-                    <img class="app-line-img" src='{% static "img/line2.jpg" %}' alt="">
-                <div class="app-line-text">
-                    <p>优秀的品种是优秀产品的源泉</p>
-                    <p>我们的大米采用<strong>与大学合作研发</strong>的优良品种，有良好的<strong>口感及营养</strong></p>
-                </div>
-                </div>
-                <div class="center">
-                    <img class="app-line-img" src='{% static "img/line2.jpg" %}' alt="">
-                <div class="app-line-text">
-                    <p>科技的力量让产品保证质量</p>
-                    <p>我们采用先进的<strong>育种、灌溉</strong>等现代农业方法，<strong>每一个到您手上的产品</strong>都经过我们的严格把控</p>
-                </div>
-                </div>
+    <div class="line-section" id="line-section-1" data-target="1">
+        <div class="line-frame">
+            <h1>丰饶的土地</h1>
+            <div class="show-text">
+                <p></p>
+                <p>穗源的产品产自健康的土地，</p><p>加上优美的环境和专业护理，对产品品质有了基本的保障</p>
+            </div>
+            <div class="cloud" id="s1-cloud-1"></div>
+            <div class="cloud" id="s1-cloud-2"></div>
+            <div class="cloud" id="s1-cloud-3"></div>
+            <div class="dirt-shadow"></div>
+            <div class="sky-container-50"></div>
+            <div class="dirt-container-50">
+                <div class="gold-bottom"></div>
+                <div class="gold-field"></div>
+                <div class="dry-rake"></div>
             </div>
         </div>
+        <div class="line-scroll" id="line-scroll-1"></div>
     </div>
+    <div class="line-section" id="line-section-2" data-target="2">
+        <div class="line-frame">
+            <h1 style="">大米播种</h1>
+            <div class="sky-container">
+                <div class="show-text">
+                    <div class="text-container">
+                        <p>穗源与高校合作,</p><p>使用的种子均为优秀培育的，<p>具有多种优良性状</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dirt-container">
+            <div class="dirt-bottom">
+                <div class="dirt-hole dirt-offset-1" id="dirt-hole-1"></div>
+                <div class="dirt-hole-besides dirt-offset-1" id="dirt-hole-besides-1"></div>
+                <div class="dirt-plant dirt-init dirt-offset-1" id="dirt-plant-1"></div>
+                <div class="dirt-plant-root dirt-init dirt-offset-1" id="dirt-plant-root-1"></div>
+
+
+                <div class="dirt-hole dirt-offset-2" id="dirt-hole-2"></div>
+                <div class="dirt-hole-besides dirt-offset-2" id="dirt-hole-besides-2"></div>
+                <div class="dirt-plant dirt-init dirt-offset-2" id="dirt-plant-2"></div>
+                <div class="dirt-plant-2 dirt-offset-2" id="dirt-plant-2-2"></div>
+                <div class="dirt-plant-root dirt-init dirt-offset-2" id="dirt-plant-root-2"></div>
+                <div class="dirt-hole-besides-on dirt-offset-2"></div>
+
+                <div class="dirt-hole dirt-offset-3" id="dirt-hole-3"></div>
+                <div class="dirt-hole-besides dirt-offset-3" id="dirt-hole-besides-3"></div>
+                <div class="dirt-plant dirt-init dirt-offset-3" id="dirt-plant-3"></div>
+                <div class="dirt-plant-2 dirt-offset-3" id="dirt-plant-2-3"></div>
+                <div class="dirt-plant-3 dirt-offset-3"></div>
+                <div class="dirt-plant-root dirt-init dirt-offset-3" id="dirt-plant-root-3"></div>
+                <div class="dirt-hole-besides-on dirt-offset-3"></div>
+            </div>
+            </div>
+        </div>
+        <div class="line-scroll" id="line-scroll-2"></div>
+    </div>
+
+    <div class="line-section" id="line-section-3" data-target="3">
+        <div class="line-frame">
+            <h1>精细加工</h1>
+            <div class="rice-prev"></div>
+            <div class="blue-shadow"></div>
+            <div class="show-text">
+                <div class="text-container">
+                    <h4>质量保证</h4>
+                    每一个穗源的产品都经过严格的选择和检测，使得每一个到您手上的产品都是健康及格的
+                </div>
+            </div>
+            <div class="machine-part machine-top"></div>
+            <div class="machine-part machine-middle"></div>
+            <div class="machine-part machine-middle-animated"></div>
+            <div class="machine-part machine-bottom"></div>
+        </div>
+        <div class="line-scroll" id="line-scroll-3"></div>
+    </div>
+    <div class="line-section" id="line-section-4" data-target="4">
+        <div class="line-frame">
+            <h1>包装</h1>
+            <div class="suiyuan-bag"></div>
+
+            <div class="suiyuan-bag-ba" id="bag-1"></div>
+            <div class="suiyuan-bag-ba" id="bag-2"></div>
+            <div class="suiyuan-bag-ba" id="bag-3"></div>
+            <div class="suiyuan-bag-ba" id="bag-4"></div>
+
+
+            <div class="rice-next"></div>
+            <div class="show-text">
+                <p>每一粒大米都是穗源的心血</p>
+                <p>每一个产品都是您值得尝试的食物</p>
+                <p>穗源，让消费者放心，让合作者省心</p>
+            </div>
+        </div>
+        <div class="line-scroll" id="line-scroll-4"></div>
+    </div>
+    <div class="line-section" id="line-section-5" data-target="5"></div>
     </div>
     <div class="app-customer">
         <div class="container app-con-head">
@@ -92,34 +157,118 @@
     <div class="app-video">
         <div class="container">
             <div class="col-md-12 center app-font-head">
-                <h2>关于穗源</h2>
-                <hr style="border-top-color: #2b542c; margin-bottom: 40px">
-                <div class="app-about-what">
-                    <h2>穗源全方位布局有机农业</h2>
-                    <ul>
-                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>粮油产品</p></li>
-                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>蔬菜水果</p></li>
-                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>观光旅游</p></li>
-                        <li><img src='{% static "img/line2.jpg" %}' alt=""><p>还有一个</p></li>
-                    </ul>
-                </div>
-                <hr style="border-top: solid #e3e3e3 2px;width: 200px;">
                 <div class="app-video-content center" style="max-width: 700px">
                     <h2>宣传视频</h2>
                 <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen=""></iframe>
     </div>
                     </div>
-                <div class="app-join-us">
-                    <h2>穗源，等待你的参与</h2>
-                        <ul class="app-join-us-list">
-                            <li><a href="" class="app-join-circle app-hover-red">加盟</a></li>
-                            <li><a class="app-join-circle app-hover-green" href="">应聘</a></li>
-                            <li><a class="app-join-circle app-hover-gold" href="">购买</a></li>
-                        </ul>
-                </div>
             </div>
         </div>
+    </div>
+    <div class="app-what">
+    <div class="what-header">
+        <div class="what-shadow">
+        <div class="container center">
+            <h2>穗源的有机农业布局</h2>
+            <div class="text-container">
+                穗源在有机农业进行了全面的布局，力求促进中国农业的现代化发展。
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="what-row">
+        <div class="background-container">
+            <div class="what-color-section" id="what-color-1"></div>
+            <div class="what-color-section" id="what-color-2"></div>
+        </div>
+
+        <div class="content-container">
+            <div class="wide-container">
+                <div class="what-section col-md-4" id="what-section-1">
+                <div class="img-container">
+                    <img src="{% static 'img/what-1.jpg' %}" alt="">
+                </div>
+                <div class="shadow-container">
+                    <h2>粮油产品</h2>
+                    <p>穗源为你提供</p><p>健康、放心的大米和食用油</p>
+                </div>
+            </div>
+                <div class="what-section col-md-4" id="what-section-2">
+                <div class="img-container">
+                    <img src="{% static 'img/what-2.jpg' %}" alt="">
+                </div>
+                <div class="shadow-container">
+                    <h2>蔬菜水果</h2>
+                    <p>穗源的蔬果</p><p>均采用高效、营养的方式种植</p>
+                </div>
+            </div>
+                <div class="what-section col-md-4" id="what-section-3">
+                <div class="img-container">
+                    <img src="{% static 'img/what-4.jpg' %}" alt="">
+                </div>
+                <div class="shadow-container">
+                                        <h2>互联网+农业</h2>
+                    <p>穗源率先相应互联网趋势</p><p>让农业从种植到销售的信息畅通流通</p>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="what-row">
+        <div class="background-container">
+            <div class="what-color-section" id="what-color-3"></div>
+            <div class="what-color-section" id="what-color-4"></div>
+        </div>
+        <div class="content-container">
+            <div class="wide-container">
+                <div class="what-section col-md-4" id="what-section-4">
+                <div class="img-container">
+                    <img src="{% static 'img/what-5.jpg' %}" alt="">
+                </div>
+                <div class="shadow-container">
+                                        <h2>农业健康养老</h2>
+                    <p>穗源采用公司+农户</p><p>的模式让农业成为农业的养老依靠</p>
+                </div>
+            </div>
+                <div class="what-section col-md-4" id="what-section-5">
+                <div class="img-container">
+                    <img src="{% static 'img/what-3.jpg' %}" alt="">
+                </div>
+                <div class="shadow-container">
+                                        <h2>农业观光旅游</h2>
+                    <p>穗源利用有机农业的发展</p><p>优势让人们享受农业的快乐</p>
+                </div>
+            </div>
+                <div class="what-section col-md-4" id="what-section-6">
+                <div class="text-container">
+                    更多发展中计划
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div></div>
+    <div class="app-more">
+    <div class="container center">
+        <a href=""><div class="col-md-2 col-md-offset-3" id="more-know">
+            <i class="fa fa-map-o fa-2x"></i>
+            <h4>了解穗源</h4>
+            <p>穗源是一家年轻的公司，我们采用先进的经营理念和先进的技术基础成功发展壮大</p>
+        </div>
+            </a>
+        <a href=""><div class="col-md-2 more-center" id="more-buy">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+            <h4>购买产品</h4>
+            <p>穗源有众多经销商并在各大超市铺货，您可以到现场购买；或者您可以在穗源网站上直接购买</p>
+        </div></a>
+        <a href=""><div class="col-md-2" id="more-coo">
+            <i class="fa fa-send-o fa-2x"></i>
+            <h4>加盟合作</h4>
+            <p>穗源注重合作共赢，如果你希望合作商讨，或者加盟，请联系我们</p>
+        </div></a>
+    </div>
     </div>
 <script>
     $('.app-nav').css('background-color','transparent');
@@ -135,6 +284,12 @@ $(document).scroll(function(){
         bar_transparent = true;
         $('.app-nav').css('animation','nav-change-reverse 1s forwards');
     }
+    if(hi > $('#line-section-1').offset().top)
+        $('.app-nav').css('display','none');
+    else
+        $('.app-nav').css('display','block');
 });
 </script>
+    <script src='{%  static  "javascript/jquery.waypoints.js" %}'></script>
+    <script src='{%  static  "javascript/app-line.js" %}'></script>
 {% endblock %}

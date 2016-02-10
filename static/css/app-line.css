@@ -1,0 +1,372 @@
+.line-section{
+    position: relative;
+    overflow: hidden;
+}
+
+.line-section .line-frame{
+    height: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.rice-prev{
+    background: url("img/line/rice-prev.png");
+    width: 250px;
+    height: 233px;
+    left: 830px;
+    top: 90px;
+    position: absolute;
+}
+.blue-shadow{
+    background: #00bcb4;
+    width: 250px;
+    height: 233px;
+    left: 830px;
+    top: 350px;
+    position: absolute;
+}
+
+#line-scroll-1{
+    height: 1500px;
+}
+#line-scroll-2{
+    height: 2000px;
+}
+#line-scroll-3{
+    height: 2000px;
+}
+#line-scroll-4{
+    height: 2000px;
+}
+#line-section-3 .show-text{
+    position: absolute;
+    left: 1200px;
+    top: 320px;
+    color: white;
+    font-size: 18px;
+}
+#line-section-3 .show-text .text-container{
+    width: 140px;
+    opacity: 0;
+}
+.suiyuan-bag{
+    background: url("img/line/suiyuan-bag.png");
+    width: 193px;
+    height: 299px;
+    position: absolute;
+    left: 870px;
+    top: 200px;
+}
+.rice-next{
+    background: url("img/line/rice-next.png") no-repeat center;
+    width: 100%;
+    height: 224px;
+    margin-top: -300px;
+}
+
+.suiyuan-bag-ba{
+    background: url("img/line/suiyuan-bag.png");
+    width: 193px;
+    height: 299px;
+    position: absolute;
+    top: 350px;
+    transform: scale(0.7,0.7);
+}
+
+#bag-1{
+    left: 400px;
+}
+#bag-2{
+    left: 620px;
+}
+
+#bag-3{
+    right: 620px;
+}
+
+#bag-4{
+    right: 400px;
+}
+
+#line-section-4 .show-text{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 130px;
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+}
+.app-fixed{
+    position: fixed!important;
+}
+.app-bottom{
+    bottom: 0;
+}
+#line-section-1{
+    background: #9ae2d1;
+}
+#line-section-1 > .line-frame > h1{
+    margin-top: 40px;
+    color: white;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+#line-section-2{
+    background: #9ae2d1;
+}
+#line-section-2 > .line-frame > h1{
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 40px;
+}
+#line-section-3{
+    background: #00bcb4;
+}
+#line-section-3 > .line-frame > h1{
+    width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+#line-section-4{
+    background: #9ae2d1;
+
+}
+
+#line-section-4 > .line-frame > h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    font-size: 40px;
+}
+.machine-part{
+    position: absolute;
+}
+.machine-top{
+    background: url("img/line/machin-top.png") no-repeat center;
+    height: 274px;
+    width: 100%;
+    bottom: 231px;
+}
+.machine-bottom{
+    background: url("img/line/machine-bottom.png") no-repeat center;
+    height: 93px;
+    width: 100%;
+    bottom: 0px;
+}
+.machine-middle{
+    background: url("img/line/machine-middle.png") no-repeat center;
+    height: 138px;
+    width: 100%;
+    bottom: 93px;
+}
+.machine-middle-animated{
+    background: url("img/line/machine-middle-animated.gif") no-repeat center;
+    height: 138px;
+    width: 100%;
+    bottom: 93px;
+    display: none;
+}
+
+
+.bottom-zero{
+    bottom: 0;
+    top: inherit!important;
+}
+
+.dirt-bottom{
+    background: #bd6122 url('img/line/dirt-texture.png') repeat top center;
+    height: 300px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.sky-container-50{
+    height: 30%;
+    position: relative;
+}
+.dirt-container-50{
+    height: 60%;
+    position: relative;
+}
+.sky-container{
+    height: 65%;
+    position: relative;
+}
+.sky-container .show-text{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #122b40;
+    position: absolute;
+    top: 60px;
+    left: 510px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+}
+.sky-container .show-text .text-container{
+    margin-top: 45px;
+}
+.gold-bottom{
+    background: #bd6122;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.gold-field{
+    background:  url("img/line/field-min.png") no-repeat center;
+    width: 1000px;
+    height: 400px;
+    position: absolute;
+    top: 40px;
+    left: 440px;
+}
+.dry-rake{
+    background: url("img/line/rake-sin.png");
+    width: 413px;
+    height: 206px;
+    position: absolute;
+    left: 800px;
+    top: 100px;
+    z-index: 2000;
+}
+
+#line-section-1 .show-text{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 290px;
+    opacity: 0;
+}
+.dirt-shadow{
+    background: #bd6122;
+    width: 540px;
+    height: 150px;
+    position: absolute;
+    left: 630px;
+    top: 450px;
+    z-index: 1000;
+}
+.cloud{
+    position: absolute;
+    left: 0;
+}
+#s1-cloud-1{
+    animation: cloud-moving 100s linear both;
+    top: 20px;
+    background: url("img/line/cloud-1.png");
+    width: 79px;
+    height: 45px;
+}
+#s1-cloud-2{
+    animation: cloud-moving 70s linear both;
+    top: 70px;
+    background: url("img/line/cloud-2.png");
+    width: 153px;
+    height: 73px;
+    left: -50px;
+}
+@keyframes cloud-moving {
+    from{
+        left: -20px;
+    }
+    to{
+        left: 2000px;
+    }
+}
+
+.dirt-container{
+    height: 30%;
+    position: relative;
+}
+
+.dirt-offset-1{
+    left: 410px;
+}
+.dirt-offset-2{
+    left: 810px;
+}
+.dirt-offset-3{
+    left: 1210px;
+}
+
+.dirt-plant{
+    background: url("img/line/plant-init.png") no-repeat center;
+    height: 269px;
+    width: 400px;
+    position: absolute;
+    margin-top: -210px;
+    z-index: 1000;
+}
+
+.dirt-plant-root{
+    background: url("img/line/plant-root.png") no-repeat center;
+    height: 400px;
+    width: 400px;
+    margin-top: -98px;
+    z-index: 1000;
+    position: absolute;
+}
+#dirt-plant-1{
+    margin-top: -460px;
+}
+#dirt-plant-root-1{
+    margin-top: -350px;
+}
+.dirt-hole{
+    background: url("img/line/plant-bottom-phase0.png") no-repeat center;
+    height: 203px;
+    width: 400px;
+    position: absolute;
+}
+
+.dirt-hole-besides{
+    background: url("img/line/plant-top-phase1.png") no-repeat center;
+    height: 50px;
+    width: 400px;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.dirt-hole-besides-on{
+    background: url("img/line/dirt-top.png") no-repeat center;
+    height: 24px;
+    width: 400px;
+    position: absolute;
+    top: -24px;
+    display: none;
+    
+}
+
+.dirt-plant-2{
+    background: url("img/line/plant-section-2.png") no-repeat center;
+    height: 460px;
+    width: 400px;
+    position: absolute;
+    top: -350px;
+    display: none;
+    z-index: 1000;
+}
+
+.dirt-plant-3{
+    background: url("img/line/plant-section-3.png") no-repeat center;
+    height: 460px;
+    width: 400px;
+    position: absolute;
+    top:-350px;
+    display: none;
+    z-index: 1000;
+}
