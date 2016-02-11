@@ -197,6 +197,15 @@ $('.app-news-list-head li').click(function(){
     });
 });
 
+$('.preload-image').click(function(){
+   document.getElementById('suiyuan-video').play();
+    $('.preload-image').css('display','none');
+});
+$('#say-more').click(function(){
+   $('#app-say-2').fadeIn(800);
+    $(this).css('display','none');
+    $('#say-more-arrow i').attr('class','fa fa-angle-double-up fa-2x app-icon-down app-icon-moving-down');
+});
 $('.app-news-page-btn').click(function(){
     var page = $(this).attr('data-target');
     var type = $('.app-news-list-head').attr('data-type');

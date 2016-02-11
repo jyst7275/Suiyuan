@@ -71,6 +71,7 @@
     position: absolute;
     top: 350px;
     transform: scale(0.7,0.7);
+    opacity: 0;
 }
 
 #bag-1{

@@ -134,7 +134,7 @@ def people(request):
 	return HttpResponse(template.render(RequestContext(request, {})))
 
 
-def product_archives(request, index_pinyin):
+def product_archives(request, cat):
 	order_ba = False
 	order_di = ""
 	if request.method == "GET" and "order-by" in request.GET:
@@ -162,17 +162,17 @@ def product_archives(request, index_pinyin):
 				pc_dict[fa] = [pc]
 			else:
 				pc_dict[fa].append(pc)
-	if index_pinyin == "all":
+	if cat == "all":
 		product_list = Product.objects.all()
 		index_type = "all"
 	else:
-		pc_name = ProductCategory.objects.get(index=index_pinyin)
+		pc_name = ProductCategory.objects.get(category=cat)
 		if pc_name.is_subclass:
 			index_type = pc_name.father.index
 			index_type_sub = pc_name.index
 		else:
 			index_type = pc_name.index
-		product_list = Product.objects.filter(Q(product_category__father__index=index_pinyin) | Q(product_category__index=index_pinyin))
+		product_list = Product.objects.filter(Q(product_category__father__category=cat) | Q(product_category__category=cat))
 	if order_ba != False:
 		product_list = product_list.order_by(order_di + order_ba)
 	return HttpResponse(template.render(RequestContext(request, {
@@ -180,7 +180,7 @@ def product_archives(request, index_pinyin):
 		"pc_list": pc_dict,
 		"index_type": index_type,
 		"index_type_sub": index_type_sub,
-		"request_type": index_pinyin,
+		"request_type": cat,
 		"order": {"obj": order_ba, "direction": order_di}
 	})))
 

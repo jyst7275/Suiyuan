@@ -62,7 +62,7 @@ class ProductCategory(models.Model):
 	index = models.SlugField(max_length=100, null=True)
 
 	def get_absolute_url(self):
-		return "/products/archives/" + self.index
+		return "/products/archives/" + self.category
 
 	def __str__(self):
 		return self.category

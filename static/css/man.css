@@ -521,6 +521,22 @@ body{
     margin-top: 40px;
 }
 
+.app-video-content{
+    position: relative;
+}
+#app-say-2{
+    display: none;
+    animation-duration: 2s;
+}
+.preload-image img{
+    width: 900px;
+}
+.preload-image{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
 .app-video-content h2{
     margin-bottom: 40px;
 }

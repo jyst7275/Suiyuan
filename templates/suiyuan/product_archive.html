@@ -61,9 +61,10 @@
         <ul class="app-product-archive-list">
             {% for product in product_list %}
             <li>
-                <div class="img-container">
+                <a href="{{ product.get_absolute_url }}"><div class="img-container">
                     <img src={{ product.product_img.url }} alt="">
                 </div>
+                    </a>
                 <div class="text-container">
                     {{ product.product_name }}
                 </div>
@@ -72,7 +73,7 @@
                 </div>
 
                 <a href={{ product.get_absolute_url }}><div class="btn-container">
-                    马上购买
+                    加入购物车
                 </div></a>
                 <div class="buy-container">
                     100人购买

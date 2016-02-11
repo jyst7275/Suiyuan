@@ -75,14 +75,15 @@
                     <li>
                         <div class="app-product-panel">
                         <div class="app-product-container app-bg-fa-{{ forloop.counter }}">
-                            <div class="img-container">
+                            <a href={{ hproduct.product.get_absolute_url }}><div class="img-container">
                             <img src={{ hproduct.product.product_img.url }} alt=""></div>
+                                </a>
                             <div class="text-container">
                                 <h4>{{ hproduct.product.product_name }}</h4>
                                 <div class="app-product-detail">
                                     <p>{{ hproduct.product.product_summery }}</p>
                                 </div>
-                                <div class="app-product-price">¥{{ hproduct.product.product_prize }} <button class="btn btn-red">立即购买</button></div>
+                                <div class="app-product-price">¥{{ hproduct.product.product_prize }} <a href={{ hproduct.product.get_absolute_url }}><button class="btn btn-red">立即购买</button></a></div>
                             </div>
                             </div>
                         </div>
@@ -97,12 +98,12 @@
     {% for product_name in product_list %}
     <div class="app-product-section app-product-rice">
         <div class="container">
-            <div class="app-product-section-head" style="position: relative;">
+            <a href={{ product_name.get_absolute_url }}><div class="app-product-section-head" style="position: relative;">
                 <img src={{ product_name.img.url }} alt="">
                 <div style="position: absolute;left: 25px;top:30px;font-size: 28px;color: #2b542c">
                     {{ product_name.category }}
                 </div>
-            </div>
+            </div></a>
 
             <div class="app-product-section-list">
                 <ul>
@@ -111,13 +112,13 @@
                         <div class="app-product-panel">
                         <div class="app-product-container">
                             <div class="img-container">
-                            <img src={{ pr.product_img.url }} alt=""></div>
+                                <a href={{ pr.get_absolute_url }}><img src={{ pr.product_img.url }} alt=""></a></div>
                             <div class="text-container">
                                 <h4>{{ pr.product_name }}</h4>
                                 <div class="app-product-detail">
                                     <p>{{ pr.product_summery }}</p>
                                 </div>
-                                <div class="app-product-price">¥{{ pr.product_prize }} <button class="btn btn-red">立即购买</button></div>
+                                <div class="app-product-price">¥{{ pr.product_prize }} <a href={{ pr.get_absolute_url }}><button class="btn btn-red">立即购买</button></a></div>
                             </div>
                             </div>
                         </div>

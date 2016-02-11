@@ -31,7 +31,6 @@
             </div>
             <div class="product-btn">
                 <button class="buy-btn">加入购物车</button>
-                <button class="buy-btn">立即购买</button>
             </div>
         </div>
     </div>
@@ -59,8 +58,8 @@
                 <ul class="product-detail-recommend-list">
                     {% for product in recommend_list %}
                     <li>
-                        <img src={{ product.product.product_img.url }} alt="">
-                        <div class="text-container"><a href={{ product.product.get_absoluate_url }}>{{ product.product.product_name }}</a></div>
+                        <a href={{ product.product.get_absolute_url }}><img src={{ product.product.product_img.url }} alt=""></a>
+                        <div class="text-container"><a href={{ product.product.get_absolute_url }}>{{ product.product.product_name }}</a></div>
                         <div class="price-container">￥{{ product.product.product_prize }}</div>
                     </li>
                     {% endfor %}
