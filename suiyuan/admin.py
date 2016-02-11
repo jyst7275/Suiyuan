@@ -13,18 +13,20 @@ class ProductCategoryAdmin(admin.ModelAdmin):
 class ProductAdmin(SummernoteModelAdmin):
 	list_display = ("img_display", "product_name", "product_category", "product_prize", "product_date")
 	list_display_links = ("img_display", "product_name")
-
-
-class PassageAdmin(admin.ModelAdmin):
 	fieldsets = (
 		(None, {
-			'fields': ('pub_date', ('pass_title', 'pass_type'), 'pass_summery', 'pass_img', 'pass_content')
+			'fields': (('product_name', 'product_category'), 'product_prize', 'product_date', 'product_img',
+			           'product_summery', 'product_description')
 		}),
 		('pic', {
 			'classes': ('collapse',),
-			'fields': ('img1', 'img2', 'img3', 'img4', 'img5')
+			'fields': ('img_1', 'img_2', 'img_3', 'img_4', 'img_5')
 		}),
-		)
+	)
+
+
+class PassageAdmin(admin.ModelAdmin):
+	fields = ('pub_date', ('pass_title', 'pass_type'), 'pass_summery', 'pass_img', 'pass_content')
 
 	list_display = ('pass_title', 'pub_date')
 	view_on_site = True
