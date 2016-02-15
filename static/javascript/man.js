@@ -119,10 +119,6 @@ $(document).scroll(function(){
     }
     last_scroll_top = hi;
 
-    var s1 = $('.line-section').offset().top;
-    if (hi >= s1)
-        $('#section1 > .line-frame').addClass('app-fixed');
-
 });
 
 function setPage(type, page){

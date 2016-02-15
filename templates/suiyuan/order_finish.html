@@ -1,0 +1,15 @@
+{% extends "product_base.html"  %}
+{% block product_content %}
+<div class="container">
+
+<div class="order-finish-header center">
+    <p>你的订单已经成功提交，订单号为</p>
+    <p><strong>{{ order.order_index }}</strong></p>
+</div>
+<div class="order-finish-btn center">
+    <a href="/order/detail/"><button class="buy-btn">查询订单信息</button></a>
+    <a href="/product/"><button class="buy-btn">前往商城</button></a>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "product_base.html" %}
+{% load staticfiles %}
+{% block product_content %}
+<div class="container">
+<div class="order-user">
+
+    <div class="order-user-detail">
+    <div class="order-bar-header">
+        <strong>收件人信息</strong>
+    </div>
+        <ul class="order-address-list" id="address-list" data-selected="">
+            {% for add in address %}
+            <li data-id={{ add.data_index }}>
+                <div class="address-edit">
+                    <a class="address-edit-btn" href="javascript:void(0)">编辑</a>
+                    <a class="address-remove-btn" href="javascript:void(0)">删除</a>
+                </div>
+                <div class="address-short">{{ add.name }} {{ add.province }}{{ add.city }}</div>
+                <div class="address-name">{{ add.name }}</div>
+                <div class="address-long">{{ add.province }}{{ add.city }}{{ add.country }}{{ add.detail }}</div>
+                <div class="address-cellphone">{{ add.cellphone }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+        <div id="address-no-reminder">
+            请选择收件人信息
+        </div>
+        <a href="javascript:add_address()">增加收件地址</a>
+    </div>
+</div>
+{% if order %}
+<div class="order-bar">
+<div class="order-bar-header"><strong>订单信息</strong></div>
+<ul class="order-bar-list">
+    <li class="order-bar-pic"></li>
+    <li class="order-bar-name">商品名称</li>
+    <li class="order-bar-price center">单价（元）</li>
+    <li class="order-bar-number center">数量</li>
+    <li class="order-bar-price-total center">小计（元）</li>
+</ul>
+
+</div>
+<div class="order-list-container">
+    <ul class="order-product-list" id="order-list">
+        {% for pr in order %}
+        <li data-id={{ pr.product.product_index }} data-count={{ pr.count }}>
+            <ul class="order-product-detail">
+                <li class="order-bar-pic">
+                    <a href={{ pr.product.get_absolute_url }}>
+                        <img src={{ pr.product.product_img.url }} alt="">
+                    </a>
+                </li>
+                <li class="order-bar-name"><a href={{ pr.product.get_absolute_url }}>{{ pr.product.product_name }}</a></li>
+                <li class="order-bar-price center">{{ pr.product.product_prize }}</li>
+                <li class="order-bar-number center box-container">{{ pr.count }}</li>
+                <li class="order-bar-price-total center">{{ pr.total }}</li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+    <div class="order-footer">
+    <div id="total-price">实付款：<span>￥{{ total }}</span></div>
+    <div id="confirm-container"><span><a href="/user/cart/">返回购物车编辑</a></span>
+        <button id="order-confirm-btn" class="buy-btn" style="margin-right: 0">提交订单</button>
+    </div>
+</div>
+    <div class="reveal-modal" id="add-address">
+        <div class="add-address-topbar">
+            <div class="window-cancel">
+                <i class="fa fa-close"></i>
+            </div>
+            增加收件人
+        </div>
+        <form id="add-address-form" action="/user/address/">
+            <div id="address-name" class="form-inline">
+                <span>收&nbsp&nbsp货&nbsp&nbsp人：</span>
+                <input type="text" name="address-username" class="form-control" placeholder="收件人">
+            </div>
+            <div id="address-dis" class="form-inline"><span>所在地区：</span>
+                <input class="form-control" type="text" name="address-province" placeholder="省份">
+                <input class="form-control" type="text" name="address-city" placeholder="城市">
+                <input class="form-control" type="text" name="address-country" placeholder="县/区">
+            </div>
+            <div id="address-address" class="form-inline">
+                <span>详细地址：</span>
+                <textarea name="address-detail" class="form-control" placeholder="详细地址（街道）"></textarea>
+            </div>
+            <div id="address-cell" class="form-inline">
+                <span>手机号码：</span>
+                <input type="text" name="address-cellphone" class="form-control" placeholder="请输入11位手机号">
+            </div>
+        </form>
+            <button id="add-address-submit" class="btn btn-primary">提交</button>
+    </div>
+    <div class="reveal-modal" id="edit-address">
+        <div class="add-address-topbar">
+            <div class="window-cancel">
+                <i class="fa fa-close"></i>
+            </div>
+            编辑收件人
+        </div>
+        <form id="add-address-form" action="/user/address/">
+            <div id="address-name" class="form-inline">
+                <span>收&nbsp&nbsp货&nbsp&nbsp人：</span>
+                <input type="text" name="address-username" class="form-control" placeholder="收件人">
+            </div>
+            <div id="address-dis" class="form-inline"><span>所在地区：</span>
+                <input class="form-control" type="text" name="address-province" placeholder="省份">
+                <input class="form-control" type="text" name="address-city" placeholder="城市">
+                <input class="form-control" type="text" name="address-country" placeholder="县/区">
+            </div>
+            <div id="address-address" class="form-inline">
+                <span>详细地址：</span>
+                <textarea name="address-detail" class="form-control" placeholder="详细地址（街道）"></textarea>
+            </div>
+            <div id="address-cell" class="form-inline">
+                <span>手机号码：</span>
+                <input type="text" name="address-cellphone" class="form-control" placeholder="请输入11位手机号">
+            </div>
+        </form>
+            <button id="edit-address-submit" class="btn btn-primary">提交</button>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

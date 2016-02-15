@@ -1,8 +1,12 @@
 from django_summernote.admin import SummernoteModelAdmin
 from .model import Passage
-from .model import PassageContent
 from .model import Topnews, Flownews, ProductCategory, Product, Hotproduct, RecommendProduct
 from django.contrib import admin
+from django import forms
+from django.contrib.auth.models import Group
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from .model import SyUser, Address, Order, OrderDetail
 
 
 class ProductCategoryAdmin(admin.ModelAdmin):
@@ -11,7 +15,7 @@ class ProductCategoryAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(SummernoteModelAdmin):
-	list_display = ("img_display", "product_name", "product_category", "product_prize", "product_date")
+	list_display = ("img_display", "product_name", "product_category", "product_prize", "product_date", "product_index")
 	list_display_links = ("img_display", "product_name")
 	fieldsets = (
 		(None, {
@@ -25,7 +29,7 @@ class ProductAdmin(SummernoteModelAdmin):
 	)
 
 
-class PassageAdmin(admin.ModelAdmin):
+class PassageAdmin(SummernoteModelAdmin):
 	fields = ('pub_date', ('pass_title', 'pass_type'), 'pass_summery', 'pass_img', 'pass_content')
 
 	list_display = ('pass_title', 'pub_date')
@@ -41,14 +45,73 @@ class PassageAdmin(admin.ModelAdmin):
 		return super(PassageAdmin, self).formfield_for_choice_field(db_field, request, **kwargs)
 
 
-class PassageContentAdmin(SummernoteModelAdmin):
-	pass
+class UserCreationForm(forms.ModelForm):
+	password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
+	password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
 
+	class Meta:
+		model = SyUser
+		fields = ('cellphone', 'username', 'email')
+
+	def clean_password2(self):
+		password1 = self.cleaned_data.get("password1")
+		password2 = self.cleaned_data.get("password2")
+		if password1 and password2 and password1 != password2:
+			raise forms.ValidationError("Passwords don't match")
+		return password2
+
+	def save(self, commit=True):
+		user = super(UserCreationForm, self).save(commit=False)
+		user.set_password(self.cleaned_data["password1"])
+		if commit:
+			user.save()
+		return user
+
+
+class UserChangeForm(forms.ModelForm):
+	password = ReadOnlyPasswordHashField()
+
+	class Meta:
+		model = SyUser
+		fields = ('cellphone', 'username', 'email', 'password', 'is_active', 'is_admin')
+
+	def clean_password(self):
+		return self.initial["password"]
+
+
+class UserAdmin(BaseUserAdmin):
+	form = UserChangeForm
+	add_form = UserCreationForm
+	list_display = ('username', 'cellphone', 'is_admin')
+	list_filter = ('is_admin', )
+	fieldsets = (
+		(None, {'fields': ('username', 'password')}),
+		('Personal Info', {'fields': ('email', 'cellphone')}),
+		('Permissions', {'fields': ('is_admin', )})
+	)
+	add_fieldsets = (
+		(None, {
+			'classes': ('wide',),
+			'fields': ('cellphone', 'username', 'email', 'password1', 'password2')
+		}),
+	)
+	search_fields = ('cellphone',)
+	ordering = ('cellphone', )
+	filter_horizontal = ()
+
+
+class OrderAdmin(admin.ModelAdmin):
+	fields = ('order_index', ('order_buyer', 'order_username'), 'order_date', 'order_address', 'order_total')
+	list_display = ('order_index', 'order_username', 'order_date', 'order_detail' ,'order_total')
+admin.site.register(SyUser, UserAdmin)
+admin.site.unregister(Group)
 admin.site.register(Topnews)
 admin.site.register(Flownews)
 admin.site.register(Hotproduct)
 admin.site.register(RecommendProduct)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Passage, PassageAdmin)
-admin.site.register(PassageContent, PassageContentAdmin)
 admin.site.register(ProductCategory, ProductCategoryAdmin)
+admin.site.register(Address)
+admin.site.register(Order, OrderAdmin)
+admin.site.register(OrderDetail)

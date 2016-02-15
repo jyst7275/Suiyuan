@@ -61,31 +61,32 @@ $('#line-section-4').waypoint(function(direction){
 
 });
 $('.line-frame').css('height', window.innerHeight);
-$('.line-frame').css('width', window.innerWidth);
+//$('.line-frame').css('width', window.innerWidth);
 
 $(document).scroll(function(){
-    var scroll_now = document.body.scrollTop;
+    var scroll_now = document.body.scrollTop|document.documentElement.scrollTop;
     if(now == 1) {
         var off = scroll_now - $('#line-section-1').offset().top;
+
         if (off <= 50) {
-            $('.dry-rake').css('left', '800px');
-            $('.dirt-shadow').css('width', '540px');
+            $('.dry-rake').css('left', '90px');
+            $('.dirt-shadow').css('width', '600px');
         }
         else if (off <= 100) {
-            $('.dry-rake').css('left', '700px');
-            $('.dirt-shadow').css('width', '440px');
+            $('.dry-rake').css('left', '-10px');
+            $('.dirt-shadow').css('width', '500px');
         }
         else if (off <= 150) {
-            $('.dry-rake').css('left', '600px');
-            $('.dirt-shadow').css('width', '340px');
+            $('.dry-rake').css('left', '-110px');
+            $('.dirt-shadow').css('width', '400px');
         }
         else if (off <= 200) {
-            $('.dry-rake').css('left', '500px');
-            $('.dirt-shadow').css('width', '240px');
+            $('.dry-rake').css('left', '-210px');
+            $('.dirt-shadow').css('width', '300px');
         }
         else if (off <= 250){
-            $('.dry-rake').css('left', '400px');
-            $('.dirt-shadow').css('width', '140px');
+            $('.dry-rake').css('left', '-310px');
+            $('.dirt-shadow').css('width', '200px');
         }
 
         if(off <= 250){
@@ -157,22 +158,22 @@ $(document).scroll(function(){
         }
 
         if(off <= 500)
-            $('.sky-container .show-text').css('opacity', '0');
+            $('.sky-container .circle-show-text').css('opacity', '0');
         else if(off <= 600)
-            $('.sky-container .show-text').css('opacity', '0.3');
+            $('.sky-container .circle-show-text').css('opacity', '0.3');
         else if(off <= 700)
-            $('.sky-container .show-text').css('opacity', '0.6');
+            $('.sky-container .circle-show-text').css('opacity', '0.6');
         else if(off <= 800)
-            $('.sky-container .show-text').css('opacity', '0.8');
+            $('.sky-container .circle-show-text').css('opacity', '0.8');
         else
-            $('.sky-container .show-text').css('opacity', '1');
+            $('.sky-container .circle-show-text').css('opacity', '1');
 
     }
     else if(now == 3){
         var off = scroll_now - $('#line-section-3').offset().top;
 
         if(off <= 50 ){
-            $('.rice-prev').css('top', '80px')
+            $('.rice-prev').css('top', '50px')
         }
         else if(off <= 100 ){
             $('.rice-prev').css('top', '160px')
@@ -207,16 +208,16 @@ $(document).scroll(function(){
         }
 
         if(off <= 1500){
-            $('.rice-next').css('margin-top', '-300px');
+            $('.rice-next').css('top', '-210px');
         }
         else if(off <=1600)
-            $('.rice-next').css('margin-top', '-195px');
+            $('.rice-next').css('top', '-140px');
         else if(off <=1700)
-            $('.rice-next').css('margin-top', '-90px');
+            $('.rice-next').css('top', '20px');
         else if(off <=1800)
-            $('.rice-next').css('margin-top', '15px');
+            $('.rice-next').css('top', '115px');
         else
-            $('.rice-next').css('margin-top', '120px');
+            $('.rice-next').css('top', '220px');
 
         if(off > 1800)
             $('.rice-next').css('display', 'none');
@@ -227,7 +228,7 @@ $(document).scroll(function(){
         var off = scroll_now - $('#line-section-4').offset().top;
         if(off <= 100){
             $('.suiyuan-bag').css('transform','scale(1,1)');
-            $('.suiyuan-bag').css('top','200px');
+            $('.suiyuan-bag').css('top','120px');
         }
         else if(off <= 200){
             $('.suiyuan-bag').css('transform','scale(0.9,0.9)');

@@ -1,0 +1,64 @@
+{% extends "product_base.html" %}
+{% load staticfiles %}
+{% block product_content %}
+<div class="container">
+{% if cart %}
+<div class="cart-bar">
+<ul class="cart-bar-list">
+    <li class="cart-bar-all cart-select-all"><span><input type="checkbox" checked="checked"></span>全选</li>
+    <li class="cart-bar-name">商品</li>
+    <li class="cart-bar-price center">单价（元）</li>
+    <li class="cart-bar-number center">数量</li>
+    <li class="cart-bar-price-total center">小计（元）</li>
+    <li class="cart-bar-oper center">操作</li>
+</ul>
+</div>
+<div class="cart-buy-container">
+    <ul class="cart-product-list" id="cart-list">
+        {% for pr in cart %}
+        <li data-id={{ pr.product.product_index }} data-check="true">
+            <ul class="cart-product-detail">
+                <li class="cart-bar-all">
+                    <span>
+                        <input class="product-select-box" type="checkbox" checked="checked" data-target={{ pr.product.product_index }}>
+                    </span>
+                    <a href={{ pr.product.get_absolute_url }}>
+                        <img src={{ pr.product.product_img.url }} alt="">
+                    </a>
+                </li>
+                <li class="cart-bar-name"><a href={{ pr.product.get_absolute_url }}>{{ pr.product.product_name }}</a></li>
+                <li class="cart-bar-price center">{{ pr.product.product_prize }}</li>
+                <li class="cart-bar-number center box-container">
+                    <a href="javascript:void(0)">
+                        <span class="box-re box-minus cook-change" data-target={{ pr.product.product_index }}>-</span>
+                    </a>
+                    <input class="cart-number-box" id={{ pr.product.product_index }} type="text" value={{ pr.count }}>
+                    <a href="javascript:void(0)">
+                        <span class="box-re box-add cook-change" data-target={{ pr.product.product_index }}>+</span>
+                    </a>
+                </li>
+                <li class="cart-bar-price-total center">{{ pr.total }}</li>
+                <li class="cart-bar-oper center"><a href="javascript:void(0)" class="cart-product-delete" data-target={{ pr.product.product_index }}>删除商品</a></li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="cart-footer">
+    <div class="cart-footer-up">
+        <div class="cart-select-count" id="cart-total-count">已选商品 <span>{{ total_count }}</span> 件</div>
+        <div class="cart-select-total" id="cart-total-price">合计：<span>￥{{ total }}</span></div>
+        <div><a href="javascript:request_order()" style="text-decoration: none"><div class="cart-select-btn" role="button">结 算</div></a></div>
+    </div>
+    <ul class="cart-footer-list">
+        <li class="cart-footer-all cart-select-all" role="button"><span><input type="checkbox" checked="checked"></span>全选</li>
+        <li class="cart-footer-delete" role="button">删除选中商品</li>
+    </ul>
+</div>
+    {% else %}
+        <div style="margin:20px 20px;font-size: 18px;width:100%;text-align: center">
+        <p>你的购物车现在是空的，快去<a href="/products/">穗源商城</a>看看把</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

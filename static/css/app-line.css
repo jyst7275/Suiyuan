@@ -8,20 +8,20 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
 }
 .rice-prev{
-    background: url("img/line/rice-prev.png");
-    width: 250px;
+    background: url("img/line/rice-prev.png") center no-repeat;
+    width: 100%;
     height: 233px;
-    left: 830px;
-    top: 90px;
+    top: 50px;
     position: absolute;
 }
 .blue-shadow{
     background: #00bcb4;
-    width: 250px;
+    width: 100%;
     height: 233px;
-    left: 830px;
     top: 350px;
     position: absolute;
 }
@@ -40,8 +40,8 @@
 }
 #line-section-3 .show-text{
     position: absolute;
-    left: 1200px;
-    top: 320px;
+    left: 900px;
+    top: 280px;
     color: white;
     font-size: 18px;
 }
@@ -50,18 +50,18 @@
     opacity: 0;
 }
 .suiyuan-bag{
-    background: url("img/line/suiyuan-bag.png");
-    width: 193px;
+    background: url("img/line/suiyuan-bag.png") center no-repeat;
+    width: 100%;
     height: 299px;
     position: absolute;
-    left: 870px;
-    top: 200px;
+    top: 120px;
 }
 .rice-next{
     background: url("img/line/rice-next.png") no-repeat center;
     width: 100%;
     height: 224px;
-    margin-top: -300px;
+    position: absolute;
+    top: 0px;
 }
 
 .suiyuan-bag-ba{
@@ -75,18 +75,18 @@
 }
 
 #bag-1{
-    left: 400px;
+    left: 0;
 }
 #bag-2{
-    left: 620px;
+    left: 240px;
 }
 
 #bag-3{
-    right: 620px;
+    right: 240px;
 }
 
 #bag-4{
-    right: 400px;
+    right: 0;
 }
 
 #line-section-4 .show-text{
@@ -202,20 +202,25 @@
 .sky-container{
     height: 65%;
     position: relative;
+    width: 1200px;
+    margin: 0 auto;
 }
-.sky-container .show-text{
+
+
+
+.circle-show-text{
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background: #122b40;
     position: absolute;
     top: 60px;
-    left: 510px;
+    left: 100px;
     color: white;
     text-align: center;
     opacity: 0;
 }
-.sky-container .show-text .text-container{
+.circle-show-text .text-container{
     margin-top: 45px;
 }
 .gold-bottom{
@@ -224,24 +229,28 @@
     height: 100%;
     position: absolute;
     top: 0;
+    text-align: center;
 }
 .gold-field{
     background:  url("img/line/field-min.png") no-repeat center;
     width: 1000px;
     height: 400px;
-    position: absolute;
-    top: 40px;
-    left: 440px;
+    margin: 50px auto;
+    position: relative;
+    /*top: 40px;*/
+    /*left: 440px;*/
 }
 .dry-rake{
     background: url("img/line/rake-sin.png");
     width: 413px;
     height: 206px;
     position: absolute;
-    left: 800px;
-    top: 100px;
-    z-index: 2000;
+    left: 90px;
+    top: 80px;
+    margin-left: 300px;
 }
+
+
 
 #line-section-1 .show-text{
     width: 100%;
@@ -254,12 +263,11 @@
 }
 .dirt-shadow{
     background: #bd6122;
-    width: 540px;
-    height: 150px;
     position: absolute;
-    left: 630px;
-    top: 450px;
-    z-index: 1000;
+    left: 160px;
+    top: 130px;
+    width: 600px;
+    height: 150px;
 }
 .cloud{
     position: absolute;
@@ -295,13 +303,13 @@
 }
 
 .dirt-offset-1{
-    left: 410px;
+    left: 0;
 }
 .dirt-offset-2{
-    left: 810px;
+    left: 400px;
 }
 .dirt-offset-3{
-    left: 1210px;
+    left: 800px;
 }
 
 .dirt-plant{
@@ -370,4 +378,101 @@
     top:-350px;
     display: none;
     z-index: 1000;
+}
+
+.dirt-center-container{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (min-width: 820px) and (max-width: 1280px){
+    .dirt-center-container{
+        width: 800px;
+    }
+    .sky-container{
+        width: 800px;
+    }
+    #line-section-3 .show-text{
+        left: 700px;
+    }
+    #bag-2{
+        display: none;
+    }
+    #bag-3{
+        display: none;
+    }
+    .gold-field{
+        background-size: 100% 100%;
+        width: 600px;
+        height: 269px;
+    }
+    .dirt-container-50{
+        height: 45%;
+    }
+    .sky-container-50{
+        height: 45%;
+    }
+    .dirt-shadow{
+        display: none;
+    }
+    .dry-rake{
+        background-size: 100% 100%;
+        width: 260px;
+        height: 130px;
+        margin-left: 150px;
+        left: 90px;
+    }
+}
+
+@media (max-width: 819px){
+    /*.dirt-center-container{*/
+        /*width: 800px;*/
+    /*}*/
+    .sky-container{
+        width: 400px;
+    }
+    /*#line-section-3 .show-text{*/
+        /*left: 700px;*/
+    /*}*/
+    #line-section-3 .show-text .text-container{
+        width: 200px;
+    }
+    #line-section-3 .show-text{
+        left: 100px;
+        top: 80px;
+    }
+    #bag-1{
+        display: none;
+    }
+    #bag-2{
+        display: none;
+    }
+    #bag-3{
+        display: none;
+    }
+    #bag-4{
+        display: none;
+    }
+        .dirt-container-50{
+        height: 45%;
+    }
+    .sky-container-50{
+        height: 45%;
+    }
+    .dirt-shadow{
+        display: none;
+    }
+    .dry-rake{
+        background-size: 100% 100%;
+        width: 260px;
+        height: 130px;
+        margin-left: 150px;
+        left: 90px;
+    }
+    .gold-field{
+        background: none;
+        width: 400px;
+    }
 }

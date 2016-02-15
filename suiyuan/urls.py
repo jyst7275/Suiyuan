@@ -18,6 +18,7 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from . import rest
+from . import user_man
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -28,6 +29,16 @@ urlpatterns = [
     url(r'^products/$', views.products),
     url(r'^products/archives/([\w|\-]+)/$', views.product_archives),
     url(r'^products/details/([\w|\-]+)/([0-9]+)', views.product_details),
+    url(r'^user/login/$', user_man.login),
+    url(r'^user/logout/$', user_man.logout),
+    url(r'^user/code/([0-9]+)/$', user_man.user_code_gen),
+    url(r'^user/status/$', user_man.status),
+    url(r'^user/code/see/([0-9]+)/$', user_man.user_code_see),
+    url(r'^user/cart/$', user_man.cart),
+    url(r'^order/confirm/$', user_man.order_confirm),
+    url(r'^order/request/$',user_man.order_request),
+    url(r'^v1/user/address/$', user_man.order_address),
+    url(r'^v1/user/address/([0-9]+)/$', user_man.address_oper),
     url(r'^contact', views.contact),
     url(r'^people', views.people),
     url(r'^summernote/', include('django_summernote.urls')),

@@ -26,11 +26,12 @@
             <div class="product-service">服务：由穗源加盟店配送及进行售后服务</div>
             <div class="product-type">种类：{{ product.product_category.category }}</div>
             <div class="product-number box-container">
-                <span>数量：</span><a href="javascript:void(0)"><span id="box-minus" class="box-re">-</span></a><input id="number_box" type="text" value="1"><a
-                    href="javascript:void(0)"><span id="box-add" class="box-re">+</span></a>
+                <span>数量：</span>
+                <a href="javascript:void(0)"><span class="box-re box-minus" data-target="number-box">-</span></a><input id="number-box" type="text" value="1"><a
+                    href="javascript:void(0)"><span class="box-re box-add" data-target="number-box">+</span></a>
             </div>
             <div class="product-btn">
-                <button class="buy-btn">加入购物车</button>
+                <button class="buy-btn buy-product" data-buy={{ product.product_index }}>加入购物车</button>
             </div>
         </div>
     </div>
@@ -68,5 +69,4 @@
             </div>
             </div>
     </div>
-    <script src='{%  static  "javascript/product.js" %}'></script>
 {% endblock %}

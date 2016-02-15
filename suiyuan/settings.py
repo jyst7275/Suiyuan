@@ -117,3 +117,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 1
 }
+
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'suiyuan.user_man.UserBackend']
+AUTH_USER_MODEL = 'suiyuan.SyUser'
+LOGIN_URL = '/user/login/'

@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% block header %}
+<link href='{%  static  "css/buy.css" %}' rel="stylesheet" type="text/css">
+<link href='{%  static  "css/reveal.css" %}' rel="stylesheet" type="text/css">
+<script src='{%  static  "javascript/jquery.reveal.js" %}'></script>
+{% endblock %}
 
 {% block content %}
 {% load staticfiles %}
@@ -6,13 +12,13 @@
         <div class="container">
             <ul class="app-product-archive-bar-list">
                 <li style="background: #c81118"><a href="/products/archives/all">所有商品</a></li>
-                <li><a href="">购物车</a></li>
+                <li><a href="/user/cart/">购物车</a></li>
                 <li><a href="">订单查询</a></li>
             </ul>
         </div>
     </div>
     {% block product_content %}{% endblock %}
-        <div class="app-product-footer">
+    <div class="app-product-footer">
         <div class="container">
             <hr style="border-top: #f7f7f7 solid 1px;margin-bottom: 0;">
             <div class="app-product-footer-main">
@@ -26,13 +32,13 @@
                     <li>
                         <div class="app-product-footer-container">
                         <img src='{% static "img/jd.png" %}' alt="">
-                        京东商城 清远馆
+                        京东商城 清远专馆
                         </div>
                     </li>
                     <li>
                         <div class="app-product-footer-container">
                         <img src='{% static "img/tmall.png" %}' alt="">
-                        天猫商城专卖店
+                        天猫商城 旗舰卖场
                         </div>
                     </li>
                     <li>
@@ -47,4 +53,19 @@
             <hr style="border-top: #f7f7f7 solid 1px;margin-top: 0;">
         </div>
     </div>
+    <div class="reveal-modal" id="after-buy">
+    <div class="img-container"></div>
+    <div class="text-container">
+        <p class="product-name">商品</p>
+        <p>成功加入购物车</p>
+        <div class="btn-container">
+            <button onclick=closeWindow()>继续购买</button>
+            <a href="/user/cart/"><button>查看购物车</button></a>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+{% block footer %}
+<script src='{%  static  "javascript/product.js" %}'></script>
+
 {% endblock %}
