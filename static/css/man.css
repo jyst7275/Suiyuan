@@ -51,6 +51,16 @@ body{
     font-size: 18px;
     height: inherit !important;
 }
+#logout-btn{
+    padding: 5px;
+    font-size: 18px;
+    margin: 20px 0 5px 0;
+    width: 100%;
+    background: #449d44;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
 #login-form .checked{
     cursor:not-allowed;
     background: grey;
@@ -989,7 +999,7 @@ display: none;
 
 .app-product-bar-container{
     position: absolute;
-    top: 52px;
+    top: 0;
     left: 15px;
     height: 600px;
     background: white;
@@ -1000,10 +1010,13 @@ display: none;
     padding-left: 0;
 }
 .app-product-type-list li{
-    padding:20px 30px;
     background: white;
     font-size: 16px;
     position: relative;
+    height: 60px;
+    width: 220px;
+    padding-top: 8px;
+    padding-left: 20px;
 }
 
 .app-product-type-list li:hover{
@@ -1022,9 +1035,12 @@ display: none;
     padding-left: 0;
 }
 
-.app-product-type-list li a{
-    text-decoration: none;
+.app-product-type-list > li > a{
     color: #000;
+}
+.app-product-type-list > li > p > a{
+    color: grey;
+    font-size: 14px;
 }
 
 .app-product-section{
@@ -1169,6 +1185,8 @@ display: none;
 .app-carousel-list{
     padding-left: 0;
     margin-bottom: 0;
+    max-height: 450px;
+    overflow: hidden;
 }
 
 .app-carousel-list li{
@@ -1392,23 +1410,30 @@ display: none;
     list-style: none;
     padding-left: 0;
     margin-bottom: 0;
+    font-size: 16px;
+    height: 40px;
 }
 
 
 .app-product-archive-bar-list li{
-    display: inline-block;
-    padding: 20px 30px;;
-}
+    float: left;
 
+}
+.app-product-archive-bar-list li:hover{
+    background: black;
+}
 .app-product-archive-bar-list li a{
     color: white;
+    height: 40px;
+    line-height: 40px;
+    padding: 10px 30px;
     text-decoration: none;
 }
 
 .app-product-archive-selector-list{
     display: block;
     list-style: none;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding-left: 0;
 }
 .app-product-archive-selector-list li span{
@@ -1542,9 +1567,6 @@ display: none;
     padding: 5px;
 }
 
-.app-product-archive-list li .buy-container:hover{
-    cursor: default;
-}
 
 .app-product-archive-list li .btn-container:hover{
     color: white;
@@ -1774,4 +1796,196 @@ display: none;
     .app-carousel-content .text-container{
         display: none;
     }
+}
+
+.profile-bg{
+    background: #f5f5f5;
+    margin-bottom: -130px;
+    padding-bottom: 130px;
+}
+
+.my-order-container{
+
+}
+
+.my-order-container h4{
+    width: 100%;
+    color: #333;
+    background: white;
+    padding: 20px 20px;
+    border-radius: 5px;
+}
+
+.my-order-panel{
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.panel-header ul{
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.panel-header ul li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.panel-header ul .selected{
+    border-bottom: 2px solid #449d44;
+}
+.panel-header ul .selected a{
+    color: #449d44;
+}
+.panel-header ul li a{
+    text-decoration: none;
+    color: #333;
+}
+
+.panel-header ul li a:hover{
+    color: #449d44;
+}
+
+.order-panel-header{
+    background: #e3e3e3;
+    height: 30px;
+    margin: 10px;
+    width: 98%;
+}
+
+
+.my-order-list{
+    padding: 0;
+    margin: 10px 0;
+    display: block;
+    list-style: none;
+}
+
+.myorder-detail .header{
+    background: #e3e3e3;
+
+    height: 30px;
+    line-height: 29px;
+    padding-left: 10px;
+    border-radius: 3px;
+}
+
+.myorder-detail{
+    border: 1px solid #f7f7f7;
+    margin: 10px;
+}
+.myorder-detail table{
+    width: 100%;
+}
+.myorder-header-detail{
+    width: 50%;
+}
+.myorder-header-name{
+    width: 15%;
+}
+.myorder-header-price{
+    width: 15%;
+}
+.myorder-header-status{
+    width: 15%;
+}
+
+.order-detail-row{
+    height: 100px;
+}
+
+.myorder-header-detail img{
+    width: 40px;
+    height: 60px;
+    border: 1px solid #f7f7f7;
+    float: left;
+    margin-right: 20px;
+}
+.border-bottom{
+    border-bottom: 1px solid #f7f7f7;
+}
+.border-left{
+    border-left: 1px solid #f7f7f7;
+}
+
+.order-detail-row .myorder-header-detail{
+    padding-left: 20px;
+}
+
+.myorder-detail-count{
+    margin-left: 50px;
+}
+
+.order-detail-row td{
+    border: solid 1px #f7f7f7;
+}
+
+.float-div-container{
+    position: relative;
+    display: none;
+}
+
+.float-div-container .float-div{
+    position: absolute;
+    border: 1px solid #e3e3e3;
+    left: -150px;
+    top: -70px;
+    background: white;
+    border-radius: 5px;
+    text-align: left;
+    padding: 15px;
+    width: 180px;
+}
+
+.myorder-detail-address:hover{
+    cursor: pointer;
+}
+
+.my-address-container{
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.panel-white-radis{
+    margin-top: 20px;
+    background: white;
+    border-radius: 5px;
+    padding: 7px 20px;
+}
+
+
+.sep{
+    margin: 10px;
+    border-bottom: 1px dashed #449d44;
+}
+
+.order-detail-list .total-price{
+    margin-top: 50px;
+    text-align: right;
+    color: darkred;
+    font-size: 25px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+.quick-buy{
+    color: white;
+    background: darkred;
+    margin-left: 105px;
+    cursor: hand;
+}
+.data-circle{
+    width: 300px;
+    height:300px;
+}
+
+.data-container{
+    text-align: center;
+    font-size: 22px;
+}
+.data-container img{
+    margin-bottom: 40px;
 }

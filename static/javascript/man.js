@@ -222,3 +222,21 @@ $('#app-news-page-prev').click(function(){
     setPage(type, Number(page) - 1);
     setPageBar(Number(page) - 1);
 });
+
+$('#checkcode-btn').click(function(){
+    $.ajax({
+        url:'/v1/user/sendcode/' + $('#login-form input[name=cellphone]').val() + '/',
+        type:'POST',
+        success:function(data){
+            var data_json = $.parseJSON(data);
+            $('#checkcode-btn').addClass('checked');
+            alert(data_json.code)
+        }
+    });
+});
+
+$('.myorder-detail-address').hover(function(){
+   $(this).next().css('display','block');
+}, function(){
+    $(this).next().css('display','none');
+});

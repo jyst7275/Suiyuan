@@ -8,6 +8,11 @@ import math
 
 
 @register.filter
+def get_point(item, key):
+	return item.key
+
+
+@register.filter
 def get_item_index(a):
 	return a.index
 
@@ -60,9 +65,9 @@ def about(request):
 	return HttpResponse(template.render(RequestContext(request, {})))
 
 
-def archives(request, year, month, day, index_pinyin):
+def archives(request, year, month, day, title):
 	template = loader.get_template('suiyuan/article.html')
-	object_get = Passage.objects.get(index_pinyin=index_pinyin, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
+	object_get = Passage.objects.get(pass_title=title, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
 	try:
 		object_next = object_get.get_next_by_pub_date()
 	except Passage.DoesNotExist:
@@ -168,10 +173,10 @@ def product_archives(request, cat):
 	else:
 		pc_name = ProductCategory.objects.get(category=cat)
 		if pc_name.is_subclass:
-			index_type = pc_name.father.index
-			index_type_sub = pc_name.index
+			index_type = pc_name.father.category
+			index_type_sub = pc_name.category
 		else:
-			index_type = pc_name.index
+			index_type = pc_name.category
 		product_list = Product.objects.filter(Q(product_category__father__category=cat) | Q(product_category__category=cat))
 	if order_ba != False:
 		product_list = product_list.order_by(order_di + order_ba)
@@ -185,9 +190,9 @@ def product_archives(request, cat):
 	})))
 
 
-def product_details(request, product_category, product_id):
+def product_details(request, product_category, product_index):
 	template = loader.get_template("suiyuan/product_detail.html")
-	obj = Product.objects.get(id=product_id)
+	obj = Product.objects.get(product_index=product_index)
 
 	recommend_list = RecommendProduct.objects.all()
 	return HttpResponse(template.render(RequestContext(request, {

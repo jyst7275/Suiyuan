@@ -4,17 +4,26 @@
 <div class="container">
 
 <div class="login-container">
+{% if not login_bool %}
 <div class="login-panel">
 <h4>用户登录</h4>
-<form action="/buyer/login/" method="POST" id="login-form">
+<form action="/user/login/" method="POST" id="login-form">
     {% csrf_token %}
     {{ form }}
-    <button id="checkcode-btn" class="checked">点击获取验证码</button>
-    <input id="redirect_url" type="hidden" value={{ redirect }}>
+    <button id="checkcode-btn" class="" type="button">点击获取验证码</button>
+    <input id="redirect_url" name="redirect" type="hidden" value={{ redirect }}>
     <input type="submit" value="登录" id="login-btn">
 </form>
 </div>
+{% else %}
+<div class="login-panel">
+<h4>登录信息</h4>
+<div>您已经登录，{{ user }}</div>
+    <a href="/user/logout/"><button id="logout-btn">登出</button></a>
 </div>
+{% endif %}
+</div>
+
 </div>
     </div>
 {% endblock %}

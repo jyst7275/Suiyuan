@@ -2,65 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/cloud-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/cloud-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/dirt-texture.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/dirt-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/field-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/field.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/machin-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/machine-bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/machine-middle-animated.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/machine-middle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/plant-bottom-phase0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/plant-init.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/plant-root.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/plant-section-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/plant-section-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/plant-top-phase1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/plant-top-phase5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/rake-sin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/rake.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/rice-next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/rice-next.xcf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/rice-prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/line/suiyuan-bag.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/main_ok.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/modal-gloss.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/make_argri.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/video-pre.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/what-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/what-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/what-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/what-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/what-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/buy.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/reveal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/javascript/buy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/javascript/jquery.reveal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/javascript/js.cookie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/suiyuan/user_man.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/suiyuan/cart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/suiyuan/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/suiyuan/order_finish.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/suiyuan/migrations/0002_productcategory_father.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/suiyuan/migrations/0003_auto_20160202_1638.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/suiyuan/order_detail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/suiyuan/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/app-line.css" afterPath="$PROJECT_DIR$/static/css/app-line.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/man.css" afterPath="$PROJECT_DIR$/static/css/man.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/app-line.js" afterPath="$PROJECT_DIR$/static/javascript/app-line.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/buy.js" afterPath="$PROJECT_DIR$/static/javascript/buy.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/man.js" afterPath="$PROJECT_DIR$/static/javascript/man.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/product.js" afterPath="$PROJECT_DIR$/static/javascript/product.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/admin.py" afterPath="$PROJECT_DIR$/suiyuan/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/suiyuan/migrations/0001_initial.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/model.py" afterPath="$PROJECT_DIR$/suiyuan/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/settings.py" afterPath="$PROJECT_DIR$/suiyuan/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/urls.py" afterPath="$PROJECT_DIR$/suiyuan/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/user_man.py" afterPath="$PROJECT_DIR$/suiyuan/user_man.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/views.py" afterPath="$PROJECT_DIR$/suiyuan/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product_base.html" afterPath="$PROJECT_DIR$/templates/product_base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/article.html" afterPath="$PROJECT_DIR$/templates/suiyuan/article.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/about.html" afterPath="$PROJECT_DIR$/templates/suiyuan/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/cart.html" afterPath="$PROJECT_DIR$/templates/suiyuan/cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/contact.html" afterPath="$PROJECT_DIR$/templates/suiyuan/contact.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/index.html" afterPath="$PROJECT_DIR$/templates/suiyuan/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/login.html" afterPath="$PROJECT_DIR$/templates/suiyuan/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" afterPath="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/order_finish.html" afterPath="$PROJECT_DIR$/templates/suiyuan/order_finish.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/product_archive.html" afterPath="$PROJECT_DIR$/templates/suiyuan/product_archive.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/product_detail.html" afterPath="$PROJECT_DIR$/templates/suiyuan/product_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/products.html" afterPath="$PROJECT_DIR$/templates/suiyuan/products.html" />
@@ -98,12 +59,68 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/suiyuan/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.304348">
-              <caret line="187" column="44" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="293" column="34" selection-start-line="293" selection-start-column="34" selection-end-line="293" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/suiyuan/about.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.25">
+              <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="38" />
               <folding>
-                <element signature="e#1165#1487#0#HTML" expanded="false" />
-                <element signature="e#1996#3621#0#HTML" expanded="false" />
-                <element signature="e#4706#4863#0#HTML" expanded="false" />
+                <element signature="e#1672#1698#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="man.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/man.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6275862">
+              <caret line="1986" column="17" selection-start-line="1986" selection-start-column="17" selection-end-line="1986" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_man.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/suiyuan/user_man.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="100" column="54" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#628#714#0" expanded="false" />
+                <element signature="e#745#1247#0" expanded="false" />
+                <element signature="e#1271#2067#0" expanded="false" />
+                <element signature="e#2143#2195#0" expanded="false" />
+                <element signature="e#4158#4888#0" expanded="false" />
+                <element signature="e#4982#6132#0" expanded="false" />
+                <element signature="e#6215#7747#0" expanded="false" />
+                <element signature="e#7839#8502#0" expanded="false" />
+                <element signature="e#8579#9388#0" expanded="false" />
+                <element signature="e#9413#9477#0" expanded="false" />
+                <element signature="e#9500#10363#0" expanded="false" />
+                <element signature="e#10406#10493#0" expanded="false" />
+                <element signature="e#10536#10911#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/suiyuan/cart.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+              <folding>
+                <element signature="e#146#519#0#HTML" expanded="false" />
+                <element signature="e#564#2274#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -113,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/suiyuan/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+              <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
               <folding>
                 <element signature="e#560#601#0" expanded="true" />
               </folding>
@@ -121,34 +138,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_man.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/suiyuan/user_man.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/suiyuan/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+              <caret line="176" column="45" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#604#690#0" expanded="false" />
-                <element signature="e#721#1223#0" expanded="false" />
-                <element signature="e#1943#1995#0" expanded="false" />
-                <element signature="e#2078#3031#0" expanded="false" />
-                <element signature="e#3114#3844#0" expanded="false" />
-                <element signature="e#3938#5088#0" expanded="false" />
-                <element signature="e#5171#6297#0" expanded="false" />
-                <element signature="e#6387#7057#0" expanded="false" />
-                <element signature="e#7100#7187#0" expanded="false" />
-                <element signature="e#7230#7569#0" expanded="false" />
+                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#403#417#0" expanded="false" />
+                <element signature="e#457#470#0" expanded="false" />
+                <element signature="e#515#534#0" expanded="false" />
+                <element signature="e#577#596#0" expanded="false" />
+                <element signature="e#642#662#0" expanded="false" />
+                <element signature="e#686#824#0" expanded="false" />
+                <element signature="e#847#1291#0" expanded="false" />
+                <element signature="e#1315#1434#0" expanded="false" />
+                <element signature="e#1486#2033#0" expanded="false" />
+                <element signature="e#2054#2150#0" expanded="false" />
+                <element signature="e#2172#2242#0" expanded="false" />
+                <element signature="e#2269#2983#0" expanded="false" />
+                <element signature="e#3009#3130#0" expanded="false" />
+                <element signature="e#3155#3275#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,8 +167,8 @@
       <file leaf-file-name="buy.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/javascript/buy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="60.545456">
-              <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="317" column="35" selection-start-line="317" selection-start-column="35" selection-end-line="317" selection-end-column="35" />
               <folding>
                 <element signature="e#91#1303#0" expanded="false" />
                 <element signature="n#!!block;n#csrfSafeMethod#0" expanded="false" />
@@ -181,70 +192,69 @@
                 <element signature="n#!!block;n#add_address#0" expanded="false" />
                 <element signature="e#6342#6641#0" expanded="false" />
                 <element signature="e#6686#7994#0" expanded="false" />
-                <element signature="e#9942#10246#0" expanded="false" />
+                <element signature="e#8040#9447#0" expanded="false" />
+                <element signature="e#9981#10285#0" expanded="false" />
                 <element signature="n#!!block;n#check_address#0" expanded="false" />
-                <element signature="e#11056#12020#0" expanded="false" />
-                <element signature="e#11865#12016#0" expanded="false" />
-                <marker date="1455558516300" expanded="true" signature="7378:7503" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7587" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7611" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7674" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7675" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7683" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7695" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7740" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7762" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7829" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7879" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7880" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7907" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7378:7926" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="7422:7503" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="8831:9379" placeholder="..." />
-                <marker date="1455558516300" expanded="true" signature="8875:9065" placeholder="..." />
+                <element signature="e#11132#12096#0" expanded="false" />
+                <element signature="e#11941#12092#0" expanded="false" />
+                <marker date="1455636178964" expanded="true" signature="7378:7503" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7587" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7611" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7674" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7675" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7683" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7695" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7740" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7762" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7829" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7879" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7880" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7907" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7378:7926" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="7422:7503" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="8831:9379" placeholder="..." />
+                <marker date="1455636178964" expanded="true" signature="8875:9065" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/suiyuan/login.html">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.25">
-              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="man.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/css/man.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46753246">
-              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="products.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/suiyuan/products.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.173913">
-              <caret line="43" column="45" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app-line.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/app-line.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0869565">
-              <caret line="443" column="17" selection-start-line="443" selection-start-column="17" selection-end-line="443" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="77" />
               <folding>
-                <element signature="e#6655#6739#0" expanded="false" />
-                <element signature="e#6741#7440#0" expanded="false" />
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#290#388#0" expanded="false" />
+                <element signature="e#1376#1492#0" expanded="false" />
+                <element signature="e#1525#1738#0" expanded="false" />
+                <element signature="e#1779#2159#0" expanded="false" />
+                <element signature="e#4103#4221#0" expanded="false" />
+                <element signature="e#4189#4221#0" expanded="false" />
+                <element signature="e#4257#4375#0" expanded="false" />
+                <element signature="e#4417#4877#0" expanded="false" />
+                <element signature="e#4913#5614#0" expanded="false" />
+                <element signature="e#5406#5449#0" expanded="false" />
+                <element signature="e#5648#5773#0" expanded="false" />
+                <element signature="e#7638#7967#0" expanded="false" />
+                <element signature="e#8000#8973#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="man.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/man.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="234" column="7" selection-start-line="234" selection-start-column="7" selection-end-line="234" selection-end-column="7" />
+              <folding>
+                <marker date="1455618751268" expanded="true" signature="4472:5049" placeholder="..." />
+                <marker date="1455618751268" expanded="true" signature="4585:5044" placeholder="..." />
+                <marker date="1455618751268" expanded="false" signature="4832:4861" placeholder="..." />
+                <marker date="1455618751268" expanded="false" signature="4921:4935" placeholder="..." />
+                <marker date="1455618751268" expanded="true" signature="5864:5878" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -273,40 +283,42 @@
         <option value="$PROJECT_DIR$/templates/suiyuan/base.html" />
         <option value="$PROJECT_DIR$/static/javascript/articles-bar.js" />
         <option value="$PROJECT_DIR$/templates/suiyuan/people.html" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/about.html" />
         <option value="$PROJECT_DIR$/static/javascript/admin.js" />
         <option value="$PROJECT_DIR$/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/static/css/animation.css" />
         <option value="$PROJECT_DIR$/suiyuan/rest.py" />
         <option value="$PROJECT_DIR$/templates/suiyuan/news.html" />
         <option value="$PROJECT_DIR$/templates/suiyuan/product_base.html" />
-        <option value="$PROJECT_DIR$/suiyuan/views.py" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/contact.html" />
         <option value="$PROJECT_DIR$/buy/models.py" />
         <option value="$PROJECT_DIR$/templates/suiyuan/article.html" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/product_detail.html" />
         <option value="$PROJECT_DIR$/static/javascript/jquery.reveal.js" />
         <option value="$PROJECT_DIR$/static/javascript/product.js" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/product_archive.html" />
-        <option value="$PROJECT_DIR$/suiyuan/admin.py" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/cart.html" />
-        <option value="$PROJECT_DIR$/suiyuan/model.py" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/order_finish.html" />
         <option value="$PROJECT_DIR$/static/css/reveal.css" />
-        <option value="$PROJECT_DIR$/static/css/buy.css" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" />
-        <option value="$PROJECT_DIR$/templates/product_base.html" />
-        <option value="$PROJECT_DIR$/static/javascript/man.js" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/index.html" />
         <option value="$PROJECT_DIR$/static/javascript/app-line.js" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/templates/suiyuan/products.html" />
         <option value="$PROJECT_DIR$/static/css/app-line.css" />
-        <option value="$PROJECT_DIR$/suiyuan/urls.py" />
-        <option value="$PROJECT_DIR$/suiyuan/user_man.py" />
         <option value="$PROJECT_DIR$/suiyuan/settings.py" />
-        <option value="$PROJECT_DIR$/static/javascript/buy.js" />
         <option value="$PROJECT_DIR$/templates/suiyuan/login.html" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/product_detail.html" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/products.html" />
+        <option value="$PROJECT_DIR$/static/css/buy.css" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/order_finish.html" />
+        <option value="$PROJECT_DIR$/static/javascript/man.js" />
+        <option value="$PROJECT_DIR$/templates/product_base.html" />
+        <option value="$PROJECT_DIR$/suiyuan/admin.py" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/profile.html" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/order_detail.html" />
+        <option value="$PROJECT_DIR$/suiyuan/urls.py" />
+        <option value="$PROJECT_DIR$/suiyuan/model.py" />
+        <option value="$PROJECT_DIR$/suiyuan/views.py" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/product_archive.html" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/cart.html" />
+        <option value="$PROJECT_DIR$/static/javascript/buy.js" />
+        <option value="$PROJECT_DIR$/suiyuan/user_man.py" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/contact.html" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/index.html" />
+        <option value="$PROJECT_DIR$/templates/suiyuan/about.html" />
         <option value="$PROJECT_DIR$/static/css/man.css" />
       </list>
     </option>
@@ -317,10 +329,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="11" />
-    <option name="y" value="97" />
+    <option name="x" value="121" />
+    <option name="y" value="52" />
     <option name="width" value="1717" />
-    <option name="height" value="934" />
+    <option name="height" value="933" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -783,7 +795,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455192130982</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Login System&#10;Index">
+      <created>1455563322992</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1455563322992</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -796,14 +814,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="97" width="1717" height="934" extended-state="0" />
-    <editor active="false" />
+    <frame x="121" y="52" width="1717" height="933" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19676065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2015597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299748" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3371069" sideWeight="0.50419164" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3371069" sideWeight="0.4958084" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.49790043" order="2" side_tool="false" content_ui="tabs" />
@@ -817,6 +834,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3371069" sideWeight="0.4958084" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -842,25 +860,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/templates/suiyuan/order_confirm.html</url>
+          <line>11</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/man.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/man.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -907,13 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.712">
           <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.36">
-          <caret line="273" column="21" selection-start-line="273" selection-start-column="21" selection-end-line="273" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -980,68 +984,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/rest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8339768">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3360996">
-          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.75">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-          <folding>
-            <element signature="e#398#454#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16763006">
-          <caret line="177" column="50" selection-start-line="177" selection-start-column="50" selection-end-line="177" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#341#355#0" expanded="false" />
-            <element signature="e#395#408#0" expanded="false" />
-            <element signature="e#453#472#0" expanded="false" />
-            <element signature="e#515#534#0" expanded="false" />
-            <element signature="e#580#600#0" expanded="false" />
-            <element signature="e#624#762#0" expanded="false" />
-            <element signature="e#785#1229#0" expanded="false" />
-            <element signature="e#1253#1372#0" expanded="false" />
-            <element signature="e#1431#1987#0" expanded="false" />
-            <element signature="e#2008#2104#0" expanded="false" />
-            <element signature="e#2126#2196#0" expanded="false" />
-            <element signature="e#2223#2937#0" expanded="false" />
-            <element signature="e#2963#3084#0" expanded="false" />
-            <element signature="e#3109#3229#0" expanded="false" />
-            <element signature="e#4793#5068#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14154653">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,17 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/product_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52737755">
-          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4862385">
           <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,67 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33289647">
           <caret line="92" column="4" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/product_archive.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25997248">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-          <folding>
-            <element signature="e#118#3058#0#HTML" expanded="false" />
-            <element signature="e#165#1584#0#HTML" expanded="false" />
-            <element signature="e#224#328#0#HTML" expanded="false" />
-            <element signature="e#337#791#0#HTML" expanded="false" />
-            <element signature="e#800#1573#0#HTML" expanded="false" />
-            <element signature="e#1589#3047#0#HTML" expanded="false" />
-            <element signature="e#3216#3926#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.94626474">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-            <element signature="e#513#654#0" expanded="false" />
-            <element signature="e#700#1167#0" expanded="false" />
-            <element signature="e#1213#1674#0" expanded="false" />
-            <element signature="e#1719#2399#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.347826">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="e#2592#2621#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.32241154">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-            <element signature="e#371#1354#0" expanded="false" />
-            <element signature="e#1388#1504#0" expanded="false" />
-            <element signature="e#1537#1750#0" expanded="false" />
-            <element signature="e#1791#2454#0" expanded="false" />
-            <element signature="e#4244#4362#0" expanded="false" />
-            <element signature="e#4330#4362#0" expanded="false" />
-            <element signature="e#4398#4516#0" expanded="false" />
-            <element signature="e#4558#5018#0" expanded="false" />
-            <element signature="e#5054#5755#0" expanded="false" />
-            <element signature="e#6612#6795#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,57 +1020,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/order_finish.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.037087914">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2612859">
           <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/buy.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74038464">
-          <caret line="338" column="13" selection-start-line="338" selection-start-column="13" selection-end-line="338" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29532966">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/man.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5196335">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-          <folding>
-            <marker date="1455539327508" expanded="true" signature="4472:5049" placeholder="..." />
-            <marker date="1455539327508" expanded="true" signature="4585:5044" placeholder="..." />
-            <marker date="1455539327508" expanded="false" signature="4832:4861" placeholder="..." />
-            <marker date="1455539327508" expanded="false" signature="4921:4935" placeholder="..." />
-            <marker date="1455539327508" expanded="true" signature="5864:5878" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/order_confirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.637682">
-          <caret line="121" column="43" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,39 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.909091">
           <caret line="178" column="31" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <element signature="e#102#465#0" expanded="false" />
-            <element signature="e#540#793#0" expanded="false" />
-            <element signature="e#845#1098#0" expanded="false" />
-            <element signature="e#1150#1403#0" expanded="false" />
-            <element signature="e#1455#1708#0" expanded="false" />
-            <element signature="e#2747#2886#0" expanded="false" />
-            <element signature="e#2914#3055#0" expanded="false" />
-            <element signature="e#3083#3224#0" expanded="false" />
-            <element signature="e#3252#3391#0" expanded="false" />
-            <element signature="e#3419#5808#0" expanded="false" />
-            <element signature="e#3512#3648#0" expanded="false" />
-            <element signature="e#3677#3813#0" expanded="false" />
-            <element signature="e#3842#3978#0" expanded="false" />
-            <element signature="e#4020#4155#0" expanded="false" />
-            <element signature="e#4180#4366#0" expanded="false" />
-            <element signature="e#4380#5007#0" expanded="false" />
-            <element signature="e#5044#5168#0" expanded="false" />
-            <element signature="e#5195#5319#0" expanded="false" />
-            <element signature="e#6096#6155#0" expanded="false" />
-            <element signature="e#6168#6227#0" expanded="false" />
-            <element signature="e#6252#6387#0" expanded="false" />
-            <element signature="e#6401#6536#0" expanded="false" />
-            <element signature="e#6560#6651#0" expanded="false" />
-            <element signature="e#6679#6772#0" expanded="false" />
-            <element signature="e#6800#6893#0" expanded="false" />
-            <element signature="e#6906#6997#0" expanded="false" />
-            <element signature="e#8229#8368#0" expanded="false" />
-            <element signature="e#8396#8537#0" expanded="false" />
-            <element signature="e#8565#8706#0" expanded="false" />
-            <element signature="e#8719#8858#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1260,68 +1053,224 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.114173226">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2644628">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/products.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9444447">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+          <folding>
+            <element signature="e#76#594#0#HTML" expanded="false" />
+            <element signature="e#231#272#0#HTML" expanded="false" />
+            <element signature="e#393#413#0#HTML" expanded="false" />
+            <element signature="e#459#479#0#HTML" expanded="false" />
+            <element signature="e#657#683#0#HTML" expanded="false" />
+            <element signature="e#689#2299#0#HTML" expanded="false" />
+            <element signature="e#2591#2610#0#HTML" expanded="false" />
+            <element signature="e#3348#4689#0#HTML" expanded="false" />
+            <element signature="n#for#3;n#!!top" expanded="false" />
+            <element signature="e#6372#7733#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/buy.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.097931035">
+          <caret line="160" column="1" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suiyuan/rest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.181818">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.055555">
+          <caret line="113" column="54" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="54" />
+          <folding>
+            <element signature="e#4198#4220#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/order_finish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="16.61111">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suiyuan/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="109" selection-start-line="104" selection-start-column="109" selection-end-line="104" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/product_archive.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/order_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03724138">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/suiyuan/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
           <folding>
             <element signature="e#560#601#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
+    <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/products.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.173913">
-          <caret line="43" column="45" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/user_man.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="77" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#604#690#0" expanded="false" />
-            <element signature="e#721#1223#0" expanded="false" />
-            <element signature="e#1943#1995#0" expanded="false" />
-            <element signature="e#2078#3031#0" expanded="false" />
-            <element signature="e#3114#3844#0" expanded="false" />
-            <element signature="e#3938#5088#0" expanded="false" />
-            <element signature="e#5171#6297#0" expanded="false" />
-            <element signature="e#6387#7057#0" expanded="false" />
-            <element signature="e#7100#7187#0" expanded="false" />
-            <element signature="e#7230#7569#0" expanded="false" />
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#290#388#0" expanded="false" />
+            <element signature="e#1376#1492#0" expanded="false" />
+            <element signature="e#1525#1738#0" expanded="false" />
+            <element signature="e#1779#2159#0" expanded="false" />
+            <element signature="e#4103#4221#0" expanded="false" />
+            <element signature="e#4189#4221#0" expanded="false" />
+            <element signature="e#4257#4375#0" expanded="false" />
+            <element signature="e#4417#4877#0" expanded="false" />
+            <element signature="e#4913#5614#0" expanded="false" />
+            <element signature="e#5406#5449#0" expanded="false" />
+            <element signature="e#5648#5773#0" expanded="false" />
+            <element signature="e#7638#7967#0" expanded="false" />
+            <element signature="e#8000#8973#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/index.html">
+    <entry file="file://$PROJECT_DIR$/suiyuan/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.304348">
-          <caret line="187" column="44" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="45" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
           <folding>
-            <element signature="e#1165#1487#0#HTML" expanded="false" />
-            <element signature="e#1996#3621#0#HTML" expanded="false" />
-            <element signature="e#4706#4863#0#HTML" expanded="false" />
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#403#417#0" expanded="false" />
+            <element signature="e#457#470#0" expanded="false" />
+            <element signature="e#515#534#0" expanded="false" />
+            <element signature="e#577#596#0" expanded="false" />
+            <element signature="e#642#662#0" expanded="false" />
+            <element signature="e#686#824#0" expanded="false" />
+            <element signature="e#847#1291#0" expanded="false" />
+            <element signature="e#1315#1434#0" expanded="false" />
+            <element signature="e#1486#2033#0" expanded="false" />
+            <element signature="e#2054#2150#0" expanded="false" />
+            <element signature="e#2172#2242#0" expanded="false" />
+            <element signature="e#2269#2983#0" expanded="false" />
+            <element signature="e#3009#3130#0" expanded="false" />
+            <element signature="e#3155#3275#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/order_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.583333">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding>
+            <element signature="e#2550#2828#0#HTML" expanded="false" />
+            <element signature="e#2833#4264#0#HTML" expanded="false" />
+            <element signature="e#3062#4173#0#HTML" expanded="false" />
+            <element signature="e#4269#5702#0#HTML" expanded="false" />
+            <element signature="e#4499#5610#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/man.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="234" column="7" selection-start-line="234" selection-start-column="7" selection-end-line="234" selection-end-column="7" />
+          <folding>
+            <marker date="1455618751268" expanded="true" signature="4472:5049" placeholder="..." />
+            <marker date="1455618751268" expanded="true" signature="4585:5044" placeholder="..." />
+            <marker date="1455618751268" expanded="false" signature="4832:4861" placeholder="..." />
+            <marker date="1455618751268" expanded="false" signature="4921:4935" placeholder="..." />
+            <marker date="1455618751268" expanded="true" signature="5864:5878" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+          <folding>
+            <element signature="e#146#519#0#HTML" expanded="false" />
+            <element signature="e#564#2274#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/buy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="60.545456">
-          <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="317" column="35" selection-start-line="317" selection-start-column="35" selection-end-line="317" selection-end-column="35" />
           <folding>
             <element signature="e#91#1303#0" expanded="false" />
             <element signature="n#!!block;n#csrfSafeMethod#0" expanded="false" />
@@ -1345,43 +1294,85 @@
             <element signature="n#!!block;n#add_address#0" expanded="false" />
             <element signature="e#6342#6641#0" expanded="false" />
             <element signature="e#6686#7994#0" expanded="false" />
-            <element signature="e#9942#10246#0" expanded="false" />
+            <element signature="e#8040#9447#0" expanded="false" />
+            <element signature="e#9981#10285#0" expanded="false" />
             <element signature="n#!!block;n#check_address#0" expanded="false" />
-            <element signature="e#11056#12020#0" expanded="false" />
-            <element signature="e#11865#12016#0" expanded="false" />
-            <marker date="1455558516300" expanded="true" signature="7378:7503" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7587" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7611" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7674" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7675" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7683" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7695" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7740" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7762" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7829" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7879" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7880" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7907" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7378:7926" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="7422:7503" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="8831:9379" placeholder="..." />
-            <marker date="1455558516300" expanded="true" signature="8875:9065" placeholder="..." />
+            <element signature="e#11132#12096#0" expanded="false" />
+            <element signature="e#11941#12092#0" expanded="false" />
+            <marker date="1455636178964" expanded="true" signature="7378:7503" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7587" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7611" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7674" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7675" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7683" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7695" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7740" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7762" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7829" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7879" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7880" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7907" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7378:7926" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="7422:7503" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="8831:9379" placeholder="..." />
+            <marker date="1455636178964" expanded="true" signature="8875:9065" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suiyuan/login.html">
+    <entry file="file://$PROJECT_DIR$/suiyuan/user_man.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.25">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="54" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#628#714#0" expanded="false" />
+            <element signature="e#745#1247#0" expanded="false" />
+            <element signature="e#1271#2067#0" expanded="false" />
+            <element signature="e#2143#2195#0" expanded="false" />
+            <element signature="e#4158#4888#0" expanded="false" />
+            <element signature="e#4982#6132#0" expanded="false" />
+            <element signature="e#6215#7747#0" expanded="false" />
+            <element signature="e#7839#8502#0" expanded="false" />
+            <element signature="e#8579#9388#0" expanded="false" />
+            <element signature="e#9413#9477#0" expanded="false" />
+            <element signature="e#9500#10363#0" expanded="false" />
+            <element signature="e#10406#10493#0" expanded="false" />
+            <element signature="e#10536#10911#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-38.25">
+          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="293" column="34" selection-start-line="293" selection-start-column="34" selection-end-line="293" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suiyuan/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.25">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="38" />
+          <folding>
+            <element signature="e#1672#1698#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/man.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46753246">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.6275862">
+          <caret line="1986" column="17" selection-start-line="1986" selection-start-column="17" selection-end-line="1986" selection-end-column="17" />
           <folding />
         </state>
       </provider>

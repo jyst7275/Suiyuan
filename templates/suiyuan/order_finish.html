@@ -7,8 +7,8 @@
     <p><strong>{{ order.order_index }}</strong></p>
 </div>
 <div class="order-finish-btn center">
-    <a href="/order/detail/"><button class="buy-btn">查询订单信息</button></a>
-    <a href="/product/"><button class="buy-btn">前往商城</button></a>
+    <a href={{ order.get_absolute_url }}><button class="buy-btn">查询订单信息</button></a>
+    <a href="/products/"><button class="buy-btn">前往商城</button></a>
 </div>
 </div>
 

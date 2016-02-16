@@ -1,6 +1,5 @@
 from .model import SyUser, UserCode
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, HttpResponseBadRequest
-from .model import UserCode
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as userlogin
 from django.contrib.auth import logout as userlogout
@@ -9,6 +8,8 @@ from django import forms
 from django.http import QueryDict
 from django.shortcuts import render
 from .model import Product, Address, Order,OrderDetail
+from random import choice
+from datetime import date
 import random
 import urllib.parse
 import json
@@ -51,14 +52,24 @@ def login(request):
 			user = authenticate(cellphone=cell, code_input=code)
 			if user is not None:
 				userlogin(request, user)
-				if 'redirect_to' in request.POST:
-					redirect_url = request.POST['redirect_url']
+				if 'redirect' in request.POST:
+					redirect_url = request.POST['redirect']
 				return HttpResponseRedirect(redirect_url)
 	else:
 		if 'redirect_to' in request.GET:
 			redirect_url = request.GET['redirect_to']
 		form = LoginForm()
-	return render(request, 'suiyuan/login.html', {'form': form, 'redirect': redirect_url})
+	login_bool = request.user.is_authenticated()
+	if login_bool:
+		login_user = request.user.cellphone
+	else:
+		login_user = None
+	return render(request, 'suiyuan/login.html', {
+		'form': form,
+		'redirect': redirect_url,
+		'login_bool': login_bool,
+		'user':login_user
+	})
 
 
 @login_required(redirect_field_name="redirect_to")
@@ -68,41 +79,64 @@ def status(request):
 
 @login_required(redirect_field_name="redirect_to")
 def order_confirm(request):
-	if request.method != 'POST':
-		return HttpResponseBadRequest()
-	cart_id = request.POST['id']
-	cart_count = request.POST['count']
-	cart_id_list = cart_id.split(',')
-	cart_count_list = cart_count.split(',')
-	return_cart = []
-	total = 0
-	total_count = 0
-	try:
-		if len(cart_id_list) != len(cart_count_list):
-			raise KeyError
-
-		for i, pr in enumerate(cart_id_list):
-			product = Product.objects.get(product_index=pr)
-			count = int(cart_count_list[i])
-			if count <= 0:
+	if request.method == 'GET':
+		if 'product' in request.GET:
+			try:
+				pr_id = Product.objects.get(product_index=request.GET['product'])
+			except Product.DoesNotExist:
+				return HttpResponseNotFound()
+			return_cart = [{
+				'product': pr_id,
+				'count': 1,
+				'total': pr_id.product_prize
+			}]
+			total_count = 1
+			total = pr_id.product_prize
+		else:
+			return HttpResponseBadRequest()
+	elif request.method == 'POST':
+		if 'cart_pk' not in request.session:
+			return HttpResponseRedirect('/user/cart/')
+		if not request.POST.get('cart_pk') == request.session['cart_pk']:
+			return HttpResponseRedirect('/user/cart/')
+		del request.session['cart_pk']
+		cart_id = request.POST['id']
+		cart_count = request.POST['count']
+		cart_id_list = cart_id.split(',')
+		cart_count_list = cart_count.split(',')
+		return_cart = []
+		total = 0
+		total_count = 0
+		try:
+			if len(cart_id_list) != len(cart_count_list):
 				raise KeyError
-			pr_total = product.product_prize * count
-			total += pr_total
-			total_count + count
-			return_cart.append({
-				'product': product,
-				'count': count,
-				'total': pr_total
-			})
-	except KeyError or Product.DoesNotExist:
-		return HttpResponseBadRequest()
 
+			for i, pr in enumerate(cart_id_list):
+				product = Product.objects.get(product_index=pr)
+				count = int(cart_count_list[i])
+				if count <= 0:
+					raise KeyError
+				pr_total = product.product_prize * count
+				total += pr_total
+				total_count += count
+				return_cart.append({
+					'product': product,
+					'count': count,
+					'total': pr_total
+				})
+		except KeyError or Product.DoesNotExist:
+			return HttpResponseBadRequest()
+	else:
+		return HttpResponseBadRequest()
 	address = Address.objects.filter(user=request.user)
+	data_index = ''.join([choice('AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxyZz0123456789') for i in range(20)])
+	request.session['order_pk'] = data_index
 	return render(request, "suiyuan/order_confirm.html", {
 		'order': return_cart,
 		'total': total,
 		'total_count': total_count,
-		'address': address
+		'address': address,
+		'order_pk': data_index
 	})
 
 
@@ -183,11 +217,22 @@ def order_request(request):
 	if request.method != 'POST':
 		return HttpResponseBadRequest()
 
+	#check code
+	print()
+	if 'order_pk' not in request.session:
+		return HttpResponseBadRequest()
+	session_order_code = request.session['order_pk']
+	del request.session['order_pk']
+	if request.POST.get('order_pk') != session_order_code:
+		return HttpResponseBadRequest()
+
 	id_list = request.POST.get('id', '').split(',')
 	count_list = request.POST.get('count', '').split(',')
 	address = request.POST['address']
-	address_obj = Address.objects.get(id=int(address[-9:]))
-	order = Order.objects.create(order_total=0, order_address=address_obj.short(), order_buyer=request.user, order_username=address_obj.name)
+	address_obj = Address.objects.get(data_index=address)
+	order = Order.objects.create(order_total=0, order_address=address_obj.short(), order_buyer=request.user,
+	                             order_username= address_obj.name, order_pay=None, order_status="paying",
+	                             order_cellphone=address_obj.cellphone)
 	order.save()
 	total = 0
 	for i, ids in enumerate(id_list):
@@ -210,9 +255,61 @@ def order_request(request):
 	return return_render
 
 
+@login_required(redirect_field_name='redirect_to')
+def order_detail(request, order_id):
+	try:
+		order = Order.objects.get(order_buyer=request.user, order_index=order_id)
+	except Order.DoesNotExist:
+		return HttpResponseNotFound()
+	order_detail = OrderDetail.objects.filter(order_id=order)
+	if order.order_status == "paying":
+		order_info = "您的订单已提交，请尽快付款"
+	elif order.order_status == "waiting":
+		order_info = "您的订单已确认，正等待系统处理"
+	elif order.order_status == "processing":
+		order_info = "系统已经处理了您的订单，等待出货中"
+	elif order.order_status == "finished":
+		order_info = "您的订单已出货，感谢您选择穗源"
+	else:
+		order_info = "订单状态异常，等待系统处理中"
+	return render(request, "suiyuan/order_detail.html", {
+		'order': order,
+		'order_detail': order_detail,
+		'order_info': order_info
+	})
+
+
+@login_required(redirect_field_name='redirect_to')
+def profile(request):
+	order_detail = {}
+	order_detail_first = {}
+	order_list_count = {}
+	order_list = Order.objects.filter(order_buyer=request.user)
+	if request.method == "GET":
+		if "selected" in request.GET:
+			order_list = order_list.filter(order_status=request.GET['selected'])
+	for order in order_list:
+		detail = OrderDetail.objects.filter(order_id=order)
+		order_list_count[order] = detail.count()
+		order_detail[order] = []
+		for i, obj in enumerate(detail):
+			if i == 0:
+				order_detail_first[order] = [obj]
+			else:
+				order_detail[order].append(obj)
+	address = Address.objects.filter(user=request.user)
+	return render(request, "suiyuan/profile.html", {
+		'order_list': order_list,
+		'order_detail': order_detail,
+		'order_detail_first': order_detail_first,
+		'product_count': order_list_count,
+		'address':address
+	})
+
+
 def logout(request):
 	userlogout(request)
-	return HttpResponse()
+	return HttpResponseRedirect('/user/login/')
 
 
 def cart(request):
@@ -234,8 +331,14 @@ def cart(request):
 			total_count += count
 		except Product.DoesNotExist:
 			continue
-
-	return render(request, "suiyuan/cart.html", {'cart':return_cart, 'total':total, 'total_count':total_count})
+	data_index = ''.join([choice('AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxyZz0123456789') for i in range(20)])
+	request.session['cart_pk'] = data_index
+	return render(request, "suiyuan/cart.html", {
+		'cart': return_cart,
+		'total': total,
+		'total_count': total_count,
+		'cart_pk': data_index
+	})
 
 
 def user_code_see(request, cellphone):
@@ -245,7 +348,7 @@ def user_code_see(request, cellphone):
 
 def user_code_gen(request, cellphone):
 	if len(cellphone) == 11:
-		code = random.randint(100000,999999)
+		code = random.randint(100000, 999999)
 	else:
 		return HttpResponse('None')
 	try:
@@ -254,4 +357,4 @@ def user_code_gen(request, cellphone):
 	except UserCode.DoesNotExist:
 		usercode = UserCode.objects.create(usercode=cellphone,code=code)
 	usercode.save()
-	return HttpResponse(str(usercode.code))
+	return HttpResponse(json.dumps({'code': usercode.code, 'status': 'true'}))

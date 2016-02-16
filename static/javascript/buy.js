@@ -289,7 +289,8 @@ $('#order-confirm-btn').click(function(){
     $.StandardPost('/order/request/',{
         id:id_list,
         count:count_list,
-        address:$('#address-list').attr('data-selected')
+        address:$('#address-list').attr('data-selected'),
+        order_pk:$('#order-pk').val()
     });
 });
 
@@ -313,7 +314,8 @@ function request_order(){
     });
     $.StandardPost('/order/confirm/',{
         id:id_list,
-        count:count_list
+        count:count_list,
+        cart_pk:$('#cart-pk').val()
     });
 }
 

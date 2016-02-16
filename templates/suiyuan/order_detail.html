@@ -1,0 +1,65 @@
+{% extends "product_base.html" %}
+
+{% block product_content %}
+<div class="profile-bg">
+<div class="container">
+<div class="order-detail-container">
+    <div class="panel-white-radis">
+        <h4 style="color: darkred">订单详情</h4>
+        <p>订单号：<strong>{{ order.order_index }}</strong></p>
+        <p>状态：<span style="color: #449d44">{{ order.status }}</span></p>
+        <p>{{ order_info }}</p>
+    </div>
+    <div class="panel-white-radis">
+        <div class="order-detail-header">
+            <h4 style="margin-bottom: 20px">订单信息</h4>
+            <div class="order-detail-address">
+                <h5><strong>地址信息</strong></h5>
+                <p>收货人：{{ order.order_username }}</p>
+                <p>地址：{{ order.order_address }}</p>
+                <p>联系电话：{{ order.order_cellphone }}</p>
+            </div>
+            <div class="sep"></div>
+            <div class="order-detail-payment">
+                <h5><strong>付款信息</strong></h5>
+                <p>付款状态：{{ order.order_username }}</p>
+                <p>付款方式：{{ order.order_address }}</p>
+                <p>付款日期：{{ order.order_cellphone }}</p>
+            </div>
+            <div class="sep"></div>
+            <div class="order-detail-list">
+                <h5><strong>商品清单</strong></h5>
+            <ul class="order-bar-list">
+    <li class="order-bar-pic"></li>
+    <li class="order-bar-name">商品名称</li>
+    <li class="order-bar-price center">单价（元）</li>
+    <li class="order-bar-number center">数量</li>
+    <li class="order-bar-price-total center">小计（元）</li>
+</ul>
+                    <ul class="order-product-list" id="order-list">
+                    {% for pr in order_detail %}
+                    <li data-id={{ pr.order_product.product_index }}>
+                        <ul class="order-product-detail">
+                            <li class="order-bar-pic">
+                                <a href={{ pr.order_product.get_absolute_url }}>
+                                    <img src={{ pr.order_product.product_img.url }} alt="">
+                                </a>
+                            </li>
+                            <li class="order-bar-name"><a href={{ pr.order_product.get_absolute_url }}>{{ pr.order_product.product_name }}</a></li>
+                            <li class="order-bar-price center">{{ pr.order_price }}</li>
+                            <li class="order-bar-number center box-container">{{ pr.order_count }}</li>
+                            <li class="order-bar-price-total center">{{ pr.order_price }}</li>
+                        </ul>
+                    </li>
+                    {% endfor %}
+                    </ul>
+                <div class="total-price"><span>订单总额：</span>￥{{ order.order_total }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+{% endblock %}

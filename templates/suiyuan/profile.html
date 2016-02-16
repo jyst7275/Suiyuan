@@ -1,0 +1,171 @@
+{% extends "product_base.html" %}
+
+{% block product_content %}
+    <div class="profile-bg">
+    <div class="container">
+        <div class="my-order-container">
+            <h4>我的订单</h4>
+            <div class="my-order-panel">
+                <div class="panel-header">
+                    <ul>
+                        <li class="selected"><a href="/user/profile/">全部订单</a></li>
+                        <li><a href="/user/profile/?selected=paying">待付款</a></li>
+                        <li><a href="/user/profile/?selected=waiting">待发货</a></li>
+                        <li><a href="/user/profile/?selected=finished">订单完成</a></li>
+                    </ul>
+                </div>
+                <div class="order-panel-content">
+                    <table class="order-panel-header">
+                        <tr>
+                         <td class="myorder-header-detail center">订单详情</td>
+                        <td class="myorder-header-name center">收货人</td>
+                        <td  class="myorder-header-price center">金额</td>
+                        <td  class="myorder-header-status center">状态</td>
+                        </tr>
+
+                    </table>
+                    {% if order_list %}
+                    <ul class="my-order-list">
+                    {% for order in order_list %}
+                       <li class="myorder-detail">
+                       <div class="header">
+                           订单号：{{ order.order_index }} <span style="margin-left: 10px">{{ order.order_date }}</span>
+                       </div>
+                        <table>
+                            <tbody>
+                            {% for pr in order_detail_first|get_item:order %}
+                            <tr class="order-detail-row">
+                                <td class="myorder-header-detail">
+                                    <img src={{ pr.order_product.product_img.url }} alt="">
+                                    <a href={{ pr.order_product.get_absolute_url }}>{{ pr.order_product.product_name }}</a>
+                                    <span class="myorder-detail-count">￥{{ pr.order_price }}</span>
+                                    <span class="myorder-detail-count">x{{ pr.order_count }}</span>
+                                </td>
+                                <td class="myorder-header-name center" rowspan={{ product_count|get_item:order }}>
+                                    <div class="myorder-detail-address">{{ order.order_username }}</div>
+                                    <div class="float-div-container">
+                                        <div class="float-div">
+                                            <p>{{ order.order_username }}</p>
+                                            <p>{{ order.order_address }}</p>
+                                            <p>{{ order.order_cellphone }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="myorder-header-price center" rowspan={{ product_count|get_item:order }}>
+                                    ￥{{ order.order_total }}
+                                    <br>
+                                    在线支付
+                                </td>
+                                <td class="myorder-header-status center" rowspan={{ product_count|get_item:order }}>
+                                    {{ order.status }}
+                                    <br>
+                                    <a href={{ order.get_absolute_url }}>查看订单</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+                            {% if order_detail|get_item:order %}
+                            {% for pr in order_detail|get_item:order %}
+                            <tr class="order-detail-row">
+                                <td class="myorder-header-detail">
+                                    <img src={{ pr.order_product.product_img.url }} alt="">
+                                    <a href={{ pr.order_product.get_absolute_url }}>
+                                        {{ pr.order_product.product_name }}
+                                    </a>
+                                    <span class="myorder-detail-count">x{{ pr.order_count }}</span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+
+                            </tbody>
+                        </table>
+                       </li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="my-address-container">
+                <div class="order-bar-header">
+        <strong>收件人信息</strong>
+    </div>
+        <ul class="order-address-list" id="address-list" data-selected="">
+            {% for add in address %}
+            <li data-id={{ add.data_index }}>
+                <div class="address-edit">
+                    <a class="address-edit-btn" href="javascript:void(0)">编辑</a>
+                    <a class="address-remove-btn" href="javascript:void(0)">删除</a>
+                </div>
+                <div class="address-short">{{ add.name }} {{ add.province }}{{ add.city }}</div>
+                <div class="address-name">{{ add.name }}</div>
+                <div class="address-long">{{ add.province }}{{ add.city }}{{ add.country }}{{ add.detail }}</div>
+                <div class="address-cellphone">{{ add.cellphone }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+        <div id="address-no-reminder">
+            请选择收件人信息
+        </div>
+        <a href="javascript:add_address()">增加收件地址</a>
+        </div>
+    </div>
+        <div class="reveal-modal" id="add-address">
+        <div class="add-address-topbar">
+            <div class="window-cancel">
+                <i class="fa fa-close"></i>
+            </div>
+            增加收件人
+        </div>
+        <form id="add-address-form" action="/user/address/">
+            <div id="address-name" class="form-inline">
+                <span>收&nbsp&nbsp货&nbsp&nbsp人：</span>
+                <input type="text" name="address-username" class="form-control" placeholder="收件人">
+            </div>
+            <div id="address-dis" class="form-inline"><span>所在地区：</span>
+                <input class="form-control" type="text" name="address-province" placeholder="省份">
+                <input class="form-control" type="text" name="address-city" placeholder="城市">
+                <input class="form-control" type="text" name="address-country" placeholder="县/区">
+            </div>
+            <div id="address-address" class="form-inline">
+                <span>详细地址：</span>
+                <textarea name="address-detail" class="form-control" placeholder="详细地址（街道）"></textarea>
+            </div>
+            <div id="address-cell" class="form-inline">
+                <span>手机号码：</span>
+                <input type="text" name="address-cellphone" class="form-control" placeholder="请输入11位手机号">
+            </div>
+        </form>
+            <button id="add-address-submit" class="btn btn-primary">提交</button>
+    </div>
+    <div class="reveal-modal" id="edit-address">
+        <div class="add-address-topbar">
+            <div class="window-cancel">
+                <i class="fa fa-close"></i>
+            </div>
+            编辑收件人
+        </div>
+        <form id="add-address-form" action="/user/address/">
+            <div id="address-name" class="form-inline">
+                <span>收&nbsp&nbsp货&nbsp&nbsp人：</span>
+                <input type="text" name="address-username" class="form-control" placeholder="收件人">
+            </div>
+            <div id="address-dis" class="form-inline"><span>所在地区：</span>
+                <input class="form-control" type="text" name="address-province" placeholder="省份">
+                <input class="form-control" type="text" name="address-city" placeholder="城市">
+                <input class="form-control" type="text" name="address-country" placeholder="县/区">
+            </div>
+            <div id="address-address" class="form-inline">
+                <span>详细地址：</span>
+                <textarea name="address-detail" class="form-control" placeholder="详细地址（街道）"></textarea>
+            </div>
+            <div id="address-cell" class="form-inline">
+                <span>手机号码：</span>
+                <input type="text" name="address-cellphone" class="form-control" placeholder="请输入11位手机号">
+            </div>
+        </form>
+            <button id="edit-address-submit" class="btn btn-primary">提交</button>
+    </div>
+    </div>
+{% endblock %}

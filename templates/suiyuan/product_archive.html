@@ -11,16 +11,16 @@
         <ul class="app-product-archive-selector-list">
             <li {% if index_type|item_eq:"all" %} class="app-active" {% endif %}><a href="/products/archives/all">全部</a></li>
             {% for pc in pc_list %}
-                <li {% if index_type|item_eq:pc.index %} class="app-active" {% endif %} role="button" data-target="product-subset-{{ pc.index }}"><a href={{ pc.get_absolute_url }}>{{ pc.category }}</a></li>
+                <li {% if index_type|item_eq:pc.category %} class="app-active" {% endif %} role="button" data-target="product-subset-{{ pc.index }}"><a href={{ pc.get_absolute_url }}>{{ pc.category }}</a></li>
             {% endfor %}
         </ul>
         <div class="app-product-archive-subcontainer">
         {% for pc in pc_list %}
         {% if pc_list|get_item:pc %}
-        <ul {% if index_type|item_eq:pc.index %} class="app-active app-product-archive-sublist" {% else %} class="app-product-archive-sublist" {% endif %} id="product-subset-{{ pc.index }}">
+        <ul {% if index_type|item_eq:pc.category %} class="app-active app-product-archive-sublist" {% else %} class="app-product-archive-sublist" {% endif %} id="product-subset-{{ pc.index }}">
             <li {% if index_type_sub|item_eq:"all" %} class="app-active" {% endif %} role="button"><a href={{ pc.get_absolute_url }}>全部</a></li>
             {% for sub_pc in pc_list|get_item:pc %}
-            <li {% if sub_pc.index|item_eq:index_type_sub %} class="app-active" {% endif %} role="button"><a href={{ sub_pc.get_absolute_url }}>{{ sub_pc.category }}</a></li>
+            <li {% if sub_pc.category|item_eq:index_type_sub %} class="app-active" {% endif %} role="button"><a href={{ sub_pc.get_absolute_url }}>{{ sub_pc.category }}</a></li>
             {% endfor %}
         </ul>
         {% endif %}
@@ -65,9 +65,9 @@
                 <div class="btn-container buy-product-one" role="button" data-buy={{ product.product_index }}>
                     加入购物车
                 </div>
-                <div class="buy-container">
-                    100人购买
-                </div>
+                <a href="/order/confirm/?product={{ product.product_index }}"><div class="buy-container quick-buy">
+                    立即购买
+                </div></a>
             </li>
             {% endfor %}
         </ul>
