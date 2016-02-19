@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/about-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/about-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/about-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/data-get-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/data-get-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/data-get.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/product_img.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/product_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/product_img.xcf" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/product-img.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/img/what-1.jpg" afterPath="$PROJECT_DIR$/static/img/what-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/img/login_img.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/buy.css" afterPath="$PROJECT_DIR$/static/css/buy.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/man.css" afterPath="$PROJECT_DIR$/static/css/man.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/buy.js" afterPath="$PROJECT_DIR$/static/javascript/buy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/man.js" afterPath="$PROJECT_DIR$/static/javascript/man.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/admin.py" afterPath="$PROJECT_DIR$/suiyuan/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/model.py" afterPath="$PROJECT_DIR$/suiyuan/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/rest.py" afterPath="$PROJECT_DIR$/suiyuan/rest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/settings.py" afterPath="$PROJECT_DIR$/suiyuan/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/urls.py" afterPath="$PROJECT_DIR$/suiyuan/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/user_man.py" afterPath="$PROJECT_DIR$/suiyuan/user_man.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/views.py" afterPath="$PROJECT_DIR$/suiyuan/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product_base.html" afterPath="$PROJECT_DIR$/templates/product_base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/about.html" afterPath="$PROJECT_DIR$/templates/suiyuan/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/article.html" afterPath="$PROJECT_DIR$/templates/suiyuan/article.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/contact.html" afterPath="$PROJECT_DIR$/templates/suiyuan/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/index.html" afterPath="$PROJECT_DIR$/templates/suiyuan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/login.html" afterPath="$PROJECT_DIR$/templates/suiyuan/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/news.html" afterPath="$PROJECT_DIR$/templates/suiyuan/news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" afterPath="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/order_detail.html" afterPath="$PROJECT_DIR$/templates/suiyuan/order_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/product_detail.html" afterPath="$PROJECT_DIR$/templates/suiyuan/product_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/products.html" afterPath="$PROJECT_DIR$/templates/suiyuan/products.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suiyuan/profile.html" afterPath="$PROJECT_DIR$/templates/suiyuan/profile.html" />
     </list>
     <ignored path="suiyuan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -308,6 +274,86 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="line" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -645,7 +691,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455639947001</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finished&#10;todo&#10;1\404,400&#10;2\alipay&#10;3\search&#10;">
+      <created>1455852441561</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1455852441561</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -663,23 +715,23 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2105579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299748" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3371069" sideWeight="0.50419164" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.49790043" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964029" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.49790043" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3371069" sideWeight="0.4958084" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -701,7 +753,8 @@
     <MESSAGE value="Finish Product indexing&#10;Finish Product Detail&#10;Finish Index Animation" />
     <MESSAGE value="Login System&#10;Index" />
     <MESSAGE value="Basic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic" />
+    <MESSAGE value="finished&#10;todo&#10;1\404,400&#10;2\alipay&#10;3\search&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished&#10;todo&#10;1\404,400&#10;2\alipay&#10;3\search&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -903,6 +956,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47862068">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -932,6 +986,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -939,6 +994,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.25">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -981,6 +1037,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.4393063">
           <caret line="94" column="77" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
+          <folding>
+            <element signature="n#for#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,6 +1104,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.76589596">
           <caret line="2075" column="0" selection-start-line="2075" selection-start-column="0" selection-end-line="2075" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
