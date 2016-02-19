@@ -13,7 +13,6 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 import random
 import urllib.parse
-import urllib.parse
 import json
 import requests
 import hashlib
