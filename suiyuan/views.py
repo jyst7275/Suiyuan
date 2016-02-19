@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.template import RequestContext, loader
 from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct, RecommendProduct
 from django.template.defaulttags import register
@@ -95,7 +95,10 @@ def about(request):
 def archives(request, year, month, day, title):
 	template = loader.get_template('suiyuan/article.html')
 	url = request.path
-	object_get = Passage.objects.get(pass_title=title, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
+	try:
+		object_get = Passage.objects.get(pass_title=title, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
+	except Passage.DoesNotExist:
+		return HttpResponseNotFound()
 	try:
 		object_next = object_get.get_next_by_pub_date()
 	except Passage.DoesNotExist:
