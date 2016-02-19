@@ -11,16 +11,22 @@
     <div class="app-product-archive-bar app-to-top">
         <div class="container">
             <ul class="app-product-archive-bar-list">
-                <li style="background: #c81118; width: 220px"><a href="/products/archives/all">所有商品</a></li>
-                <li><a href="/products/">首页</a></li>
-                <li style="float: right"><a href="/user/profile/">订单查询</a></li>
-                <li style="float: right"><a href="/user/cart/">购物车 <i class="fa fa-shopping-cart"></i></a></li>
-
+                <li class="app-product-bar-red"><a href="/products/archives/all">所有商品</a></li>
+                <li class="hidden-xs"><a href="/products/">首页</a></li>
+                {% if user.is_authenticated %}
+                <li class="hidden-xs" style="float: right"><a href="/user/logout/">登出</a></li>
+                <li class="hidden-xs" style="float: right"><a href="/user/profile/">用户中心</a></li>
+                {% else %}
+                <li class="hidden-xs" style="float: right"><a href="/user/login/">用户登录</a></li>
+                {% endif %}
+                <li class="hidden-xs" style="float: right"><a href="/user/cart/">购物车 <i class="fa fa-shopping-cart"></i></a></li>
+                <li class="visible-xs" style="float: right"><a href="/user/profile/"><i class="fa fa-user"></i></a></li>
+                <li class="visible-xs" style="float: right"><a href="/user/cart/"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </div>
     {% block product_content %}{% endblock %}
-    <div class="app-product-footer">
+    <div class="hidden-xs app-product-footer">
         <div class="container">
             <hr style="border-top: #f7f7f7 solid 1px;margin-bottom: 0;">
             <div class="app-product-footer-main">

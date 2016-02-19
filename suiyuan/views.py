@@ -3,8 +3,20 @@ from django.template import RequestContext, loader
 from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct, RecommendProduct
 from django.template.defaulttags import register
 from django.db.models import Q
+import qrcode as qrcode_maker
+from io import BytesIO
 import datetime
 import math
+
+
+@register.filter
+def oper_minus(a, b):
+	return a - b
+
+
+@register.filter
+def oper_plus(a, b):
+	return a + b
 
 
 @register.filter
@@ -45,7 +57,21 @@ def index(request):
 
 def news(request):
 	template = loader.get_template('suiyuan/news.html')
-	pass_all = Passage.objects.all()
+	pass_all = Passage.objects.filter(pass_status="published")
+	type_list = ['app-active ', '', '', '']
+	if request.method == 'GET':
+
+		pass_type = request.GET.get('passage', '')
+		if not pass_type == "":
+			type_list[0] = ''
+			pass_all = pass_all.filter(pass_type=pass_type)
+		if pass_type == 'news':
+			type_list[1] = 'app-active '
+		elif pass_type == 'business':
+			type_list[2] = 'app-active '
+		elif pass_type == 'health':
+			type_list[3] = 'app-active '
+
 	top_news = Topnews.objects.latest('set_date')
 	page_count = math.ceil(pass_all.count()/6)
 	try:
@@ -56,7 +82,8 @@ def news(request):
 		"passage_list": pass_all,
 		"top_news": top_news,
 		"flow_news": flow_news,
-		"page_count": page_count
+		"page_count": page_count,
+		"type_list": type_list
 	})))
 
 
@@ -67,6 +94,7 @@ def about(request):
 
 def archives(request, year, month, day, title):
 	template = loader.get_template('suiyuan/article.html')
+	url = request.path
 	object_get = Passage.objects.get(pass_title=title, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
 	try:
 		object_next = object_get.get_next_by_pub_date()
@@ -79,8 +107,24 @@ def archives(request, year, month, day, title):
 	return HttpResponse(template.render(RequestContext(request, {
 		"passage": object_get,
 		"passage_next": object_next,
-		"passage_prev": object_prev
+		"passage_prev": object_prev,
+		"current_url": url
 	})))
+
+
+def qrcode(request, url):
+	get_num = '?action=qrcode'
+	for key in request.GET:
+		get_num += '&{0}={1}'.format(key, request.GET[key])
+	url = "http://10.0.0.102:8080" + url + get_num
+	img = qrcode_maker.make(url)
+	buf = BytesIO()
+	img.save(buf)
+	image_stream = buf.getvalue()
+	response = HttpResponse(image_stream, content_type='image/png')
+	response['Last-Modified'] = 'Thu, 18 Feb 2016 02:05:03 GMT'
+	response['Cache-Control'] = 'max-age=31536000'
+	return response
 
 
 def get_cat(fo):
@@ -103,7 +147,7 @@ def products(request):
 	product_dict = {}
 	pc_dict = {}
 	pc_list = ProductCategory.objects.all()
-	product_list = Product.objects.all()
+	product_list = Product.objects.filter(product_status="on")
 	hot_list = Hotproduct.objects.all()
 	for foo in product_list:
 		main_ca = get_cat(foo)
@@ -197,5 +241,6 @@ def product_details(request, product_category, product_index):
 	recommend_list = RecommendProduct.objects.all()
 	return HttpResponse(template.render(RequestContext(request, {
 		"product": obj,
-		"recommend_list": recommend_list
+		"recommend_list": recommend_list,
+		'current_url': '/order/confirm/?product='+product_index
 	})))

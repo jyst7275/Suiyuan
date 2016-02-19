@@ -9,10 +9,14 @@ from django.http import QueryDict
 from django.shortcuts import render
 from .model import Product, Address, Order,OrderDetail
 from random import choice
-from datetime import date
+from django.utils import timezone
+from django.core.paginator import Paginator
 import random
 import urllib.parse
+import urllib.parse
 import json
+import requests
+import hashlib
 
 
 class LoginForm(forms.Form):
@@ -43,7 +47,7 @@ class UserBackend(object):
 
 
 def login(request):
-	redirect_url = '/user/status/'
+	redirect_url = '/user/profile/'
 	if request.method == 'POST':
 		form = LoginForm(request.POST)
 		if form.is_valid():
@@ -270,6 +274,10 @@ def order_detail(request, order_id):
 		order_info = "系统已经处理了您的订单，等待出货中"
 	elif order.order_status == "finished":
 		order_info = "您的订单已出货，感谢您选择穗源"
+	elif order.order_status == 'cancelpending':
+		order_info = "您的取消请求已提交，正等待系统处理"
+	elif order.order_status == 'canceled':
+		order_info = "您的订单已取消"
 	else:
 		order_info = "订单状态异常，等待系统处理中"
 	return render(request, "suiyuan/order_detail.html", {
@@ -285,10 +293,19 @@ def profile(request):
 	order_detail_first = {}
 	order_list_count = {}
 	order_list = Order.objects.filter(order_buyer=request.user)
+	selected = "all"
+	page_now = 1
 	if request.method == "GET":
 		if "selected" in request.GET:
-			order_list = order_list.filter(order_status=request.GET['selected'])
-	for order in order_list:
+			selected = request.GET['selected']
+			order_list = order_list.filter(order_status=selected)
+		if "page" in request.GET:
+			page_now = int(request.GET['page'])
+	paginator = Paginator(order_list, 5)
+	if not 0 <= page_now <= paginator.num_pages:
+		return HttpResponseNotFound()
+	p = paginator.page(page_now)
+	for order in p.object_list:
 		detail = OrderDetail.objects.filter(order_id=order)
 		order_list_count[order] = detail.count()
 		order_detail[order] = []
@@ -298,12 +315,35 @@ def profile(request):
 			else:
 				order_detail[order].append(obj)
 	address = Address.objects.filter(user=request.user)
+
+	selected_after = ''
+	selected_list = ['', '', '', '', '']
+	if selected == 'all':
+		selected_list[0] = 'selected'
+	elif selected == 'paying':
+		selected_list[1] = 'selected'
+	elif selected == 'waiting':
+		selected_list[2] = 'selected'
+	elif selected == 'processing':
+		selected_list[3] = 'selected'
+	elif selected == 'finished':
+		selected_list[4] = 'selected'
+
+	if not selected == "all":
+		selected_after = "&selected=%s" % selected
+
 	return render(request, "suiyuan/profile.html", {
-		'order_list': order_list,
+		'order_list': p.object_list,
 		'order_detail': order_detail,
 		'order_detail_first': order_detail_first,
 		'product_count': order_list_count,
-		'address':address
+		'address': address,
+		'selected_after': selected_after,
+		'selected_list': selected_list,
+		'page_now': page_now,
+		'page_total': paginator.num_pages,
+		'has_next': p.has_next(),
+		'has_prev': p.has_previous()
 	})
 
 
@@ -346,7 +386,31 @@ def user_code_see(request, cellphone):
 	return HttpResponse(usercode.code)
 
 
+def sendcode(cellphone, code):
+	mymd5 = hashlib.md5()
+	mymd5.update(b'jy727580')
+	password = mymd5.hexdigest()
+	content = '您的验证码是：【%s】。请不要把验证码泄露给其他人。' % code
+	sendvalue = {
+		'method': 'Submit',
+		'account': 'cf_jyst7275',
+		'password': password,
+		'mobile': cellphone,
+		'content': content
+	}
+	url = 'http://106.ihuyi.cn/webservice/sms.php?method=Submit'
+	r = requests.post(url, sendvalue)
+	print(r.content.decode('utf-8'))
+
+
 def user_code_gen(request, cellphone):
+	try:
+		code_before = UserCode.objects.get(usercode=cellphone)
+		time_delta = (timezone.now() - code_before.last_request).seconds
+		if time_delta <= 60:
+			return HttpResponseBadRequest("请不要重复请求")
+	except UserCode.DoesNotExist:
+		pass
 	if len(cellphone) == 11:
 		code = random.randint(100000, 999999)
 	else:
@@ -355,6 +419,30 @@ def user_code_gen(request, cellphone):
 		usercode = UserCode.objects.get(usercode=cellphone)
 		usercode.code = code
 	except UserCode.DoesNotExist:
-		usercode = UserCode.objects.create(usercode=cellphone,code=code)
+		usercode = UserCode.objects.create(usercode=cellphone, code=code)
 	usercode.save()
+	# sendcode(cellphone, str(code))
 	return HttpResponse(json.dumps({'code': usercode.code, 'status': 'true'}))
+
+
+@login_required(redirect_field_name='redirect_to')
+def address_location(request):
+	if request.method != 'POST':
+		return HttpResponseBadRequest()
+	try:
+		long = request.POST['long']
+		lat = request.POST['lat']
+		long = float(long) + 0.008774687519
+		lat = float(lat) + 0.00374531687912
+	except KeyError:
+		return HttpResponseBadRequest
+	url = 'http://api.map.baidu.com/geocoder/v2/?output=json&ak=u75trxs2Sm6TsanHVanYIopW&location={0},{1}'.format(lat,long)
+	r = requests.get(url)
+	r_json = r.json()
+	address_json = {
+		'province': r_json['result']['addressComponent']['province'],
+		'city': r_json['result']['addressComponent']['city'],
+		'country': r_json['result']['addressComponent']['district'],
+		'detail': r_json['result']['formatted_address']
+	}
+	return HttpResponse(json.dumps(address_json))

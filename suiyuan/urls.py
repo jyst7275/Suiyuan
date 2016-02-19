@@ -38,10 +38,12 @@ urlpatterns = [
     url(r'^order/confirm/$', user_man.order_confirm),
     url(r'^order/request/$',user_man.order_request),
     url(r'^v1/user/address/$', user_man.order_address),
+    url(r'^v1/user/address/location/', user_man.address_location),
     url(r'^v1/user/address/([0-9]+)/$', user_man.address_oper),
     url(r'^v1/user/sendcode/([0-9]+)/$', user_man.user_code_gen),
     url(r'^contact', views.contact),
     url(r'^people', views.people),
     url(r'^summernote/', include('django_summernote.urls')),
-    url(r'^v1/passage/([\w]+)/$', rest.PassageDetail.as_view())
+    url(r'^v1/passage/([\w]+)/$', rest.PassageDetail.as_view()),
+    url(r'^v1/qrcode/(.+)$', views.qrcode)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

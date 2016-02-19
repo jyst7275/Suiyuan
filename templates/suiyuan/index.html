@@ -312,7 +312,7 @@ $(document).scroll(function(){
         bar_transparent = true;
         $('.app-nav').css('animation','nav-change-reverse 1s forwards');
     }
-    if(hi > $('#line-section-1').offset().top)
+    if(hi > $('#line-section-1').offset().top && hi < $('.app-customer').offset().top)
         $('.app-nav').css('display','none');
     else
         $('.app-nav').css('display','block');

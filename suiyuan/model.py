@@ -5,18 +5,42 @@ from uuslug import slugify
 from django.utils.html import format_html
 from random import choice
 from datetime import date
+
+
+class ProductBanner(models.Model):
+	banner_name = models.CharField('标签名', max_length=10)
+	banner_img = models.ImageField('标签图', upload_to='uploads/banner/')
+
+	class Meta:
+		verbose_name_plural = '产品标签'
+		verbose_name = '产品标签'
+
+	def __str__(self):
+		return self.banner_name
+
+
 class UserCode(models.Model):
-	usercode = models.CharField(max_length=20,primary_key=True)
+	usercode = models.CharField(max_length=20, primary_key=True)
 	code = models.CharField(max_length=6)
+	last_request = models.DateTimeField(auto_now=True)
 
 
 class Passage(models.Model):
-	pub_date = models.DateTimeField('date published', default=timezone.now())
-	pass_type = models.CharField(max_length=20, choices=(("News", "公司新闻"), ("Business", "行业动态"), ("Health", "健康知识")))
-	pass_title = models.CharField(max_length=100)
-	pass_summery = models.CharField(max_length=500)
-	pass_img = models.ImageField(upload_to='uploads/%Y/%m/%d/', null=True)
-	pass_content = models.TextField()
+	pub_date = models.DateTimeField('日期', default=timezone.now())
+	pass_type = models.CharField('文章类型', max_length=20, choices=(("News", "公司新闻"), ("Business", "行业动态"), ("Health", "健康知识")))
+	pass_title = models.CharField('文章标题', max_length=100)
+	pass_summery = models.CharField('文章简介', max_length=500)
+	pass_img = models.ImageField('文章图片', upload_to='uploads/%Y/%m/%d/', null=True)
+	pass_content = models.TextField('文章内容')
+	pass_status = models.CharField('文章状态', max_length=20, choices=(
+		("published", "发布"),
+		('draft', "草稿"),
+		('withdraw', "撤回")
+	))
+
+	class Meta:
+		verbose_name = '文章管理'
+		verbose_name_plural = '文章管理'
 
 	def img_url(self):
 		return self.pass_img.url
@@ -36,25 +60,42 @@ class Passage(models.Model):
 
 
 class Flownews(models.Model):
-	passage = models.ForeignKey(Passage, on_delete=models.CASCADE)
+	passage = models.ForeignKey(Passage, on_delete=models.CASCADE, verbose_name='文章')
+
+	class Meta:
+		verbose_name = '滚动新闻'
+		verbose_name_plural = '滚动新闻'
 
 	def __str__(self):
 		return self.passage.pass_title
 
 
 class Topnews(models.Model):
-	title = models.CharField(max_length=100)
-	summery = models.CharField(max_length=500)
-	set_date = models.DateTimeField('Latest', default=timezone.now)
-	passage = models.ForeignKey(Passage, on_delete=models.CASCADE)
+	title = models.CharField('标题', max_length=100)
+	summery = models.CharField('简介', max_length=500)
+	set_date = models.DateTimeField('设置日期', default=timezone.now)
+	passage = models.ForeignKey(Passage, on_delete=models.CASCADE, verbose_name='所选文章')
+
+	class Meta:
+		verbose_name = '最新消息'
+		verbose_name_plural = '最新消息'
+
+	def __str__(self):
+		return self.title
+
+	def get_absolute_url(self):
+		return '/news/'
 
 
 class ProductCategory(models.Model):
-	category = models.CharField(max_length=100)
-	is_subclass = models.BooleanField()
-	img = models.ImageField(upload_to='uploads/productCategory/')
-	count = models.IntegerField()
-	father = models.ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True)
+	category = models.CharField('种类名', max_length=100)
+	is_subclass = models.BooleanField('是否子类')
+	img = models.ImageField('种类图片', upload_to='uploads/productCategory/')
+	father = models.ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True, verbose_name='父类别')
+
+	class Meta:
+		verbose_name = '产品种类'
+		verbose_name_plural = '产品种类'
 
 	def get_absolute_url(self):
 		return "/products/archives/" + self.category
@@ -64,19 +105,28 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
-	product_name = models.CharField(max_length=100)
-	product_index = models.SlugField(max_length=100)
-	product_img = models.ImageField(upload_to='uploads/product/')
-	product_summery = models.CharField(max_length=200)
-	product_description = models.TextField()
-	product_prize = models.FloatField()
-	product_category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
-	product_date = models.DateField("Up_to_Market", default=timezone.datetime.today().date().replace(2012, 1, 1))
-	img_1 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
-	img_2 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
-	img_3 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
-	img_4 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
-	img_5 = models.ImageField(upload_to='uploads/product/', null=True, blank=True)
+	product_name = models.CharField('产品名', max_length=100)
+	product_index = models.SlugField('产品id', max_length=100)
+	product_img = models.ImageField('产品图片', upload_to='uploads/product/')
+	product_summery = models.CharField('产品简介（很短）', max_length=200)
+	product_description = models.TextField('产品介绍')
+	product_prize = models.FloatField('产品价格')
+	product_category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, verbose_name='产品种类')
+	product_date = models.DateField("上市日期", default=timezone.datetime.today().date().replace(2012, 1, 1))
+	product_status = models.CharField('产品状态', max_length=20, choices=(
+		("on", "销售中"),
+		('out', "已下架"),
+		('off', "暂不可用")
+	))
+	img_1 = models.ImageField('产品图1', upload_to='uploads/product/', null=True, blank=True)
+	img_2 = models.ImageField('产品图2', upload_to='uploads/product/', null=True, blank=True)
+	img_3 = models.ImageField('产品图3', upload_to='uploads/product/', null=True, blank=True)
+	img_4 = models.ImageField('产品图4', upload_to='uploads/product/', null=True, blank=True)
+	img_5 = models.ImageField('产品图5', upload_to='uploads/product/', null=True, blank=True)
+
+	class Meta:
+		verbose_name = '产品'
+		verbose_name_plural = '产品'
 
 	def img_set(self):
 		return [self.img_1, self.img_2, self.img_3, self.img_4, self.img_5]
@@ -105,14 +155,23 @@ class Product(models.Model):
 
 
 class RecommendProduct(models.Model):
-	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+	product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='商品名')
+
+	class Meta:
+		verbose_name = '推荐产品'
+		verbose_name_plural = '推荐产品'
 
 	def __str__(self):
 		return self.product.product_name
 
 
 class Hotproduct(models.Model):
-	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+	product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='商品名')
+	banner = models.ForeignKey(ProductBanner, on_delete=models.CASCADE, verbose_name='标签', null=True)
+
+	class Meta:
+		verbose_name_plural = '首页产品'
+		verbose_name = '首页产品'
 
 	def __str__(self):
 		return self.product.product_name
@@ -136,11 +195,15 @@ class SyUserManager(BaseUserManager):
 
 
 class SyUser(AbstractBaseUser):
-	cellphone = models.CharField(max_length=20, unique=True)
-	username = models.CharField(max_length=20,default='nobody')
-	email = models.CharField(max_length=255)
-	is_active = models.BooleanField(default=True)
-	is_admin = models.BooleanField(default=False)
+	cellphone = models.CharField('手机号', max_length=20, unique=True)
+	username = models.CharField('用户名', max_length=20,default='nobody')
+	email = models.CharField('电子邮件', max_length=255)
+	is_active = models.BooleanField('激活', default=True)
+	is_admin = models.BooleanField('管理权限', default=False)
+
+	class Meta:
+		verbose_name = '用户'
+		verbose_name_plural = '用户'
 
 	objects = SyUserManager()
 
@@ -168,27 +231,45 @@ class SyUser(AbstractBaseUser):
 
 
 class OrderPay(models.Model):
-	pay_date = models.DateTimeField()
-	pay_method = models.CharField(max_length=200)
-	pay_data = models.CharField(max_length=200)
+	pay_date = models.DateTimeField('付款日期')
+	pay_method = models.CharField('付款方法', max_length=200)
+	pay_data = models.CharField('付款数据', max_length=200)
+
+	class Meta:
+		verbose_name = '订单付款'
+		verbose_name_plural = '订单付款'
 
 
 class Order(models.Model):
-	order_date = models.DateTimeField(default=timezone.datetime.now())
-	order_address = models.CharField(max_length=100)
-	order_total = models.FloatField()
-	order_buyer = models.ForeignKey(SyUser, on_delete=models.CASCADE)
-	order_username = models.CharField(max_length=10)
-	order_index =models.SlugField(max_length=20, null=True)
-	order_cellphone = models.CharField(max_length=20)
-	order_status = models.CharField(max_length=20,choices=(("paying", "待付款"), ("waiting", "待发货"), ("finished", "已完成")))
-	order_pay = models.OneToOneField(OrderPay, on_delete=models.CASCADE, null=True)
+	order_date = models.DateTimeField('订单日期', default=timezone.datetime.now())
+	order_address = models.CharField('地址', max_length=100)
+	order_total = models.FloatField('订单总额')
+	order_buyer = models.ForeignKey(SyUser, on_delete=models.CASCADE, verbose_name='购买账户')
+	order_username = models.CharField('收货人', max_length=10)
+	order_index =models.SlugField('订单id', max_length=20, null=True)
+	order_cellphone = models.CharField('联系人', max_length=20)
+	order_status = models.CharField('订单状态', max_length=20, choices=(
+		("paying", "待付款"),
+		("waiting", "待处理"),
+		("processing", "待出货"),
+		("finished", "已完成"),
+		("cancelpending", "取消请求中"),
+		('canceled', '取消成功')
+	))
+	order_pay = models.OneToOneField(OrderPay, on_delete=models.CASCADE, null=True, verbose_name='付款详情')
+
+	class Meta:
+		verbose_name_plural = '订单'
+		verbose_name = '订单'
 
 	def status(self):
 		search_dict = {
 			"paying": "待付款",
-			"waiting": "待发货",
+			"waiting": "待处理",
+			"processing": "待出货",
 			"finished": "已完成",
+			"cancelpending": "取消请求中",
+			"canceled": "已取消"
 		}
 		return search_dict[self.order_status] if self.order_status in search_dict else None
 
@@ -216,24 +297,38 @@ class Order(models.Model):
 
 
 class OrderDetail(models.Model):
-	order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
-	order_product = models.ForeignKey(Product, on_delete=models.CASCADE)
-	order_count = models.IntegerField()
-	order_price = models.FloatField()
+	order_id = models.ForeignKey(Order, on_delete=models.CASCADE,verbose_name='订单号')
+	order_product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='产品')
+	order_count = models.IntegerField('数量')
+	order_price = models.FloatField('单价')
+
+	class Meta:
+		verbose_name_plural = '订单详情'
+		verbose_name = '订单详情'
 
 	def __str__(self):
 		return self.order_id.order_index + ' ' + self.order_product.product_name + ' ' + str(self.order_count)
 
 
+class OrderStatus(models.Model):
+	status_date = models.DateTimeField('时间', auto_now=True)
+	status_name = models.CharField('行为', max_length=10)
+	status_operator = models.CharField('操作人', max_length=20)
+
+
 class Address(models.Model):
-	name = models.CharField(max_length=20)
-	province = models.CharField(max_length=10)
-	city = models.CharField(max_length=10)
-	country = models.CharField(max_length=10)
-	detail = models.CharField(max_length=50)
-	cellphone = models.CharField(max_length=20)
-	user = models.ForeignKey(SyUser, on_delete=models.CASCADE)
-	data_index = models.SlugField(max_length=20, null=True)
+	name = models.CharField('收货人', max_length=20)
+	province = models.CharField('省份', max_length=10)
+	city = models.CharField('城市', max_length=10)
+	country = models.CharField('县/区/市', max_length=10)
+	detail = models.CharField('详细地址', max_length=50)
+	cellphone = models.CharField('电话号码', max_length=20)
+	user = models.ForeignKey(SyUser, on_delete=models.CASCADE, verbose_name='用户帐号')
+	data_index = models.SlugField(max_length=20, null=True, verbose_name='地址id')
+
+	class Meta:
+		verbose_name_plural = '地址'
+		verbose_name = '地址'
 
 	def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
 		if not self.data_index:

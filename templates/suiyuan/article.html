@@ -4,18 +4,21 @@
 <div class="container app-to-top">
     <div class="col-md-12">
         <div><h4>首页 > 新闻 > </h4></div>
+        <img class="qrcode" style="float: right;margin-top: -20px" src="/v1/qrcode/{{ current_url }}" alt="">
         <div class="app-detail-head">
             <h2>{{ passage.pass_title }}</h2>
+
         </div>
-        <div class="app-detail-date"><p>{{ pass.pub_date }}</p></div>
+        <div class="app-detail-date"><p>{{ passage.pub_date|date:'Y年m月d日 H:i' }}</p></div>
         <div class="app-detail-share">
             <hr style="border-top: 1px #f7f7f7 solid;margin-bottom: 8px">
             <ul class="app-detail-share-list">
-                <li style="background: lightcoral"><i class="fa fa-print"></i></li>
-                <li style="background: lightcoral"><i class="fa fa-envelope"></i></li>
-                <li style="background: lightblue"><i class="fa fa-weibo"></i></li>
-                <li style="background: lightgreen"><i class="fa fa-wechat"></i></li>
-                <li style="background: red"><i class="fa fa-qq"></i></li>
+
+                <a href="javascript:print()"><li style="background: lightcoral"><i class="fa fa-print"></i></li></a>
+                <a href="Mailto:"><li style="background: lightcoral"><i class="fa fa-envelope"></i></li></a>
+                <a href=""><li style="background: lightblue"><i class="fa fa-weibo"></i></li></a>
+{#                <li style="background: lightgreen"><i class="fa fa-wechat"></i></li>#}
+                <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{ current_url }}"><li style="background: red"><i class="fa fa-qq"></i></li></a>
             </ul>
         </div>
         <div class="app-detail-content">

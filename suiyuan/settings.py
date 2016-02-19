@@ -121,3 +121,9 @@ REST_FRAMEWORK = {
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'suiyuan.user_man.UserBackend']
 AUTH_USER_MODEL = 'suiyuan.SyUser'
 LOGIN_URL = '/user/login/'
+
+SMSINFO = {
+    'username': 'cf_jyst7275',
+    'password': 'jy727580',
+    'url': 'http://106.ihuyi.cn/webservice/sms.php?method=Submit'
+}

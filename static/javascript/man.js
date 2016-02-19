@@ -8,6 +8,7 @@ var app_news_date_list = false;
 var last_scroll_top = document.body.scrollTop|document.documentElement.scrollTop;
 var bar_show = true;
 var app_carousel_click = false;
+var countdown = 0;
 $('#app-com-btn').click(function(){
     if(compan) {
         $('#app-com-panel').fadeOut(100);
@@ -223,17 +224,43 @@ $('#app-news-page-prev').click(function(){
     setPageBar(Number(page) - 1);
 });
 
-$('#checkcode-btn').click(function(){
-    $.ajax({
-        url:'/v1/user/sendcode/' + $('#login-form input[name=cellphone]').val() + '/',
-        type:'POST',
-        success:function(data){
-            var data_json = $.parseJSON(data);
-            $('#checkcode-btn').addClass('checked');
-            alert(data_json.code)
-        }
-    });
-});
+function set_countdown(){
+    if(countdown == 0){
+        $('#checkcode-btn').removeClass('checked');
+        $('#checkcode-btn').text('点击获取验证码');
+    }
+    else{
+        countdown -= 1;
+        $('#checkcode-btn').text(countdown + 's 后重新获取');
+        setTimeout(function(){
+            set_countdown();
+        },1000);
+    }
+}
+
+function get_check_code(){
+    if(countdown == 0) {
+        $.ajax({
+            url: '/v1/user/sendcode/' + $('#login-form input[name=cellphone]').val() + '/',
+            type: 'POST',
+            success: function (data) {
+                var data_json = $.parseJSON(data);
+                alert(data_json.code)
+            },
+            error:function(a, b,c){
+                alert("请在60s后再提交！")
+            }
+        });
+        $('#checkcode-btn').addClass('checked');
+        countdown = 60;
+        set_countdown()
+    }
+}
+
+
+
+
+$('#checkcode-btn').click(get_check_code);
 
 $('.myorder-detail-address').hover(function(){
    $(this).next().css('display','block');

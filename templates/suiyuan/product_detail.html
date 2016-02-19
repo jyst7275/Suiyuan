@@ -20,6 +20,10 @@
     </div>
     <div class="col-md-6">
         <div class="product-detail-select">
+            <div style="float: right;margin-top: -5px">
+                <img class="qrcode" style="float: right;margin-top: 10px" src="/v1/qrcode/{{ current_url }}" alt="">
+                <div class="text-container">扫码购买</div>
+            </div>
             <div class="product-header"><h3><strong>{{ product.product_name }}</strong></h3></div>
             <div class="product-summery">{{ product.product_summery }}</div>
             <div class="product-price"><span>价格：</span>￥{{ product.product_prize }}</div>

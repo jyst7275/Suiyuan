@@ -4,10 +4,17 @@
         <div class="app-product-archive-bar app-to-top">
         <div class="container">
             <ul class="app-product-archive-bar-list">
-                <li style="background: #c81118; width: 220px"><a href="/products/archives/all">所有商品</a></li>
-                <li><a href="/products/">首页</a></li>
-                <li style="float: right"><a href="">订单查询</a></li>
-                <li style="float: right"><a href="/user/cart/">购物车 <i class="fa fa-shopping-cart"></i></a></li>
+                <li class="app-product-bar-red"><a href="/products/archives/all">所有商品</a></li>
+                <li class="hidden-xs"><a href="/products/">首页</a></li>
+                {% if user.is_authenticated %}
+                <li class="hidden-xs" style="float: right"><a href="/user/logout/">登出</a></li>
+                <li class="hidden-xs" style="float: right"><a href="/user/profile/">用户中心</a></li>
+                {% else %}
+                <li class="hidden-xs" style="float: right"><a href="/user/login/">用户登录</a></li>
+                {% endif %}
+                <li class="hidden-xs" style="float: right"><a href="/user/cart/">购物车 <i class="fa fa-shopping-cart"></i></a></li>
+                <li class="visible-xs" style="float: right"><a href="/user/profile/"><i class="fa fa-user"></i></a></li>
+                <li class="visible-xs" style="float: right"><a href="/user/profile/"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </div>
@@ -15,32 +22,32 @@
     <div class="container" style="position: relative">
     <div class="app-product-head-img app-carousel">
         <ul class="app-carousel-list">
-            <li class="app-carousel-content app-active" data-bg-color="pink">
+            <li class="app-carousel-content app-active" data-bg-color="#e6d4ae">
                 <div class="img-container">
-                    <img src='{% static "img/product-img.jpg" %}' alt="">
+                    <img src='{% static "img/product_img.png" %}' alt="">
                 </div>
-                <div class="text-container">
-                    <h2>穗源御膳贡米</h2>
-                    <p>给你不一样的体验</p>
-                </div>
+{#                <div class="text-container">#}
+{#                    <h2>穗源御膳贡米</h2>#}
+{#                    <p>给你不一样的体验</p>#}
+{#                </div>#}
             </li>
-            <li class="app-carousel-content" data-bg-color="darkred">
+            <li class="app-carousel-content" data-bg-color="#e6d4ae">
                 <div class="img-container">
-                    <img src='{% static "img/product-img.jpg" %}' alt="">
+                    <img src='{% static "img/product_img.png" %}' alt="">
                 </div>
-                <div class="text-container">
-                    <h2>穗源御膳贡米</h2>
-                    <p>给你不一样的体验2</p>
-                </div>
+{#                <div class="text-container">#}
+{#                    <h2>穗源御膳贡米</h2>#}
+{#                    <p>给你不一样的体验2</p>#}
+{#                </div>#}
             </li >
-            <li class="app-carousel-content" data-bg-color="darkred">
+            <li class="app-carousel-content" data-bg-color="#e6d4ae">
                 <div class="img-container">
-                    <img src='{% static "img/product-img.jpg" %}' alt="">
+                    <img src='{% static "img/product_img.png" %}' alt="">
                 </div>
-                <div class="text-container">
-                    <h2>穗源御膳贡米3</h2>
-                    <p>给你不一样的体验</p>
-                </div>
+{#                <div class="text-container">#}
+{#                    <h2>穗源御膳贡米3</h2>#}
+{#                    <p>给你不一样的体验</p>#}
+{#                </div>#}
             </li>
         </ul>
         <div class="app-carousel-indicator">
@@ -89,6 +96,7 @@
                     {% for hproduct in hot_list %}
                     <li>
                         <div class="app-product-panel">
+                            <img class="app-product-banner" src={{ hproduct.banner.banner_img.url }} alt="">
                         <div class="app-product-container app-bg-fa-{{ forloop.counter }}">
                             <a href={{ hproduct.product.get_absolute_url }}><div class="img-container">
                             <img src={{ hproduct.product.product_img.url }} alt=""></div>
@@ -98,7 +106,13 @@
                                 <div class="app-product-detail">
                                     <p>{{ hproduct.product.product_summery }}</p>
                                 </div>
-                                <div class="app-product-price">¥{{ hproduct.product.product_prize }} <a href={{ hproduct.product.get_absolute_url }}><button class="btn btn-red">立即购买</button></a></div>
+                                <div class="app-product-price">¥{{ hproduct.product.product_prize }}
+                                    </div>
+                                <div class="app-product-buy">
+                                    <a href={{ hproduct.product.get_absolute_url }}>
+                                        <button class="btn btn-red">立即购买</button>
+                                    </a>
+                                </div>
                             </div>
                             </div>
                         </div>
@@ -133,7 +147,11 @@
                                 <div class="app-product-detail">
                                     <p>{{ pr.product_summery }}</p>
                                 </div>
-                                <div class="app-product-price">¥{{ pr.product_prize }} <a href={{ pr.get_absolute_url }}><button class="btn btn-red">立即购买</button></a></div>
+                                <div class="app-product-price">¥{{ pr.product_prize }} </div>
+                                <div class="app-product-buy">
+                                    <a href={{ pr.get_absolute_url }}>
+                                    <button class="btn btn-red">立即购买</button></a>
+                                </div>
                             </div>
                             </div>
                         </div>

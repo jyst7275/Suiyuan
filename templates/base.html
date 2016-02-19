@@ -44,11 +44,11 @@
 
     <div class="container app-bar-search">
     <div class="search-container">
-        <div class="search-content">
+        <form class="search-content" action="/search/">
             <input id="search-input" type="text" class="form-control" placeholder="搜索">
-            <i id="search-btn" class="fa fa-search fa-lg" role="button"></i>
+            <button id="search-btn"role="button"><i class="fa fa-search fa-lg"></i></button>
             <i id="search-remove" class="fa fa-remove fa-lg" role="button"></i>
-        </div>
+        </form>
             </div>
     </div>
     </div>
@@ -93,26 +93,26 @@
             <div class="col-md-2 col-md-offset-1 app-footer-guide-list">
                 <h4><strong>新闻</strong></h4>
                 <ul>
-                    <li><a href="">公司动态</a></li>
-                    <li><a href="">行业动态</a></li>
-                    <li><a href="">健康知识</a></li>
+                    <li><a href="/news/?passage=news#app-news-bar">公司动态</a></li>
+                    <li><a href="/news/?passage=business#app-news-bar">行业动态</a></li>
+                    <li><a href="/news/?passage=health#app-news-bar">健康知识</a></li>
                 </ul>
             </div>
             <div class="col-md-2 app-footer-guide-list">
                 <h4><strong>了解我们</strong></h4>
                 <ul>
-                    <li><a href="">关于穗源</a></li>
-                    <li><a href="">技术团队</a></li>
-                    <li><a href="">公司文化</a></li>
-                    <li><a href="">联系我们</a></li>
+                    <li><a href="/about/">关于穗源</a></li>
+                    <li><a href="/people/">技术团队</a></li>
+                    <li><a href="/about#about-culture">公司文化</a></li>
+                    <li><a href="/contact/">联系我们</a></li>
                 </ul>
             </div>
             <div class="col-md-2 app-footer-guide-list">
                 <h4><strong>精诚合作</strong></h4>
                 <ul>
                     <li><a href="">加入我们</a></li>
-                    <li><a href="">企业合作</a></li>
-                    <li><a href="">产品购买</a></li>
+                    <li><a href="/contact#contact-coo">企业合作</a></li>
+                    <li><a href="/products/">产品购买</a></li>
                 </ul>
             </div>
             <div class="col-md-5 app-footer-guide-list">

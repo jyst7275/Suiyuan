@@ -24,7 +24,7 @@ class PassageDetail(APIView):
 
 	def get_object(self, py):
 		try:
-			queryset = Passage.objects.all()
+			queryset = Passage.objects.filter(pass_status="published")
 			if py != "all":
 				return queryset.filter(pass_type=py)
 			return queryset

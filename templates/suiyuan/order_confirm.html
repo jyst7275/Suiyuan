@@ -25,8 +25,18 @@
         <div id="address-no-reminder">
             请选择收件人信息
         </div>
-        <a href="javascript:add_address()">增加收件地址</a>
+        <a href="javascript:add_address($('#add-address-form'))">增加收件地址</a>
     </div>
+</div>
+<div class="order-payment">
+    <div class="order-payment-header">
+        <strong>付款方式</strong>
+    </div>
+    <ul class="order-payment-list" data-pay="notpaying" id="payment-id">
+        <li class="pay-selected" data-pay="notpaying">货到付款</li>
+        <li data-pay="alipay">支付宝支付</li>
+        <li data-pay="weixinpay">微信支付</li>
+    </ul>
 </div>
 {% if order %}
 <div class="order-bar">
@@ -82,6 +92,7 @@
                 <input class="form-control" type="text" name="address-province" placeholder="省份">
                 <input class="form-control" type="text" name="address-city" placeholder="城市">
                 <input class="form-control" type="text" name="address-country" placeholder="县/区">
+                <span class="position-locate"><i class="fa fa-map-pin"></i>定位</span>
             </div>
             <div id="address-address" class="form-inline">
                 <span>详细地址：</span>
@@ -101,7 +112,7 @@
             </div>
             编辑收件人
         </div>
-        <form id="add-address-form" action="/user/address/">
+        <form id="edit-address-form" action="/user/address/">
             <div id="address-name" class="form-inline">
                 <span>收&nbsp&nbsp货&nbsp&nbsp人：</span>
                 <input type="text" name="address-username" class="form-control" placeholder="收件人">
@@ -110,6 +121,7 @@
                 <input class="form-control" type="text" name="address-province" placeholder="省份">
                 <input class="form-control" type="text" name="address-city" placeholder="城市">
                 <input class="form-control" type="text" name="address-country" placeholder="县/区">
+                <span class="position-locate"><i class="fa fa-map-pin"></i>定位</span>
             </div>
             <div id="address-address" class="form-inline">
                 <span>详细地址：</span>

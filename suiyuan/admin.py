@@ -6,20 +6,20 @@ from django import forms
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from .model import SyUser, Address, Order, OrderDetail
+from .model import SyUser, Address, Order, OrderDetail, ProductBanner
 
 
 class ProductCategoryAdmin(admin.ModelAdmin):
-	list_display = ("category", "is_subclass", "img", "count", "father")
+	list_display = ("category", "is_subclass", "img", "father")
 	fields = ("category", "is_subclass", "img", "count", "father")
 
 
 class ProductAdmin(SummernoteModelAdmin):
-	list_display = ("img_display", "product_name", "product_category", "product_prize", "product_date", "product_index")
+	list_display = ("img_display", "product_name", "product_category", "product_prize", "product_date", "product_index", 'product_status')
 	list_display_links = ("img_display", "product_name")
 	fieldsets = (
 		(None, {
-			'fields': (('product_name', 'product_category'), 'product_prize', 'product_date', 'product_img',
+			'fields': (('product_name', 'product_category', 'product_status'), 'product_prize', 'product_date', 'product_img',
 			           'product_summery', 'product_description')
 		}),
 		('pic', {
@@ -30,7 +30,7 @@ class ProductAdmin(SummernoteModelAdmin):
 
 
 class PassageAdmin(SummernoteModelAdmin):
-	fields = ('pub_date', ('pass_title', 'pass_type'), 'pass_summery', 'pass_img', 'pass_content')
+	fields = ('pub_date', ('pass_title', 'pass_type', 'pass_status'), 'pass_summery', 'pass_img', 'pass_content')
 
 	list_display = ('pass_title', 'pub_date')
 	view_on_site = True
@@ -108,6 +108,7 @@ admin.site.unregister(Group)
 admin.site.register(Topnews)
 admin.site.register(Flownews)
 admin.site.register(Hotproduct)
+admin.site.register(ProductBanner)
 admin.site.register(RecommendProduct)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Passage, PassageAdmin)

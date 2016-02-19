@@ -195,13 +195,54 @@ function closeWindow(){
     $('.reveal-modal-bg').trigger('click');
 }
 
-function add_address(){
+function add_address(thisElem){
     $('#add-address').reveal({
         animation:'fadeAndPop',
         animationspeed:300,
         closeonbackgroundclick:true,
         dismissmodalclass:'close-reveal-model'
     });
+    getlocation(thisElem);
+}
+
+function setlocation(thisElem, data){
+    var forms = thisElem;
+    forms.find('input[name=address-province]').val(data.province);
+    forms.find('input[name=address-city]').val(data.city);
+    forms.find('input[name=address-country]').val(data.country);
+    forms.find('textarea[name=address-detail]').val(data.detail);
+}
+
+function getlocation(thisElem){
+    var options={
+        enableHighAccuracy:false,
+        maximumAge:1000
+    };
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(function(position){
+            var longitude = position.coords.longitude;
+            var latitude = position.coords.latitude;
+            $.ajax({
+            type:'POST',
+            url:'/v1/user/address/location/',
+            data:{
+                long:longitude,
+                lat:latitude
+            },
+            success:function(data){
+                setlocation(thisElem, $.parseJSON(data));
+                return true;
+            }
+            });
+        },function(){
+            alert('获取地址失败');
+        },options);
+    }
+    else {
+        alert('位置服务不可用');
+    }
+    return false;
 }
 
 $('body').on('click', '.address-remove-btn', function(){
@@ -249,7 +290,7 @@ $('#add-address-submit').click(function(){
 
 $('#edit-address-submit').click(function(){
     var id = $('#edit-address').attr('data-id');
-        $.ajax({
+    $.ajax({
         url:'/v1/user/address/' + id + '/',
         type:'PUT',
         data:{
@@ -274,6 +315,7 @@ $('#edit-address-submit').click(function(){
             </li>');
         }
     });
+
     $('.reveal-modal-bg').trigger('click');
 });
 
@@ -290,7 +332,8 @@ $('#order-confirm-btn').click(function(){
         id:id_list,
         count:count_list,
         address:$('#address-list').attr('data-selected'),
-        order_pk:$('#order-pk').val()
+        order_pk:$('#order-pk').val(),
+        payment:$('#payment-id').attr('data-pay')
     });
 });
 
@@ -334,6 +377,7 @@ $('.window-cancel').click(closeWindow);
 
 $('body').on('click','.address-edit-btn', function(){
     var id = $(this).parent().parent().attr('data-id');
+    getlocation();
     $.ajax({
         url:'/v1/user/address/' + id + '/',
         type:'GET',
@@ -355,3 +399,15 @@ $('body').on('click','.address-edit-btn', function(){
         dismissmodalclass:'close-reveal-model'
     });
 });
+
+$('.order-payment-list li').click(function(){
+   var now = $(this).parent().attr('data-pay');
+    $(this).parent().children('[data-pay=' + now + ']').removeClass('pay-selected');
+    $(this).addClass('pay-selected');
+    $(this).parent().attr('data-pay', $(this).attr('data-pay'));
+});
+
+$('.position-locate').click(function(){
+    getlocation($(this).parent().parents());
+});
+

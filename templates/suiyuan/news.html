@@ -32,7 +32,7 @@
     <div class="container">
         <div class="row">
             {% if top_news %}
-            <div class="col-md-5 app-news-top-img">
+            <div class="col-md-5 app-news-top-img" style="margin-bottom: 15px">
                 <img src={{ top_news.passage.pass_img.url }} alt="">
             </div>
             <div class="col-md-12" style="float: none">
@@ -80,13 +80,14 @@
     <div class="app-news-list">
     <div class="container">
         <ul class="app-news-list-head" data-type="all">
-        <li class="app-active app-news-type-all" role="button" data-type="all">全部</li>
-        <li class="app-news-type-news" role="button" data-type="news">公司动态</li>
-        <li class="app-news-type-business" role="button" data-type="business">行业动向</li>
-        <li class="app-news-type-health" role="button" data-type="health">健康知识</li>
+        <li class="{{ type_list.0 }}app-news-type-all" role="button" data-type="all">全部</li>
+        <li class="{{ type_list.1 }}app-news-type-news" role="button" data-type="news">公司动态</li>
+        <li class="{{ type_list.2 }}app-news-type-business" role="button" data-type="business">行业动向</li>
+        <li class="{{ type_list.3 }}app-news-type-health" role="button" data-type="health">健康知识</li>
         </ul>
-        {% if passage_list %}
+
         <ul class="app-news-list-container">
+
         {% for pass in passage_list %}
             <li class="app-news-container">
                 <img src={{ pass.pass_img.url }} alt="">
@@ -100,7 +101,7 @@
             </li>
         {% endfor %}
         </ul>
-            {% else  %}
+        {% if not passage_list %}
             <p>无文章</p>
         {% endif %}
         <nav class="app-news-pageguide" data-page="1" data-max={{ page_count }}>
