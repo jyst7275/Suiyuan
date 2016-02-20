@@ -48,6 +48,6 @@ urlpatterns = [
     url(r'^v1/qrcode/(.+)$', views.qrcode)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# handler500 = 'suiyuan.views.my_500_view'
-# handler404 = 'suiyuan.views.my_404_view'
-# handler400 = 'suiyuan.views.my_400_view'
+handler500 = 'suiyuan.views.my_500_view'
+handler404 = 'suiyuan.views.my_404_view'
+handler400 = 'suiyuan.views.my_400_view'
