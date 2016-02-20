@@ -45,8 +45,7 @@ urlpatterns = [
     url(r'^people', views.people),
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'^v1/passage/([\w]+)/$', rest.PassageDetail.as_view()),
-    url(r'^v1/qrcode/(.+)$', views.qrcode),
-    url(r'404/', views.my_500_view)
+    url(r'^v1/qrcode/(.+)$', views.qrcode)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler500 = 'suiyuan.views.my_500_view'

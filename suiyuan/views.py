@@ -262,7 +262,7 @@ def my_500_view(request):
 def my_404_view(request):
 	rp = RecommendProduct.objects.all()
 	flownews = Flownews.objects.all()
-	return render(request, "suiyuan/500.html", {
+	return render(request, "suiyuan/404.html", {
 		'rp': rp,
 		'news': flownews
 	})
@@ -271,7 +271,7 @@ def my_404_view(request):
 def my_400_view(request):
 	rp = RecommendProduct.objects.all()
 	flownews = Flownews.objects.all()
-	return render(request, "suiyuan/500.html", {
+	return render(request, "suiyuan/400.html", {
 		'rp': rp,
 		'news': flownews
 	})
