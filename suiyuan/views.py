@@ -3,6 +3,7 @@ from django.template import RequestContext, loader
 from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct, RecommendProduct
 from django.template.defaulttags import register
 from django.db.models import Q
+from django.shortcuts import render
 import qrcode as qrcode_maker
 from io import BytesIO
 import datetime
@@ -247,3 +248,30 @@ def product_details(request, product_category, product_index):
 		"recommend_list": recommend_list,
 		'current_url': '/order/confirm/?product='+product_index
 	})))
+
+
+def my_500_view(request):
+	rp = RecommendProduct.objects.all()
+	flownews = Flownews.objects.all()
+	return render(request, "suiyuan/500.html", {
+		'rp': rp,
+		'news': flownews
+	})
+
+
+def my_404_view(request):
+	rp = RecommendProduct.objects.all()
+	flownews = Flownews.objects.all()
+	return render(request, "suiyuan/500.html", {
+		'rp': rp,
+		'news': flownews
+	})
+
+
+def my_400_view(request):
+	rp = RecommendProduct.objects.all()
+	flownews = Flownews.objects.all()
+	return render(request, "suiyuan/500.html", {
+		'rp': rp,
+		'news': flownews
+	})

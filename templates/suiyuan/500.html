@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='{%  static  "css/bootstrap.css" %}' rel="stylesheet" type="text/css">
+    <link href='{%  static  "css/man.css" %}' rel="stylesheet" type="text/css">
+    <link href='{%  static  "css/font-awesome.css" %}' rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href='{% static  "css/animate.css" %}' type="text/css">
+    <link rel="stylesheet" href='{% static  "css/animation.css" %}' type="text/css">
+    <script src='{%  static  "javascript/jquery.js" %}'></script>
+    <script src='{%  static  "javascript/bootstrap.js" %}'></script>
+    <title>广东穗源农业股份有限公司</title>
+</head>
+<body>
+<div class="profile-bg">
+<div class="top-bar">
+    <nav class = "navbar navbar-default  app-nav">
+          <div class="container ">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+
+                  <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#app-navbar" aria-controls="app-navbar" aria-expanded="false"><i class="fa fa-bars fa-lg"></i></button>
+                  <a class="navbar-brand" href="/"><span><img src='{%  static  "img/logo.png" %}' alt="" style="height: 40px"></span>穗源农业</a>
+                  <button id="bar_search" class="bar_search visible-xs"><i class="fa fa-search fa-lg"></i></button>
+              </div>
+                  <ul id="app-navbar" class="nav navbar-nav navbar-right app-navbar-list navbar-collapse collapse">
+                  <li id="bar_news" ><a href="/news">新闻</a></li>
+                  <li id="bar_people"><a href="/people">专家团队</a></li>
+                  <li id="bar_products"><a href="/products">产品</a></li>
+                  <li id="bar_contact"><a href="/contact">联系我们</a></li>
+                  <li id="bar_about"><a href="/about">关于</a></li>
+                  <li class="bar_search"><a href="javascript:void(0)">搜索</a></li>
+            </ul>
+
+            </div>
+        </nav>
+
+    <div class="container app-bar-search">
+    <div class="search-container">
+        <form class="search-content" action="/search/">
+            <input id="search-input" type="text" class="form-control" placeholder="搜索">
+            <button id="search-btn"role="button"><i class="fa fa-search fa-lg"></i></button>
+            <i id="search-remove" class="fa fa-remove fa-lg" role="button"></i>
+        </form>
+            </div>
+    </div>
+    </div>
+<div class="container" style="padding-top: 80px">
+    <div class="container-404-section animated fadeInDown">
+        <h1 style='margin-bottom: 20px;font-family: "Helvetica", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif'>500 Internal Service Failure</h1>
+        <p style="font-size: 20px">服务器遇到错误，请等待后尝试，如果仍有问题，请联系我们</p>
+            <ul class="app-normal-list app-contact-buy-list">
+        <li>
+            <strong>电话咨询热线</strong>
+            <ul class="app-contact-phone-list app-normal-list">
+                <li><p><i class="fa fa-phone"></i>  0763-5851836（座机）</p></li>
+                <li><p><i class="fa fa-fax"></i>  0763-5851826（传真）</p></li>
+                <li><p><i class="fa fa-phone"></i>  13825882207（李小姐）</p></li>
+                <li><p><i class="fa fa-clock-o"></i>  周一至周日 08:00-18:00</p></li>
+            </ul>
+        </li>
+        <li><strong>邮件支持</strong><p><i class="fa fa-envelope">  cooperation@gdqysy.com</p></i></li>
+    </ul>
+        <div class="btn-container">
+            <a href="/"><button class="return-btn">返回首页</button></a>
+            <a href="/news/"><button class="return-btn">返回新闻</button></a>
+        </div>
+    </div>
+    <div class="container-404-section animated fadeInDown" style="animation-delay: 0.3s">
+        <h4>您可能对下面的产品有兴趣</h4>
+            <ul class="product-show-row">
+                {% for product in rp %}
+                <li>
+                    <a href="{{ product.product.get_absolute_url }}"><img src="{{ product.product.product_img.url }}" alt=""></a>
+                    <h4>{{ product.product.product_name }}</h4>
+                    <p>￥{{ product.product.product_prize }}</p>
+                    <a href="{{ product.product.get_absolute_url }}"><button class="btn btn-primary">立即购买</button></a>
+                </li>
+                {% endfor %}
+            </ul>
+    </div>
+        <div class="container-404-section animated fadeInDown" style="animation-delay: 0.6s">
+        <h4>您可能对下面的新闻有兴趣</h4>
+       <ul class="news-show-row">
+           {% for n in news %}
+           <li><a href="{{ n.passage.get_absolute_url }}">{{ n.passage.pass_title }}</a></li>
+           {% endfor %}
+       </ul>
+    </div>
+</div>
+<div class="app-more" style="background: none">
+    <div class="container center">
+        <a href="/about/"><div class="col-md-2 col-md-offset-3" id="more-know">
+            <i class="fa fa-map-o fa-2x"></i>
+            <h4>了解穗源</h4>
+            <p>穗源是一家年轻的公司，我们采用先进的经营理念和先进的技术基础成功发展壮大</p>
+        </div>
+            </a>
+        <a href="/products/"><div class="col-md-2 more-center" id="more-buy">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+            <h4>购买产品</h4>
+            <p>穗源有众多经销商并在各大超市铺货，您可以到现场购买；或者您可以在穗源网站上直接购买</p>
+        </div></a>
+        <a href="/contact#contact-coo"><div class="col-md-2" id="more-coo">
+            <i class="fa fa-send-o fa-2x"></i>
+            <h4>加盟合作</h4>
+            <p>穗源注重合作共赢，如果你希望合作商讨，或者加盟，请联系我们</p>
+        </div></a>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

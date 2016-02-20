@@ -1,7 +1,9 @@
 {% extends "product_base.html"  %}
 {% block product_content %}
-<div class="container">
+    <div class="profile-bg">
 
+<div class="container">
+<div class="order-finish-container">
 <div class="order-finish-header center">
     <p>你的订单已经成功提交，订单号为</p>
     <p><strong>{{ order.order_index }}</strong></p>
@@ -10,6 +12,21 @@
     <a href={{ order.get_absolute_url }}><button class="buy-btn">查询订单信息</button></a>
     <a href="/products/"><button class="buy-btn">前往商城</button></a>
 </div>
+</div>
+        <div class="container-404-section animated fadeInDown" style="animation-delay: 0.3s">
+        <h4>您可能对下面的产品有兴趣</h4>
+            <ul class="product-show-row">
+                {% for product in rp %}
+                <li>
+                    <a href="{{ product.product.get_absolute_url }}"><img src="{{ product.product.product_img.url }}" alt=""></a>
+                    <h4>{{ product.product.product_name }}</h4>
+                    <p>￥{{ product.product.product_prize }}</p>
+                    <a href="{{ product.product.get_absolute_url }}"><button class="btn btn-primary">立即购买</button></a>
+                </li>
+                {% endfor %}
+            </ul>
+    </div>
+
 </div>
 
 {% endblock %}

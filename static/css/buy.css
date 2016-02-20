@@ -323,12 +323,10 @@
 }
 
 .order-finish-header{
-    margin: 20px;
+    margin: 10px;
     font-size: 20px;
 }
-.order-finish-btn{
-    margin-bottom: 150px;
-}
+
 
 #address-no-reminder{
     color: darkred;
@@ -338,4 +336,12 @@
 
 #address-detail{
     height: 100px;
+}
+.order-finish-container{
+
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

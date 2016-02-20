@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate
 from django import forms
 from django.http import QueryDict
 from django.shortcuts import render
-from .model import Product, Address, Order,OrderDetail
+from .model import Product, Address, Order,OrderDetail, RecommendProduct
 from random import choice
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -245,8 +245,10 @@ def order_request(request):
 		order_detail.save()
 	order.order_total = total
 	order.save()
+	rp = RecommendProduct.objects.all()
 	return_render = render(request, "suiyuan/order_finish.html", {
-		'order': order
+		'order': order,
+		'rp': rp
 	})
 	if 'cart' in request.COOKIES:
 		cookie = request.COOKIES['cart']
