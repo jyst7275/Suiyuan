@@ -46,7 +46,7 @@ class Passage(models.Model):
 		return self.pass_img.url
 
 	def get_absolute_url(self):
-		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, self.pass_title)
+		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, self.pass_title) + '/'
 
 	def pass_url(self):
 		return self.get_absolute_url()
@@ -98,7 +98,7 @@ class ProductCategory(models.Model):
 		verbose_name_plural = '产品种类'
 
 	def get_absolute_url(self):
-		return "/products/archives/" + self.category
+		return "/products/archives/" + self.category + '/'
 
 	def __str__(self):
 		return self.category
@@ -132,7 +132,7 @@ class Product(models.Model):
 		return [self.img_1, self.img_2, self.img_3, self.img_4, self.img_5]
 
 	def get_absolute_url(self):
-		return "/products/details/" + self.product_category.category + "/" + self.product_index
+		return "/products/details/" + self.product_category.category + "/" + self.product_index + '/'
 
 	def img_display(self):
 		return format_html('<img src="{}" style="width:50px;">', self.product_img.url)

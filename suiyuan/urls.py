@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index),
     url(r'^news', views.news),
-    url(r'^archives/([0-9]+)/([0-9]+)/([0-9]+)/([\w|\-]+)', views.archives),
+    url(r'^archives/([0-9]+)/([0-9]+)/([0-9]+)/([\w|\-]+)/', views.archives),
     url(r'^about', views.about),
     url(r'^products/$', views.products),
     url(r'^products/archives/([\w|\-]+)/$', views.product_archives),
