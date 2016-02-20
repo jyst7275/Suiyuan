@@ -4,7 +4,6 @@
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/settings.py" afterPath="$PROJECT_DIR$/suiyuan/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/urls.py" afterPath="$PROJECT_DIR$/suiyuan/urls.py" />
     </list>
     <ignored path="suiyuan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/suiyuan/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6806833">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,11 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.8869908">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -239,8 +238,8 @@
         <option value="$PROJECT_DIR$/static/css/app-line.css" />
         <option value="$PROJECT_DIR$/suiyuan/views.py" />
         <option value="$PROJECT_DIR$/suiyuan/admin.py" />
-        <option value="$PROJECT_DIR$/suiyuan/settings.py" />
         <option value="$PROJECT_DIR$/suiyuan/urls.py" />
+        <option value="$PROJECT_DIR$/suiyuan/settings.py" />
       </list>
     </option>
   </component>
@@ -730,7 +729,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455973367843</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="bug fix:&#10;CategoryAdmin&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;">
+      <created>1455974345147</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1455974345147</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1174,14 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/app-line.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.138889">
@@ -1268,8 +1265,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/suiyuan/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6806833">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8869908">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding />
         </state>
       </provider>
