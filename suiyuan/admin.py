@@ -11,7 +11,7 @@ from .model import SyUser, Address, Order, OrderDetail, ProductBanner
 
 class ProductCategoryAdmin(admin.ModelAdmin):
 	list_display = ("category", "is_subclass", "img", "father")
-	fields = ("category", "is_subclass", "img", "count", "father")
+	fields = ("category", "is_subclass", "img", "father")
 
 
 class ProductAdmin(SummernoteModelAdmin):
