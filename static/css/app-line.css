@@ -476,3 +476,18 @@
         width: 400px;
     }
 }
+
+@media (max-aspect-ratio: 2/3){
+    #line-scroll-1{
+    height: 3000px;
+}
+#line-scroll-2{
+    height: 4000px;
+}
+#line-scroll-3{
+    height: 4000px;
+}
+#line-scroll-4{
+    height: 4000px;
+}
+}
