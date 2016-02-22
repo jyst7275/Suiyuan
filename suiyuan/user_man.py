@@ -13,6 +13,7 @@ from .model import Product, Address, Order,OrderDetail, RecommendProduct
 from random import choice
 from django.utils import timezone
 from django.core.paginator import Paginator
+import top, top.api
 import random
 import urllib.parse
 import json
@@ -381,7 +382,7 @@ def cart(request):
 	})
 
 
-def sendcode(cellphone, code):
+def sendcode_out(cellphone, code):
 	mymd5 = hashlib.md5()
 	mymd5.update(b'jy727580')
 	password = mymd5.hexdigest()
@@ -396,6 +397,21 @@ def sendcode(cellphone, code):
 	url = 'http://106.ihuyi.cn/webservice/sms.php?method=Submit'
 	r = requests.post(url, sendvalue)
 	print(r.content.decode('utf-8'))
+
+
+def sendcode(cellphone, code):
+	top.setDefaultAppInfo('23313828', '9c58da786b40f4d74bed1a7fb32ab7a1')
+	top.getDefaultAppInfo()
+	a = top.api.AlibabaAliqinFcSmsNumSendRequest()
+	a.sms_type = "normal"
+	a.sms_free_sign_name = "登录验证"
+	a.sms_param = {
+		"code": code,
+		"product": "穗源购物"
+	}
+	a.rec_num = cellphone
+	a.sms_template_code = "SMS_5048722"
+	a.getResponse()
 
 
 def user_code_gen(request, cellphone):
@@ -416,7 +432,7 @@ def user_code_gen(request, cellphone):
 	except UserCode.DoesNotExist:
 		usercode = UserCode.objects.create(usercode=cellphone, code=code)
 	usercode.save()
-	# sendcode(cellphone, str(code))
+	sendcode(cellphone, str(code))
 	return HttpResponse(json.dumps({'code': usercode.code, 'status': 'true'}))
 
 
