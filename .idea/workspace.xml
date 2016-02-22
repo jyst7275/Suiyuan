@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/user_man.py" afterPath="$PROJECT_DIR$/suiyuan/user_man.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/views.py" afterPath="$PROJECT_DIR$/suiyuan/views.py" />
     </list>
     <ignored path="suiyuan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -784,7 +782,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456117383248</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="bug fix:&#10;404Bug fixed finally&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;">
+      <created>1456119126644</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1456119126644</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
