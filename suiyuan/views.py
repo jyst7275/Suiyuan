@@ -219,7 +219,10 @@ def product_archives(request, cat):
 		product_list = Product.objects.all()
 		index_type = "all"
 	else:
-		pc_name = ProductCategory.objects.get(category=cat)
+		try:
+			pc_name = ProductCategory.objects.get(category=cat)
+		except ProductCategory.DoesNotExist:
+			return HttpResponseNotFound()
 		if pc_name.is_subclass:
 			index_type = pc_name.father.category
 			index_type_sub = pc_name.category
@@ -240,8 +243,10 @@ def product_archives(request, cat):
 
 def product_details(request, product_category, product_index):
 	template = loader.get_template("suiyuan/product_detail.html")
-	obj = Product.objects.get(product_index=product_index)
-
+	try:
+		obj = Product.objects.get(product_index=product_index)
+	except Product.DoesNotExist:
+		return HttpResponseNotFound()
 	recommend_list = RecommendProduct.objects.all()
 	return HttpResponse(template.render(RequestContext(request, {
 		"product": obj,

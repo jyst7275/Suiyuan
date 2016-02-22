@@ -382,11 +382,6 @@ def cart(request):
 	})
 
 
-def user_code_see(request, cellphone):
-	usercode = UserCode.objects.get(usercode=cellphone)
-	return HttpResponse(usercode.code)
-
-
 def sendcode(cellphone, code):
 	mymd5 = hashlib.md5()
 	mymd5.update(b'jy727580')
