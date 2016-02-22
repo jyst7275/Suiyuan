@@ -1,4 +1,5 @@
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 from django.template import RequestContext, loader
 from .model import Passage, Topnews, Flownews, Product, ProductCategory, Hotproduct, RecommendProduct
 from django.template.defaulttags import register
@@ -96,10 +97,7 @@ def about(request):
 def archives(request, year, month, day, title):
 	template = loader.get_template('suiyuan/article.html')
 	url = request.path
-	try:
-		object_get = Passage.objects.get(pass_title=title, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
-	except Passage.DoesNotExist:
-		return HttpResponseNotFound()
+	object_get = get_object_or_404(Passage, pass_title=title, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
 	try:
 		object_next = object_get.get_next_by_pub_date()
 	except Passage.DoesNotExist:
@@ -219,10 +217,7 @@ def product_archives(request, cat):
 		product_list = Product.objects.all()
 		index_type = "all"
 	else:
-		try:
-			pc_name = ProductCategory.objects.get(category=cat)
-		except ProductCategory.DoesNotExist:
-			return HttpResponseNotFound()
+		pc_name = get_object_or_404(ProductCategory, category=cat)
 		if pc_name.is_subclass:
 			index_type = pc_name.father.category
 			index_type_sub = pc_name.category
@@ -243,10 +238,7 @@ def product_archives(request, cat):
 
 def product_details(request, product_category, product_index):
 	template = loader.get_template("suiyuan/product_detail.html")
-	try:
-		obj = Product.objects.get(product_index=product_index)
-	except Product.DoesNotExist:
-		return HttpResponseNotFound()
+	obj = get_object_or_404(Product ,product_index=product_index)
 	recommend_list = RecommendProduct.objects.all()
 	return HttpResponse(template.render(RequestContext(request, {
 		"product": obj,

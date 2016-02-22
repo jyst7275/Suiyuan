@@ -1,5 +1,7 @@
 from .model import SyUser, UserCode
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest, Http404
+from django.shortcuts import get_object_or_404
+from django.core.exceptions import SuspiciousOperation
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as userlogin
 from django.contrib.auth import logout as userlogout
@@ -84,10 +86,7 @@ def status(request):
 def order_confirm(request):
 	if request.method == 'GET':
 		if 'product' in request.GET:
-			try:
-				pr_id = Product.objects.get(product_index=request.GET['product'])
-			except Product.DoesNotExist:
-				return HttpResponseNotFound()
+			pr_id = get_object_or_404(Product, product_index=request.GET['product'])
 			return_cart = [{
 				'product': pr_id,
 				'count': 1,
@@ -96,7 +95,7 @@ def order_confirm(request):
 			total_count = 1
 			total = pr_id.product_prize
 		else:
-			return HttpResponseBadRequest()
+			raise SuspiciousOperation
 	elif request.method == 'POST':
 		if 'cart_pk' not in request.session:
 			return HttpResponseRedirect('/user/cart/')
@@ -128,9 +127,9 @@ def order_confirm(request):
 					'total': pr_total
 				})
 		except KeyError or Product.DoesNotExist:
-			return HttpResponseBadRequest()
+			raise SuspiciousOperation
 	else:
-		return HttpResponseBadRequest()
+		raise SuspiciousOperation
 	address = Address.objects.filter(user=request.user)
 	data_index = ''.join([choice('AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxyZz0123456789') for i in range(20)])
 	request.session['order_pk'] = data_index
@@ -146,7 +145,7 @@ def order_confirm(request):
 @login_required(redirect_field_name='redirect_to')
 def order_address(request):
 	if request.method != 'POST':
-		return HttpResponseNotFound()
+		raise Http404
 	else:
 		try:
 			name = request.POST['name']
@@ -156,7 +155,7 @@ def order_address(request):
 			detail = request.POST['detail']
 			cellphone = request.POST['cellphone']
 		except KeyError:
-			return HttpResponseBadRequest()
+			raise SuspiciousOperation
 		address = Address.objects.create(name=name, province=province, city=city, country=country, detail=detail, cellphone=cellphone, user=request.user)
 		address.save()
 	return_json = {
@@ -172,10 +171,7 @@ def order_address(request):
 
 @login_required(redirect_field_name='redirect_to')
 def address_oper(request, address_no):
-	try:
-		address = Address.objects.get(data_index=address_no, user=request.user)
-	except Address.DoesNotExist:
-		return HttpResponseBadRequest()
+	address = get_object_or_404(Address, data_index=address_no, user=request.user)
 	if request.method == "GET":
 		address_json = {
 			'name': address.name,
@@ -205,7 +201,7 @@ def address_oper(request, address_no):
 		address.detail = detail
 		address.save()
 	else:
-		return HttpResponseBadRequest()
+		raise SuspiciousOperation
 	return HttpResponse(json.dumps({
 		'short': name + ' ' + province+city,
 		'long': province+city+country+detail,
@@ -218,31 +214,37 @@ def address_oper(request, address_no):
 @login_required(redirect_field_name='redirect_to')
 def order_request(request):
 	if request.method != 'POST':
-		return HttpResponseBadRequest()
+		raise SuspiciousOperation
 
 	#check code
 	print()
 	if 'order_pk' not in request.session:
-		return HttpResponseBadRequest()
+		raise SuspiciousOperation
 	session_order_code = request.session['order_pk']
 	del request.session['order_pk']
 	if request.POST.get('order_pk') != session_order_code:
-		return HttpResponseBadRequest()
+		raise SuspiciousOperation
 
 	id_list = request.POST.get('id', '').split(',')
 	count_list = request.POST.get('count', '').split(',')
 	address = request.POST['address']
-	address_obj = Address.objects.get(data_index=address)
+	try:
+		address_obj = Address.objects.get(data_index=address)
+	except Address.DoesNotExist:
+		return SuspiciousOperation
 	order = Order.objects.create(order_total=0, order_address=address_obj.short(), order_buyer=request.user,
 	                             order_username= address_obj.name, order_pay=None, order_status="paying",
 	                             order_cellphone=address_obj.cellphone)
 	order.save()
 	total = 0
-	for i, ids in enumerate(id_list):
-		or_pr = Product.objects.get(product_index=ids)
-		order_detail = OrderDetail.objects.create(order_id=order, order_product=or_pr, order_count=count_list[i], order_price=or_pr.product_prize)
-		total += int(count_list[i]) * or_pr.product_prize
-		order_detail.save()
+	try:
+		for i, ids in enumerate(id_list):
+			or_pr = Product.objects.get(product_index=ids)
+			order_detail = OrderDetail.objects.create(order_id=order, order_product=or_pr, order_count=count_list[i], order_price=or_pr.product_prize)
+			total += int(count_list[i]) * or_pr.product_prize
+			order_detail.save()
+	except Product.DoesNotExist:
+		raise SuspiciousOperation
 	order.order_total = total
 	order.save()
 	rp = RecommendProduct.objects.all()
@@ -262,10 +264,7 @@ def order_request(request):
 
 @login_required(redirect_field_name='redirect_to')
 def order_detail(request, order_id):
-	try:
-		order = Order.objects.get(order_buyer=request.user, order_index=order_id)
-	except Order.DoesNotExist:
-		return HttpResponseNotFound()
+	order = get_object_or_404(Order, order_buyer=request.user, order_index=order_id)
 	order_detail = OrderDetail.objects.filter(order_id=order)
 	if order.order_status == "paying":
 		order_info = "您的订单已提交，请尽快付款"
@@ -304,7 +303,7 @@ def profile(request):
 			page_now = int(request.GET['page'])
 	paginator = Paginator(order_list, 5)
 	if not 0 <= page_now <= paginator.num_pages:
-		return HttpResponseNotFound()
+		raise Http404
 	p = paginator.page(page_now)
 	for order in p.object_list:
 		detail = OrderDetail.objects.filter(order_id=order)
@@ -424,14 +423,14 @@ def user_code_gen(request, cellphone):
 @login_required(redirect_field_name='redirect_to')
 def address_location(request):
 	if request.method != 'POST':
-		return HttpResponseBadRequest()
+		raise SuspiciousOperation
 	try:
 		long = request.POST['long']
 		lat = request.POST['lat']
 		long = float(long) + 0.008774687519
 		lat = float(lat) + 0.00374531687912
 	except KeyError:
-		return HttpResponseBadRequest
+		raise SuspiciousOperation
 	url = 'http://api.map.baidu.com/geocoder/v2/?output=json&ak=u75trxs2Sm6TsanHVanYIopW&location={0},{1}'.format(lat,long)
 	r = requests.get(url)
 	r_json = r.json()
