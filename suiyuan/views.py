@@ -275,3 +275,25 @@ def my_400_view(request):
 		'rp': rp,
 		'news': flownews
 	})
+
+
+def search(request):
+	try:
+		search_target = request.GET['search']
+	except KeyError:
+		search_target = ""
+
+	if not search_target == "":
+		search_products = Product.objects.filter(product_name__contains=search_target)
+		search_news = Passage.objects.filter(pass_title__contains=search_target)
+	else:
+		search_products = Product.objects.filter(product_index="@")
+		search_news = Passage.objects.filter(pass_title="@")
+	return render(request, "suiyuan/search.html", {
+		'target': search_target,
+		'products': search_products,
+		'product_count': search_products.count(),
+		'news': search_news,
+		'news_count': search_news.count(),
+		'total': search_products.count() + search_news.count()
+	})

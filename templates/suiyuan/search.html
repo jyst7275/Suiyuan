@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="app-to-top profile-bg" style="margin-bottom: 0">
+    <div class="container">
+        <div class="search-header">
+            <div class="search-text">搜索：<input class="search-class" type="text" value="{{ target }}">
+                <button class="btn btn-primary search-btn">搜索</button></div>
+            <p>
+                共有{{ total }}个结果
+            </p>
+        </div>
+        {% if products %}
+        <div class="search-result-section">
+            <h4>产品：</h4>
+            <ul class="search-result-list">
+                {% for product in products %}
+                <li><a href={{ product.get_absolute_url }}>{{ product.product_name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if news %}
+        <div class="search-result-section">
+            <h4>文章：</h4>
+            <ul class="search-result-list-news">
+                {% for new in news %}
+                <li><a href={{ new.get_absolute_url }}>{{ new.pass_title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    </div>
+
+
+{% endblock %}

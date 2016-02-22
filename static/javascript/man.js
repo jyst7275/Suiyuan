@@ -267,3 +267,8 @@ $('.myorder-detail-address').hover(function(){
 }, function(){
     $(this).next().css('display','none');
 });
+
+$('.search-btn').click(function(){
+   var search = $(this).parent().children('.search-class').val();
+    location.href='/search?search=' + search;
+});
