@@ -33,7 +33,9 @@
         <div class="row">
             {% if top_news %}
             <div class="col-md-5 app-news-top-img" style="margin-bottom: 15px">
+                {% if top_news.passage.pass_img %}
                 <img src={{ top_news.passage.pass_img.url }} alt="">
+                    {% endif %}
             </div>
             <div class="col-md-12" style="float: none">
                 <h3>{{ top_news.title }}</h3>
@@ -90,7 +92,9 @@
 
         {% for pass in passage_list %}
             <li class="app-news-container">
+                {% if pass.pass_img %}
                 <img src={{ pass.pass_img.url }} alt="">
+                {% endif %}
                 <div class="app-news-text">
                 <h4>{{ pass.pass_title }}</h4>
                     <div class="app-news-date">{{ pass.pub_date }}</div>
