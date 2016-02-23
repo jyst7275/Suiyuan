@@ -240,15 +240,21 @@ function set_countdown(){
 
 function get_check_code(){
     if(countdown == 0) {
+        var cellphone_input = $('#login-form input[name=cellphone]').val();
+        var cellphone_rep = /^0?1[3|4|5|8][0-9]\d{8}$/;
+        if(!cellphone_rep.test(cellphone_input)){
+            alert('号码错误！');
+            return;
+        }
         $.ajax({
-            url: '/v1/user/sendcode/' + $('#login-form input[name=cellphone]').val() + '/',
+            url: '/v1/user/sendcode/' + cellphone_input + '/',
             type: 'POST',
             success: function (data) {
                 var data_json = $.parseJSON(data);
                 alert(data_json.code)
             },
             error:function(a, b,c){
-                alert("请在60s后再提交！")
+                alert("号码错误或请求间隔小于60s");
             }
         });
         $('#checkcode-btn').addClass('checked');

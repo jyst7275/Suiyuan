@@ -208,6 +208,10 @@ body{
     margin: 0 auto;
 }
 
+.location-not{
+    padding-left: 75px;
+}
+
 @media (min-width: 1480px) {
     .wide-container{
         width: 1440px;

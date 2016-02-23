@@ -83,8 +83,52 @@ def status(request):
 	return HttpResponse(request.user.is_authenticated())
 
 
-@login_required(redirect_field_name="redirect_to")
+def cart_to_view(cart_id_list, cart_count_list):
+	return_cart = []
+	total = 0
+	total_count = 0
+	if len(cart_id_list) != len(cart_count_list):
+		raise KeyError
+
+	for i, pr in enumerate(cart_id_list):
+		product = Product.objects.get(product_index=pr)
+		count = int(cart_count_list[i])
+		if count <= 0:
+			raise KeyError
+		pr_total = product.product_prize * count
+		total += pr_total
+		total_count += count
+		return_cart.append({
+			'product': product,
+			'count': count,
+			'total': pr_total
+		})
+	return return_cart, total, total_count
+
+
 def order_confirm(request):
+	if not request.user.is_authenticated():
+		if request.method == 'GET':
+			get_dict = request.GET
+			url_get = ""
+			for i in get_dict:
+				url_get += "&&" + i + "=" + get_dict[i]
+			if not url_get == "":
+				url_get = "?" + url_get[2:]
+			url_get_encode = urllib.parse.quote(url_get)
+			return HttpResponseRedirect('/user/login/?redirect_to=/order/confirm/' + url_get_encode)
+		elif request.method == 'POST':
+			cart_id = request.POST['id']
+			cart_count = request.POST['count']
+			cart_id_list = cart_id.split(',')
+			cart_count_list = cart_count.split(',')
+			request.session['order_confirm'] = {
+				'cart_id_list': cart_id_list,
+				'cart_count_list': cart_count_list
+			}
+			return HttpResponseRedirect('/user/login/?redirect_to=/order/confirm/' + urllib.parse.quote("?action=post"))
+		return HttpResponseRedirect('/user/login/')
+
 	if request.method == 'GET':
 		if 'product' in request.GET:
 			pr_id = get_object_or_404(Product, product_index=request.GET['product'])
@@ -95,6 +139,15 @@ def order_confirm(request):
 			}]
 			total_count = 1
 			total = pr_id.product_prize
+		elif 'action' in request.GET:
+			if request.GET['action'] == "post":
+				try:
+					return_cart, total, total_count = cart_to_view(request.session['order_confirm']['cart_id_list'], request.session['order_confirm']['cart_count_list'])
+					del request.session['order_confirm']
+				except KeyError:
+					return SuspiciousOperation
+			else:
+				raise SuspiciousOperation
 		else:
 			raise SuspiciousOperation
 	elif request.method == 'POST':
@@ -107,26 +160,8 @@ def order_confirm(request):
 		cart_count = request.POST['count']
 		cart_id_list = cart_id.split(',')
 		cart_count_list = cart_count.split(',')
-		return_cart = []
-		total = 0
-		total_count = 0
 		try:
-			if len(cart_id_list) != len(cart_count_list):
-				raise KeyError
-
-			for i, pr in enumerate(cart_id_list):
-				product = Product.objects.get(product_index=pr)
-				count = int(cart_count_list[i])
-				if count <= 0:
-					raise KeyError
-				pr_total = product.product_prize * count
-				total += pr_total
-				total_count += count
-				return_cart.append({
-					'product': product,
-					'count': count,
-					'total': pr_total
-				})
+			return_cart, total, total_count = cart_to_view(cart_id_list, cart_count_list)
 		except KeyError or Product.DoesNotExist:
 			raise SuspiciousOperation
 	else:
@@ -432,7 +467,7 @@ def user_code_gen(request, cellphone):
 	except UserCode.DoesNotExist:
 		usercode = UserCode.objects.create(usercode=cellphone, code=code)
 	usercode.save()
-	sendcode(cellphone, str(code))
+	# sendcode(cellphone, str(code))
 	return HttpResponse(json.dumps({'code': usercode.code, 'status': 'true'}))
 
 

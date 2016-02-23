@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7g*5*+kfv^a_u&2+dn475lgy7wm*r-a6kw2fh49=9xo=w2&%co'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -122,8 +122,3 @@ AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'suiyuan
 AUTH_USER_MODEL = 'suiyuan.SyUser'
 LOGIN_URL = '/user/login/'
 
-SMSINFO = {
-    'username': 'cf_jyst7275',
-    'password': 'jy727580',
-    'url': 'http://106.ihuyi.cn/webservice/sms.php?method=Submit'
-}

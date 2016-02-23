@@ -219,7 +219,7 @@ function getlocation(thisElem){
         maximumAge:1000
     };
     if(navigator.geolocation){
-
+        thisElem.find('.location-not').text('获取位置中。。。');
         navigator.geolocation.getCurrentPosition(function(position){
             var longitude = position.coords.longitude;
             var latitude = position.coords.latitude;
@@ -232,15 +232,16 @@ function getlocation(thisElem){
             },
             success:function(data){
                 setlocation(thisElem, $.parseJSON(data));
+                thisElem.find('.location-not').text('定位成功！');
                 return true;
             }
             });
         },function(){
-            alert('获取地址失败');
+            thisElem.find('.location-not').text('获取位置失败！');
         },options);
     }
     else {
-        alert('位置服务不可用');
+        thisElem.find('.location-not').text('位置服务不可用！');
     }
     return false;
 }
@@ -253,13 +254,18 @@ $('body').on('click', '.address-remove-btn', function(){
         type:'DELETE',
         data:{},
         success:function(){
-            alert('a');
             father.remove();
         }
     });
 });
 
 $('#add-address-submit').click(function(){
+    var cellphone_input = $('#add-address input[name=address-cellphone]').val();
+    var cellphone_reg = /^0?1[3|4|5|8][0-9]\d{8}$/;
+    if(!cellphone_reg.test(cellphone_input)){
+        alert('电话号码有误，请检查');
+        return;
+    }
     $.ajax({
         url:'/v1/user/address/',
         type:'POST',
@@ -290,6 +296,12 @@ $('#add-address-submit').click(function(){
 
 $('#edit-address-submit').click(function(){
     var id = $('#edit-address').attr('data-id');
+    var cellphone_input = $('#edit-address input[name=address-cellphone]').val();
+    var cellphone_reg = /^0?1[3|4|5|8][0-9]\d{8}$/;
+    if(!cellphone_reg.test(cellphone_input)){
+        alert('电话号码有误，请检查');
+        return;
+    }
     $.ajax({
         url:'/v1/user/address/' + id + '/',
         type:'PUT',
