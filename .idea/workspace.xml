@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/admin.py" afterPath="$PROJECT_DIR$/suiyuan/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/model.py" afterPath="$PROJECT_DIR$/suiyuan/model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/settings.py" afterPath="$PROJECT_DIR$/suiyuan/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumQueryRequest.py" afterPath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumQueryRequest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumSendRequest.py" afterPath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumSendRequest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcTtsNumSinglecallRequest.py" afterPath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcTtsNumSinglecallRequest.py" />
@@ -67,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/suiyuan/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5518868">
-              <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+            <state vertical-scroll-proportion="-10.636364">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
                 <element signature="e#1418#1985#0" expanded="false" />
               </folding>
@@ -103,6 +102,16 @@
                 <element signature="e#13756#14401#0" expanded="false" />
                 <element signature="e#14682#15388#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32286996">
+              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,7 +172,6 @@
         <option value="$PROJECT_DIR$/suiyuan/urls.py" />
         <option value="$PROJECT_DIR$/suiyuan/views.py" />
         <option value="$PROJECT_DIR$/top/api/base.py" />
-        <option value="$PROJECT_DIR$/suiyuan/settings.py" />
         <option value="$PROJECT_DIR$/static/javascript/man.js" />
         <option value="$PROJECT_DIR$/static/css/man.css" />
         <option value="$PROJECT_DIR$/static/javascript/buy.js" />
@@ -171,6 +179,7 @@
         <option value="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" />
         <option value="$PROJECT_DIR$/suiyuan/model.py" />
         <option value="$PROJECT_DIR$/suiyuan/admin.py" />
+        <option value="$PROJECT_DIR$/suiyuan/settings.py" />
       </list>
     </option>
   </component>
@@ -762,7 +771,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456232522850</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="update:&#10;auto pay finished&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;">
+      <created>1456234403228</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1456234403228</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView">
@@ -776,9 +791,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="105" y="131" width="1717" height="841" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24175166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24175166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33564013" sideWeight="0.50419164" order="11" side_tool="true" content_ui="tabs" />
@@ -1103,14 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1326377">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/suiyuan/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -1234,11 +1241,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/suiyuan/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5518868">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+        <state vertical-scroll-proportion="-10.636364">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="e#1418#1985#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32286996">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
