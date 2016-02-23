@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate
 from django import forms
 from django.http import QueryDict
 from django.shortcuts import render
-from .model import Product, Address, Order,OrderDetail, RecommendProduct
+from .model import Product, Address, Order,OrderDetail, RecommendProduct, OrderPay
 from random import choice
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -253,7 +253,6 @@ def order_request(request):
 		raise SuspiciousOperation
 
 	#check code
-	print()
 	if 'order_pk' not in request.session:
 		raise SuspiciousOperation
 	session_order_code = request.session['order_pk']
@@ -271,6 +270,9 @@ def order_request(request):
 	order = Order.objects.create(order_total=0, order_address=address_obj.short(), order_buyer=request.user,
 	                             order_username= address_obj.name, order_pay=None, order_status="paying",
 	                             order_cellphone=address_obj.cellphone)
+	payment = request.POST.get('payment', '')
+	if payment == "auto":
+		add_pay("auto", order)
 	order.save()
 	total = 0
 	try:
@@ -469,6 +471,13 @@ def user_code_gen(request, cellphone):
 	usercode.save()
 	# sendcode(cellphone, str(code))
 	return HttpResponse(json.dumps({'code': usercode.code, 'status': 'true'}))
+
+
+def add_pay(method, order_obj, data=""):
+	payment = OrderPay.objects.create(pay_method=method, pay_data=data)
+	payment.save()
+	order_obj.order_pay = payment
+	order_obj.order_status = "waiting"
 
 
 @login_required(redirect_field_name='redirect_to')

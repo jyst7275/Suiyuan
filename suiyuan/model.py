@@ -231,8 +231,12 @@ class SyUser(AbstractBaseUser):
 
 
 class OrderPay(models.Model):
-	pay_date = models.DateTimeField('付款日期')
-	pay_method = models.CharField('付款方法', max_length=200)
+	pay_date = models.DateTimeField('付款日期', default=timezone.now())
+	pay_method = models.CharField('付款方法', max_length=200, choices=(
+		('auto', '货到付款'),
+		('alipay', '支付宝付款'),
+		('weixinpay', "微信支付")
+	))
 	pay_data = models.CharField('付款数据', max_length=200)
 
 	class Meta:
@@ -277,7 +281,7 @@ class Order(models.Model):
 		return_html = format_html('')
 		detail_list = OrderDetail.objects.filter(order_id=self)
 		for detail in detail_list:
-			return_html += format_html('<li style="list-style:none;">{}{}{}</li>',
+			return_html += format_html('<li style="list-style:none;">{} ￥{} x{}</li>',
 			detail.order_product.product_name, detail.order_count, detail.order_price)
 		return format_html('<ul style="list-style: none;padding:0;margin:0;">') + return_html + format_html('</ul>')
 

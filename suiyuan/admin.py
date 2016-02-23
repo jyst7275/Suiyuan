@@ -102,7 +102,7 @@ class UserAdmin(BaseUserAdmin):
 
 class OrderAdmin(admin.ModelAdmin):
 	fields = ('order_index', ('order_buyer', 'order_username'), 'order_date', 'order_address', 'order_total', 'order_status')
-	list_display = ('order_index', 'order_username', 'order_date', 'order_detail', 'order_total','order_status')
+	list_display = ('order_index', 'order_username', 'order_date', 'order_detail', 'order_total', 'order_status')
 admin.site.register(SyUser, UserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Topnews)
