@@ -281,8 +281,8 @@ class Order(models.Model):
 		return_html = format_html('')
 		detail_list = OrderDetail.objects.filter(order_id=self)
 		for detail in detail_list:
-			return_html += format_html('<li style="list-style:none;">{} ￥{} x{}</li>',
-			detail.order_product.product_name, detail.order_count, detail.order_price)
+			return_html += format_html('<li style="list-style:none;"><a href={}>{} ￥{} x{}</a></li>',
+			'/admin/suiyuan/orderdetail/' + str(detail.id) + '/change/', detail.order_product.product_name, detail.order_price, detail.order_count)
 		return format_html('<ul style="list-style: none;padding:0;margin:0;">') + return_html + format_html('</ul>')
 
 	def save(self, force_insert=False, force_update=False, using=None, update_fields=None):

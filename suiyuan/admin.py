@@ -16,7 +16,10 @@ class ProductCategoryAdmin(admin.ModelAdmin):
 
 class ProductAdmin(SummernoteModelAdmin):
 	list_display = ("img_display", "product_name", "product_category", "product_prize", "product_date", "product_index", 'product_status')
+	list_editable = ['product_status', 'product_prize']
+	list_filter = ['product_category__category', 'product_status']
 	list_display_links = ("img_display", "product_name")
+	search_fields = ['product_category__category', 'product_name']
 	fieldsets = (
 		(None, {
 			'fields': (('product_name', 'product_category', 'product_status'), 'product_prize', 'product_date', 'product_img',
@@ -32,7 +35,9 @@ class ProductAdmin(SummernoteModelAdmin):
 class PassageAdmin(SummernoteModelAdmin):
 	fields = ('pub_date', ('pass_title', 'pass_type', 'pass_status'), 'pass_summery', 'pass_img', 'pass_content')
 
-	list_display = ('pass_title', 'pub_date')
+	list_display = ('pass_title', 'pub_date', 'pass_status')
+	list_filter = ['pub_date', 'pass_status']
+	list_editable = ['pass_status']
 	view_on_site = True
 
 	def formfield_for_choice_field(self, db_field, request=None, **kwargs):
@@ -101,8 +106,11 @@ class UserAdmin(BaseUserAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-	fields = ('order_index', ('order_buyer', 'order_username'), 'order_date', 'order_address', 'order_total', 'order_status')
-	list_display = ('order_index', 'order_username', 'order_date', 'order_detail', 'order_total', 'order_status')
+	fields = ('order_index', ('order_buyer', 'order_username', 'order_cellphone'), 'order_date', 'order_address', 'order_total', 'order_status')
+	list_display = ('order_index', 'order_date', 'order_detail', 'order_total', 'order_username', 'order_address', 'order_cellphone', 'order_status')
+	search_fields = ['order_username', 'order_id', 'order_cellphone']
+	list_editable = ['order_status']
+	list_filter = ['order_status', 'order_date']
 admin.site.register(SyUser, UserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Topnews)
