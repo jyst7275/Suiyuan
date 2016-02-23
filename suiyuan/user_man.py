@@ -469,8 +469,8 @@ def user_code_gen(request, cellphone):
 	except UserCode.DoesNotExist:
 		usercode = UserCode.objects.create(usercode=cellphone, code=code)
 	usercode.save()
-	# sendcode(cellphone, str(code))
-	return HttpResponse(json.dumps({'code': usercode.code, 'status': 'true'}))
+	sendcode(cellphone, str(code))
+	return HttpResponse(json.dumps({'status': 'true'}))
 
 
 def add_pay(method, order_obj, data=""):

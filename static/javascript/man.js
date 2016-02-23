@@ -251,7 +251,6 @@ function get_check_code(){
             type: 'POST',
             success: function (data) {
                 var data_json = $.parseJSON(data);
-                alert(data_json.code)
             },
             error:function(a, b,c){
                 alert("号码错误或请求间隔小于60s");

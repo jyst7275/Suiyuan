@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/settings.py" afterPath="$PROJECT_DIR$/suiyuan/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/man.js" afterPath="$PROJECT_DIR$/static/javascript/man.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/user_man.py" afterPath="$PROJECT_DIR$/suiyuan/user_man.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumQueryRequest.py" afterPath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumQueryRequest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumSendRequest.py" afterPath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcSmsNumSendRequest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcTtsNumSinglecallRequest.py" afterPath="$PROJECT_DIR$/top/api/rest/AlibabaAliqinFcTtsNumSinglecallRequest.py" />
@@ -81,8 +82,8 @@
       <file leaf-file-name="user_man.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/suiyuan/user_man.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="479" column="38" selection-start-line="479" selection-start-column="38" selection-end-line="479" selection-end-column="38" />
+            <state vertical-scroll-proportion="-7.242424">
+              <caret line="472" column="36" selection-start-line="472" selection-start-column="36" selection-end-line="472" selection-end-column="36" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#848#934#0" expanded="false" />
@@ -99,18 +100,48 @@
                 <element signature="e#12055#12918#0" expanded="false" />
                 <element signature="e#12957#13349#0" expanded="false" />
                 <element signature="e#13384#13713#0" expanded="false" />
-                <element signature="e#13756#14401#0" expanded="false" />
-                <element signature="e#14682#15388#0" expanded="false" />
+                <element signature="e#14657#15363#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="buy.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/buy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.4242425">
+              <caret line="48" column="14" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="14" />
+              <folding>
+                <marker date="1456230313309" expanded="true" signature="8928:9476" placeholder="..." />
+                <marker date="1456230313309" expanded="true" signature="8972:9162" placeholder="..." />
+                <marker date="1456230313309" expanded="true" signature="10608:11156" placeholder="..." />
+                <marker date="1456230313309" expanded="true" signature="10652:10842" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="man.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/javascript/man.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4606918">
+              <caret line="252" column="50" selection-start-line="252" selection-start-column="50" selection-end-line="252" selection-end-column="50" />
+              <folding>
+                <marker date="1456234517391" expanded="true" signature="4491:5068" placeholder="..." />
+                <marker date="1456234517391" expanded="true" signature="4604:5063" placeholder="..." />
+                <marker date="1456234517391" expanded="false" signature="4851:4880" placeholder="..." />
+                <marker date="1456234517391" expanded="false" signature="4940:4954" placeholder="..." />
+                <marker date="1456234517391" expanded="true" signature="5883:5897" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32286996">
-              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -172,14 +203,14 @@
         <option value="$PROJECT_DIR$/suiyuan/urls.py" />
         <option value="$PROJECT_DIR$/suiyuan/views.py" />
         <option value="$PROJECT_DIR$/top/api/base.py" />
-        <option value="$PROJECT_DIR$/static/javascript/man.js" />
         <option value="$PROJECT_DIR$/static/css/man.css" />
         <option value="$PROJECT_DIR$/static/javascript/buy.js" />
-        <option value="$PROJECT_DIR$/suiyuan/user_man.py" />
         <option value="$PROJECT_DIR$/templates/suiyuan/order_confirm.html" />
         <option value="$PROJECT_DIR$/suiyuan/model.py" />
         <option value="$PROJECT_DIR$/suiyuan/admin.py" />
         <option value="$PROJECT_DIR$/suiyuan/settings.py" />
+        <option value="$PROJECT_DIR$/suiyuan/user_man.py" />
+        <option value="$PROJECT_DIR$/static/javascript/man.js" />
       </list>
     </option>
   </component>
@@ -247,7 +278,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="suiyuan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascript" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -777,7 +826,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456234403228</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update:&#10;auto pay finished&#10;admin update&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;">
+      <created>1456234433476</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1456234433476</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView">
@@ -791,9 +846,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="105" y="131" width="1717" height="841" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24175166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24175166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33564013" sideWeight="0.50419164" order="11" side_tool="true" content_ui="tabs" />
@@ -843,7 +898,8 @@
     <MESSAGE value="&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;" />
     <MESSAGE value="update:&#10;location service&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;" />
     <MESSAGE value="update:&#10;auto pay finished&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="update:&#10;auto pay finished&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;" />
+    <MESSAGE value="update:&#10;auto pay finished&#10;admin update&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update:&#10;auto pay finished&#10;admin update&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1158,20 +1214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/man.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.4242425">
-          <caret line="245" column="17" selection-start-line="245" selection-start-column="12" selection-end-line="245" selection-end-column="17" />
-          <folding>
-            <marker date="1456229212372" expanded="true" signature="4491:5068" placeholder="..." />
-            <marker date="1456229212372" expanded="true" signature="4604:5063" placeholder="..." />
-            <marker date="1456229212372" expanded="false" signature="4851:4880" placeholder="..." />
-            <marker date="1456229212372" expanded="false" signature="4940:4954" placeholder="..." />
-            <marker date="1456229212372" expanded="true" signature="5883:5897" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/suiyuan/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07174888">
@@ -1185,45 +1227,6 @@
         <state vertical-scroll-proportion="1.53">
           <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/buy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5660377">
-          <caret line="347" column="30" selection-start-line="347" selection-start-column="19" selection-end-line="347" selection-end-column="30" />
-          <folding>
-            <marker date="1456230313309" expanded="true" signature="8928:9476" placeholder="..." />
-            <marker date="1456230313309" expanded="true" signature="8972:9162" placeholder="..." />
-            <marker date="1456230313309" expanded="true" signature="10608:11156" placeholder="..." />
-            <marker date="1456230313309" expanded="true" signature="10652:10842" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/user_man.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="479" column="38" selection-start-line="479" selection-start-column="38" selection-end-line="479" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#848#934#0" expanded="false" />
-            <element signature="e#965#1467#0" expanded="false" />
-            <element signature="e#1491#2288#0" expanded="false" />
-            <element signature="e#2364#2416#0" expanded="false" />
-            <element signature="e#2469#2953#0" expanded="false" />
-            <element signature="e#2985#5503#0" expanded="false" />
-            <element signature="e#5586#6294#0" expanded="false" />
-            <element signature="e#6388#7468#0" expanded="false" />
-            <element signature="e#9423#10171#0" expanded="false" />
-            <element signature="e#10248#11943#0" expanded="false" />
-            <element signature="e#11968#12032#0" expanded="false" />
-            <element signature="e#12055#12918#0" expanded="false" />
-            <element signature="e#12957#13349#0" expanded="false" />
-            <element signature="e#13384#13713#0" expanded="false" />
-            <element signature="e#13756#14401#0" expanded="false" />
-            <element signature="e#14682#15388#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1251,9 +1254,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/suiyuan/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32286996">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suiyuan/user_man.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.242424">
+          <caret line="472" column="36" selection-start-line="472" selection-start-column="36" selection-end-line="472" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#848#934#0" expanded="false" />
+            <element signature="e#965#1467#0" expanded="false" />
+            <element signature="e#1491#2288#0" expanded="false" />
+            <element signature="e#2364#2416#0" expanded="false" />
+            <element signature="e#2469#2953#0" expanded="false" />
+            <element signature="e#2985#5503#0" expanded="false" />
+            <element signature="e#5586#6294#0" expanded="false" />
+            <element signature="e#6388#7468#0" expanded="false" />
+            <element signature="e#9423#10171#0" expanded="false" />
+            <element signature="e#10248#11943#0" expanded="false" />
+            <element signature="e#11968#12032#0" expanded="false" />
+            <element signature="e#12055#12918#0" expanded="false" />
+            <element signature="e#12957#13349#0" expanded="false" />
+            <element signature="e#13384#13713#0" expanded="false" />
+            <element signature="e#14657#15363#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/buy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4242425">
+          <caret line="48" column="14" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="14" />
+          <folding>
+            <marker date="1456230313309" expanded="true" signature="8928:9476" placeholder="..." />
+            <marker date="1456230313309" expanded="true" signature="8972:9162" placeholder="..." />
+            <marker date="1456230313309" expanded="true" signature="10608:11156" placeholder="..." />
+            <marker date="1456230313309" expanded="true" signature="10652:10842" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/man.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4606918">
+          <caret line="252" column="50" selection-start-line="252" selection-start-column="50" selection-end-line="252" selection-end-column="50" />
+          <folding>
+            <marker date="1456234517391" expanded="true" signature="4491:5068" placeholder="..." />
+            <marker date="1456234517391" expanded="true" signature="4604:5063" placeholder="..." />
+            <marker date="1456234517391" expanded="false" signature="4851:4880" placeholder="..." />
+            <marker date="1456234517391" expanded="false" signature="4940:4954" placeholder="..." />
+            <marker date="1456234517391" expanded="true" signature="5883:5897" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
