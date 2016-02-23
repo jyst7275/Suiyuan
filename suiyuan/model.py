@@ -30,7 +30,7 @@ class Passage(models.Model):
 	pass_type = models.CharField('文章类型', max_length=20, choices=(("News", "公司新闻"), ("Business", "行业动态"), ("Health", "健康知识")))
 	pass_title = models.CharField('文章标题', max_length=100)
 	pass_summery = models.CharField('文章简介', max_length=500)
-	pass_img = models.ImageField('文章图片', upload_to='uploads/%Y/%m/%d/', null=True)
+	pass_img = models.ImageField('文章图片', upload_to='uploads/%Y/%m/%d/', null=True, blank=True)
 	pass_content = models.TextField('文章内容')
 	pass_status = models.CharField('文章状态', max_length=20, choices=(
 		("published", "发布"),
@@ -39,8 +39,8 @@ class Passage(models.Model):
 	))
 
 	class Meta:
-		verbose_name = '文章管理'
-		verbose_name_plural = '文章管理'
+		verbose_name = '文章'
+		verbose_name_plural = '文章'
 
 	def img_url(self):
 		return self.pass_img.url
