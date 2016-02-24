@@ -99,8 +99,7 @@ def about(request):
 def archives(request, year, month, day, title):
 	template = loader.get_template('suiyuan/article.html')
 	url = request.path
-	title_re, a = re.subn(re.compile(r'[\W]+'), '', title)
-	object_get = get_object_or_404(Passage, pass_title=title_re, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
+	object_get = get_object_or_404(Passage, pass_title_index=title, pub_date__gte=datetime.datetime(int(year), int(month), int(day)))
 	try:
 		object_next = object_get.get_next_by_pub_date()
 	except Passage.DoesNotExist:

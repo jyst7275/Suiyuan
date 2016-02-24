@@ -5,6 +5,7 @@ from uuslug import slugify
 from django.utils.html import format_html
 from random import choice
 from datetime import date
+import datetime
 import re
 
 class ProductBanner(models.Model):
@@ -29,6 +30,7 @@ class Passage(models.Model):
 	pub_date = models.DateTimeField('日期', default=timezone.now())
 	pass_type = models.CharField('文章类型', max_length=20, choices=(("News", "公司新闻"), ("Business", "行业动态"), ("Health", "健康知识")))
 	pass_title = models.CharField('文章标题', max_length=100)
+	pass_title_index = models.SlugField('索引标题', max_length=40, null=True)
 	pass_summery = models.CharField('文章简介', max_length=500)
 	pass_img = models.ImageField('文章图片', upload_to='uploads/%Y/%m/%d/', null=True, blank=True)
 	pass_content = models.TextField('文章内容')
@@ -48,14 +50,19 @@ class Passage(models.Model):
 		return ""
 
 	def get_absolute_url(self):
-		title_character, a = re.subn(re.compile(r'[\W]+'), '', self.pass_title)
-		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, title_character) + '/'
+		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, self.pass_title_index) + '/'
 
 	def pass_url(self):
 		return self.get_absolute_url()
 
 	def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-		self.index_pinyin = slugify(self.pass_title, max_length=60)
+		# self.index_pinyin = slugify(self.pass_title, max_length=60)
+		title_index, a = re.subn(re.compile(r'[\W]+'), '', self.pass_title)
+		check_obg = Passage.objects.filter(pub_date__gte=datetime.datetime(self.pub_date.year, self.pub_date.month, self.pub_date.day), pass_title_index__startswith=title_index)
+		if check_obg.count() == 0:
+			self.pass_title_index = title_index
+		else:
+			self.pass_title_index = title_index + '-' + str(check_obg.count())
 		super(Passage, self).save(force_insert, force_update, using, update_fields)
 
 	def __str__(self):
