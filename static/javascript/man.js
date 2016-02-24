@@ -213,7 +213,7 @@ $('#say-more').click(function(){
     $(this).css('display','none');
     $('#say-more-arrow i').attr('class','fa fa-angle-double-up fa-2x app-icon-down app-icon-moving-down');
 });
-$('body').on('click', function(){
+$('body').on('click', '.app-news-page-btn', function(){
     var page = $(this).attr('data-target');
     var type = $('.app-news-list-head').attr('data-type');
     setPage(type, page);
