@@ -4,7 +4,6 @@
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/model.py" afterPath="$PROJECT_DIR$/suiyuan/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/views.py" afterPath="$PROJECT_DIR$/suiyuan/views.py" />
     </list>
     <ignored path="suiyuan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,16 +35,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.18956743">
+              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#6100#6406#0" expanded="false" />
-                <element signature="e#10366#10810#0" expanded="false" />
-                <element signature="e#11046#12170#0" expanded="false" />
+                <element signature="e#6074#6380#0" expanded="false" />
+                <element signature="e#10340#10784#0" expanded="false" />
+                <element signature="e#11020#12144#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/suiyuan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3632287">
-              <caret line="102" column="8" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -214,10 +213,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="84" />
-    <option name="y" value="56" />
-    <option name="width" value="1718" />
-    <option name="height" value="841" />
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="958" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -588,12 +586,6 @@
       <option name="number" value="Default" />
       <updated>1453553531144</updated>
     </task>
-    <task id="LOCAL-00006" summary="Finish Product indexing&#10;Finish Product Detail&#10;Finish Index Animation">
-      <created>1455180076654</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1455180076654</updated>
-    </task>
     <task id="LOCAL-00007" summary="Finish Product indexing&#10;Finish Product Detail&#10;Finish Index Animation">
       <created>1455192130982</created>
       <option name="number" value="00007" />
@@ -882,7 +874,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456295473348</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="update:&#10;pagination&#10;title with \W&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;">
+      <created>1456297001744</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1456297001744</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -895,10 +893,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="84" y="56" width="1718" height="841" extended-state="0" />
+    <frame x="0" y="27" width="1920" height="958" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25239807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22513369" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33564013" sideWeight="0.50419164" order="11" side_tool="true" content_ui="tabs" />
@@ -1356,24 +1354,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
+    <entry file="file://$PROJECT_DIR$/suiyuan/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#6100#6406#0" expanded="false" />
-            <element signature="e#10366#10810#0" expanded="false" />
-            <element signature="e#11046#12170#0" expanded="false" />
-          </folding>
+          <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suiyuan/views.py">
+    <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3632287">
-          <caret line="102" column="8" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.18956743">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#6074#6380#0" expanded="false" />
+            <element signature="e#10340#10784#0" expanded="false" />
+            <element signature="e#11020#12144#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

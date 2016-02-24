@@ -56,13 +56,13 @@ class Passage(models.Model):
 		return self.get_absolute_url()
 
 	def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-		# self.index_pinyin = slugify(self.pass_title, max_length=60)
-		title_index, a = re.subn(re.compile(r'[\W]+'), '', self.pass_title)
-		check_obg = Passage.objects.filter(pub_date__gte=datetime.datetime(self.pub_date.year, self.pub_date.month, self.pub_date.day), pass_title_index__startswith=title_index)
-		if check_obg.count() == 0:
-			self.pass_title_index = title_index
-		else:
-			self.pass_title_index = title_index + '-' + str(check_obg.count())
+		if not self.pass_title_index:
+			title_index, a = re.subn(re.compile(r'[\W]+'), '', self.pass_title)
+			check_obg = Passage.objects.filter(pub_date__gte=datetime.datetime(self.pub_date.year, self.pub_date.month, self.pub_date.day), pass_title_index__startswith=title_index)
+			if check_obg.count() == 0:
+				self.pass_title_index = title_index
+			else:
+				self.pass_title_index = title_index + '-' + str(check_obg.count())
 		super(Passage, self).save(force_insert, force_update, using, update_fields)
 
 	def __str__(self):
