@@ -127,8 +127,18 @@ function setPage(type, page){
         $('.app-news-list-container').empty();
         if(data.count > 0) {
             for (var i = 0; i < data.count; i++) {
+                if(data.results[i].img_url != "")
                 $('.app-news-list-container').append('<li class="app-news-container"> \
                 <img src=' + data.results[i].img_url + ' alt=""> \
+                <div class="app-news-text"> \
+                <h4>' + data.results[i].pass_title + '</h4> \
+                    <div class="app-news-date">' + data.results[i].pub_date + '</div> \
+                <div>' + data.results[i].pass_summery + '</div> \
+                <hr style="border-top: solid 1px #5596e6"> \
+                    <i class="fa fa-book fa-lg" style="color: #337ab7"></i><a class="app-news-text-more" href=' + data.results[i].pass_url + '>阅读新闻</a>\
+                    </div></li>');
+                else
+                $('.app-news-list-container').append('<li class="app-news-container"> \
                 <div class="app-news-text"> \
                 <h4>' + data.results[i].pass_title + '</h4> \
                     <div class="app-news-date">' + data.results[i].pub_date + '</div> \

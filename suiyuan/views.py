@@ -60,6 +60,8 @@ def index(request):
 def news(request):
 	template = loader.get_template('suiyuan/news.html')
 	pass_all = Passage.objects.filter(pass_status="published")
+	if pass_all.count() > 6:
+		pass_all = pass_all[:6]
 	type_list = ['app-active ', '', '', '']
 	if request.method == 'GET':
 

@@ -43,7 +43,9 @@ class Passage(models.Model):
 		verbose_name_plural = '文章'
 
 	def img_url(self):
-		return self.pass_img.url
+		if self.pass_img:
+			return self.pass_img.url
+		return ""
 
 	def get_absolute_url(self):
 		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, self.pass_title) + '/'
