@@ -33,7 +33,7 @@ class ProductAdmin(SummernoteModelAdmin):
 
 
 class PassageAdmin(SummernoteModelAdmin):
-	fields = ('pub_date', ('pass_title', 'pass_type', 'pass_status'), 'pass_summery', 'pass_img', 'pass_content')
+	fields = ('pub_date', ('pass_title', 'pass_type', 'pass_status'), 'pass_summery', 'pass_img', 'pass_content', 'pass_title_index')
 
 	list_display = ('pass_title', 'pub_date', 'pass_status')
 	list_filter = ['pub_date', 'pass_status']
