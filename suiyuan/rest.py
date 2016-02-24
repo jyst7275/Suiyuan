@@ -37,7 +37,7 @@ class PassageDetail(APIView):
 		if request.method == "GET" and 'max_page' in request.GET:
 			return Response(math.ceil(passage.count()/6))
 
-		serializers = PassageSerializer(passage, many=True)
 		paginator = SixResultPagination()
-		paginator.paginate_queryset(passage, request)
+		paginated_data = paginator.paginate_queryset(passage, request)
+		serializers = PassageSerializer(paginated_data, many=True)
 		return paginator.get_paginated_response(serializers.data)
