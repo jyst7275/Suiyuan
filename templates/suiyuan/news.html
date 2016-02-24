@@ -97,7 +97,7 @@
                 {% endif %}
                 <div class="app-news-text">
                 <h4>{{ pass.pass_title }}</h4>
-                    <div class="app-news-date">{{ pass.pub_date }}</div>
+                    <div class="app-news-date">{{ pass.pub_date|date:'Y年m月d日 H:i' }}</div>
                 <div>{{ pass.pass_summery }}</div>
                 <hr style="border-top: solid 1px #5596e6">
                     <i class="fa fa-book fa-lg" style="color: #337ab7"></i><a class="app-news-text-more" href={{ pass.get_absolute_url }}>阅读新闻</a>

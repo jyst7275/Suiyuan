@@ -9,6 +9,26 @@ var last_scroll_top = document.body.scrollTop|document.documentElement.scrollTop
 var bar_show = true;
 var app_carousel_click = false;
 var countdown = 0;
+setPageBar(1);
+Date.prototype.Format = function(fmt)
+{ //author: meizz
+  var o = {
+    "M+" : this.getMonth()+1,                 //月份
+    "d+" : this.getDate(),                    //日
+    "h+" : this.getHours(),                   //小时
+    "m+" : this.getMinutes(),                 //分
+    "s+" : this.getSeconds(),                 //秒
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度
+    "S"  : this.getMilliseconds()             //毫秒
+  };
+  if(/(y+)/.test(fmt))
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+  for(var k in o)
+    if(new RegExp("("+ k +")").test(fmt))
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+  return fmt;
+};
+
 $('#app-com-btn').click(function(){
     if(compan) {
         $('#app-com-panel').fadeOut(100);
@@ -132,20 +152,21 @@ function setPage(type, page){
                 <img src=' + data.results[i].img_url + ' alt=""> \
                 <div class="app-news-text"> \
                 <h4>' + data.results[i].pass_title + '</h4> \
-                    <div class="app-news-date">' + data.results[i].pub_date + '</div> \
+                    <div class="app-news-date">' + new Date(data.results[i].pub_date.replace(/-/g, '/').replace(/T|Z/g, ' ')).Format('yyyy年MM月dd日 hh:mm') + '</div> \
                 <div>' + data.results[i].pass_summery + '</div> \
                 <hr style="border-top: solid 1px #5596e6"> \
-                    <i class="fa fa-book fa-lg" style="color: #337ab7"></i><a class="app-news-text-more" href=' + data.results[i].pass_url + '>阅读新闻</a>\
+                    <i class="fa fa-book fa-lg" style="color: #337ab7"></i> \
+                    <a class="app-news-text-more" href="' + data.results[i].pass_url + ' ">阅读新闻</a> \
                     </div></li>');
                 else
-                $('.app-news-list-container').append('<li class="app-news-container"> \
-                <div class="app-news-text"> \
-                <h4>' + data.results[i].pass_title + '</h4> \
-                    <div class="app-news-date">' + data.results[i].pub_date + '</div> \
-                <div>' + data.results[i].pass_summery + '</div> \
-                <hr style="border-top: solid 1px #5596e6"> \
-                    <i class="fa fa-book fa-lg" style="color: #337ab7"></i><a class="app-news-text-more" href=' + data.results[i].pass_url + '>阅读新闻</a>\
-                    </div></li>');
+                $('.app-news-list-container').append('<li class="app-news-container">\
+                <div class="app-news-text">\
+                <h4>' + data.results[i].pass_title + '</h4>\
+                    <div class="app-news-date">' + new Date(data.results[i].pub_date.replace(/-/g, '/').replace(/T|Z/g, ' ')).Format('yyyy年MM月dd日 hh:mm') + '</div>\
+                <div>' + data.results[i].pass_summery + '</div>\
+                <hr style="border-top: solid 1px #5596e6">\
+                    <i class="fa fa-book fa-lg" style="color: #337ab7"></i>\
+                    <a class="app-news-text-more" href=' + data.results[i].pass_url + ' >阅读新闻</a></div></li>');
             }
             $('.app-news-pageguide').attr('data-page', page);
         }
@@ -166,6 +187,8 @@ function setPageBar(page_now){
     else
         $('#app-news-page-next').css('display', 'block');
     $('.app-news-pageguide').attr('data-page', page_now);
+    $('.app-news-pageguide').find('.active').removeClass('active');
+    $('.app-news-pageguide').find('li[data-target=' + page_now +']').addClass('active');
 }
 
 function refreshPageBar(page_max){
@@ -177,6 +200,7 @@ function refreshPageBar(page_max){
     }
     if(page_max > 1)
     $('.app-news-pageguide .pagination').append('<li><a id="app-news-page-next" href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>');
+    $('.app-news-pageguide').attr('data-max', page_max);
 }
 
 $('.app-new-bar-li').click(function(){
@@ -194,13 +218,15 @@ $('.app-new-bar-li').click(function(){
 
 $('.app-news-list-head li').click(function(){
     var type = $(this).attr('data-type');
-    setPage(type, 1);
-    $('.app-news-type-'+$('.app-news-list-head').children('.app-active').attr('data-type')).removeClass("app-active");
-    $('.app-news-type-'+$(this).attr('data-type')).addClass('app-active');
 
     //change bar
     $.get('/v1/passage/' + type + '/' + "?max_page", function(data){
         refreshPageBar(data);
+        setPage(type, 1);
+        setPageBar(1);
+        $('.app-news-type-'+$('.app-news-list-head').children('.app-active').attr('data-type')).removeClass("app-active");
+        $('.app-news-type-'+type).addClass('app-active');
+        $('.app-news-list-head').attr('data-type', type);
     });
 });
 

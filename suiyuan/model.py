@@ -5,7 +5,7 @@ from uuslug import slugify
 from django.utils.html import format_html
 from random import choice
 from datetime import date
-
+import re
 
 class ProductBanner(models.Model):
 	banner_name = models.CharField('标签名', max_length=10)
@@ -48,7 +48,8 @@ class Passage(models.Model):
 		return ""
 
 	def get_absolute_url(self):
-		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, self.pass_title) + '/'
+		title_character = re.subn(re.compile(r'[\W]+'), '', self.pass_title)
+		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, title_character) + '/'
 
 	def pass_url(self):
 		return self.get_absolute_url()
