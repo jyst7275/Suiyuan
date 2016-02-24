@@ -11,6 +11,7 @@ import math
 class SixResultPagination(PageNumberPagination):
 	page_size = 6
 	page_query_param = "page"
+	page_size_query_param = "page_size"
 
 
 class PassageSerializer(serializers.ModelSerializer):
