@@ -48,7 +48,7 @@ class Passage(models.Model):
 		return ""
 
 	def get_absolute_url(self):
-		title_character = re.subn(re.compile(r'[\W]+'), '', self.pass_title)
+		title_character, a = re.subn(re.compile(r'[\W]+'), '', self.pass_title)
 		return "/archives/{0}/{1}/{2}/{3}".format(self.pub_date.year, self.pub_date.month, self.pub_date.day, title_character) + '/'
 
 	def pass_url(self):
