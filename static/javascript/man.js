@@ -189,6 +189,7 @@ function setPageBar(page_now){
     $('.app-news-pageguide').attr('data-page', page_now);
     $('.app-news-pageguide').find('.active').removeClass('active');
     $('.app-news-pageguide').find('li[data-target=' + page_now +']').addClass('active');
+    $('html,body').animate({scrollTop:$('#app-news-bar').offset().top}, 800);
 }
 
 function refreshPageBar(page_max){
