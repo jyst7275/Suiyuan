@@ -60,11 +60,8 @@ def index(request):
 def news(request):
 	template = loader.get_template('suiyuan/news.html')
 	pass_all = Passage.objects.filter(pass_status="published")
-	if pass_all.count() > 6:
-		pass_all = pass_all[:6]
 	type_list = ['app-active ', '', '', '']
 	if request.method == 'GET':
-
 		pass_type = request.GET.get('passage', '')
 		if not pass_type == "":
 			type_list[0] = ''
@@ -78,6 +75,8 @@ def news(request):
 
 	top_news = Topnews.objects.latest('set_date')
 	page_count = math.ceil(pass_all.count()/6)
+	if pass_all.count() > 6:
+		pass_all = pass_all[:6]
 	try:
 		flow_news = Flownews.objects.all()
 	except Flownews.DoesNotExist:
