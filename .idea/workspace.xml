@@ -4,6 +4,7 @@
     <list default="true" id="5472f82f-3813-41d6-b498-33efbe4d3af1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/admin.py" afterPath="$PROJECT_DIR$/suiyuan/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suiyuan/model.py" afterPath="$PROJECT_DIR$/suiyuan/model.py" />
     </list>
     <ignored path="suiyuan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,12 +40,12 @@
         <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+              <caret line="53" column="0" selection-start-line="52" selection-start-column="57" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#6074#6380#0" expanded="false" />
-                <element signature="e#10340#10784#0" expanded="false" />
-                <element signature="e#11020#12144#0" expanded="false" />
+                <element signature="e#6078#6384#0" expanded="false" />
+                <element signature="e#10344#10788#0" expanded="false" />
+                <element signature="e#11024#12148#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,8 +54,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/suiyuan/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55725193">
-              <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.3778626">
+              <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -610,12 +611,6 @@
       <option name="number" value="Default" />
       <updated>1453553531144</updated>
     </task>
-    <task id="LOCAL-00010" summary="finished&#10;todo&#10;1\404,400&#10;2\alipay&#10;3\search&#10;">
-      <created>1455852441561</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1455852441561</updated>
-    </task>
     <task id="LOCAL-00011" summary="finished&#10;todo&#10;1\404,400&#10;2\alipay&#10;3\search&#10;">
       <created>1455852709865</created>
       <option name="number" value="00011" />
@@ -904,7 +899,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456298256184</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="update:&#10;pagination&#10;title with \W&#10;debug=false&#10;todo&#10;2\alipay&#10;3\search&#10;">
+      <created>1456298300379</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1456298300379</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1382,20 +1383,20 @@
     <entry file="file://$PROJECT_DIR$/suiyuan/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <caret line="53" column="0" selection-start-line="52" selection-start-column="57" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#6074#6380#0" expanded="false" />
-            <element signature="e#10340#10784#0" expanded="false" />
-            <element signature="e#11020#12144#0" expanded="false" />
+            <element signature="e#6078#6384#0" expanded="false" />
+            <element signature="e#10344#10788#0" expanded="false" />
+            <element signature="e#11024#12148#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/suiyuan/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55725193">
-          <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.3778626">
+          <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
           <folding />
         </state>
       </provider>

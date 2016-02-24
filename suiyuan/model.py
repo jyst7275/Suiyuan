@@ -62,7 +62,7 @@ class Passage(models.Model):
 			if check_obg.count() == 0:
 				self.pass_title_index = title_index
 			else:
-				self.pass_title_index = title_index + '-' + str(check_obg.count())
+				self.pass_title_index = title_index + '-' + str(check_obg.count() + 1)
 		super(Passage, self).save(force_insert, force_update, using, update_fields)
 
 	def __str__(self):

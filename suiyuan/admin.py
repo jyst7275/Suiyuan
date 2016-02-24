@@ -35,9 +35,9 @@ class ProductAdmin(SummernoteModelAdmin):
 class PassageAdmin(SummernoteModelAdmin):
 	fields = ('pub_date', ('pass_title', 'pass_type', 'pass_status'), 'pass_summery', 'pass_img', 'pass_content')
 
-	list_display = ('pass_title', 'pub_date', 'pass_status', 'pass_title_index')
+	list_display = ('pass_title', 'pub_date', 'pass_status')
 	list_filter = ['pub_date', 'pass_status']
-	list_editable = ['pass_status', 'pass_title_index']
+	list_editable = ['pass_status']
 	view_on_site = True
 
 	def formfield_for_choice_field(self, db_field, request=None, **kwargs):
