@@ -121,7 +121,7 @@ def qrcode(request, url):
     get_num = '?action=qrcode'
     for key in request.GET:
         get_num += '&{0}={1}'.format(key, request.GET[key])
-    url = "http://www.qysyny.cn" + url + get_num
+    url = "http://www.qysyny.cn/" + url + get_num
     img = qrcode_maker.make(url)
     buf = BytesIO()
     img.save(buf)
