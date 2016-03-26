@@ -3,7 +3,8 @@
     {% load staticfiles %}
 <div class="container app-to-top">
     <div class="col-md-12">
-        <div><h4>首页 > 新闻 > </h4></div>
+        <div>
+            <h4><span><a href="/">首页</a></span> > <span><a href="/news/">新闻</a></span></h4></div>
         <img class="qrcode" style="float: right;margin-top: -20px" src="/v1/qrcode/{{ current_url }}" alt="">
         <div class="app-detail-head">
             <h2>{{ passage.pass_title }}</h2>
