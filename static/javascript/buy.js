@@ -389,7 +389,7 @@ $('.window-cancel').click(closeWindow);
 
 $('body').on('click','.address-edit-btn', function(){
     var id = $(this).parent().parent().attr('data-id');
-    getlocation();
+    //getlocation($(this));
     $.ajax({
         url:'/v1/user/address/' + id + '/',
         type:'GET',

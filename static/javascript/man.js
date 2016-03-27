@@ -9,6 +9,8 @@ var last_scroll_top = document.body.scrollTop|document.documentElement.scrollTop
 var bar_show = true;
 var app_carousel_click = false;
 var countdown = 0;
+var KEY_ESC = 27;
+var KEY_ENTER = 13;
 setPageBar(1);
 Date.prototype.Format = function(fmt)
 { //author: meizz
@@ -122,7 +124,13 @@ $('.bar_search').click(function(){
     $('.search-container').removeClass('animated fadeOutDown');
     $('.search-container').addClass('animated fadeInDown');
 });
+$(document).keyup(function(e){
+    if(e.keyCode == KEY_ESC){
+        $('.search-container').removeClass('animated fadeInDown');
+        $('.search-container').addClass('animated fadeOutDown');
+    }
 
+});
 $('#search-remove').click(function(){
     $('.search-container').removeClass('animated fadeInDown');
     $('.search-container').addClass('animated fadeOutDown');
@@ -314,4 +322,11 @@ $('.myorder-detail-address').hover(function(){
 $('.search-btn').click(function(){
    var search = $(this).parent().children('.search-class').val();
     location.href='/search?search=' + search;
+});
+
+$('.search-class').keyup(function(e){
+   if(e.keyCode == KEY_ENTER){
+       var search = $(this).val();
+       location.href='/search?search=' + search;
+   }
 });

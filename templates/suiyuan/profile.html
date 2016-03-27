@@ -141,14 +141,14 @@
         <a href="javascript:add_address($('#add-address-form'))">增加收件地址</a>
         </div>
     </div>
-        <div class="reveal-modal" id="add-address">
+    <div class="reveal-modal" id="add-address">
         <div class="add-address-topbar">
             <div class="window-cancel">
                 <i class="fa fa-close"></i>
             </div>
             增加收件人
         </div>
-        <form id="add-address-form" action="/user/address/">
+        <form id="add-address-form" class="address-form" action="/user/address/">
             <div id="address-name" class="form-inline">
                 <span>收&nbsp&nbsp货&nbsp&nbsp人：</span>
                 <input type="text" name="address-username" class="form-control" placeholder="收件人">
@@ -158,6 +158,8 @@
                 <input class="form-control" type="text" name="address-city" placeholder="城市">
                 <input class="form-control" type="text" name="address-country" placeholder="县/区">
                 <span class="position-locate"><i class="fa fa-map-pin"></i>定位</span>
+                <br>
+                <span class="location-not">(定位不可用)</span>
             </div>
             <div id="address-address" class="form-inline">
                 <span>详细地址：</span>
@@ -177,7 +179,7 @@
             </div>
             编辑收件人
         </div>
-        <form id="add-address-form" action="/user/address/">
+        <form id="edit-address-form" class="address-form" action="/user/address/">
             <div id="address-name" class="form-inline">
                 <span>收&nbsp&nbsp货&nbsp&nbsp人：</span>
                 <input type="text" name="address-username" class="form-control" placeholder="收件人">
@@ -187,6 +189,8 @@
                 <input class="form-control" type="text" name="address-city" placeholder="城市">
                 <input class="form-control" type="text" name="address-country" placeholder="县/区">
                 <span class="position-locate"><i class="fa fa-map-pin"></i>定位</span>
+                <br>
+                <span class="location-not"></span>
             </div>
             <div id="address-address" class="form-inline">
                 <span>详细地址：</span>

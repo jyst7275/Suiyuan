@@ -271,12 +271,12 @@
     margin-right: 10px;
 }
 
-#add-address-form{
+.address-form{
     margin-top: 20px;
 }
 
 
-#add-address-form > div{
+.address-form > div{
     margin-bottom: 20px;
 }
 #address-dis > input{
